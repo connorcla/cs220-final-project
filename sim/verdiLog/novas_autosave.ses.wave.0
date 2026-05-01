@@ -1,0 +1,75 @@
+Magic 271485
+Revision Verdi_W-2024.09-SP2-5
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 11 1908 513 143 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 9455.418350
+cursor 3100.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 8
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb"
+addSignal -h 16 -UNSIGNED -HEX /alu_tb/alu_out[15:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope alu_out_add[15:0]
+addSignal -h 16 -holdScope clk
+addSignal -h 16 -holdScope exec_cycle
+addSignal -h 16 -UNSIGNED -HEX -holdScope inst_alu[11:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope inst_so[7:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope op_dst[15:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope op_src[15:0]
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/alu_tb"
+
+SCOPE_LIST_BEGIN
+"/alu_tb"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

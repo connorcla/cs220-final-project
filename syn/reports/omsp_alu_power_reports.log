@@ -1,0 +1,62 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : omsp_alu
+Version: W-2024.09-SP5-4
+Date   : Fri May  1 15:20:02 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed32rvt_tt0p78v25c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_tt0p78v25c.db)
+
+
+Operating Conditions: tt0p78v25c   Library: saed32rvt_tt0p78v25c
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+omsp_alu               8000              saed32rvt_tt0p78v25c
+omsp_alu_DP_OP_68_122_3245_1
+                       ForQA             saed32rvt_tt0p78v25c
+omsp_alu_DP_OP_69_123_7159_1
+                       ForQA             saed32rvt_tt0p78v25c
+omsp_alu_DP_OP_70_124_7159_1
+                       ForQA             saed32rvt_tt0p78v25c
+omsp_alu_DP_OP_71_125_7159_1
+                       ForQA             saed32rvt_tt0p78v25c
+omsp_alu_DP_OP_72_126_7159_1
+                       ForQA             saed32rvt_tt0p78v25c
+
+
+Global Operating Voltage = 0.78 
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+omsp_alu                                 34.618  101.670 1.80e+07  154.323 100.0
+  DP_OP_72_126_7159 (omsp_alu_DP_OP_72_126_7159_1)
+                                          3.014    9.193 7.11e+05   12.917   8.4
+  DP_OP_71_125_7159 (omsp_alu_DP_OP_71_125_7159_1)
+                                          3.219    9.629 7.07e+05   13.555   8.8
+  DP_OP_70_124_7159 (omsp_alu_DP_OP_70_124_7159_1)
+                                          3.686   10.766 7.17e+05   15.169   9.8
+  DP_OP_69_123_7159 (omsp_alu_DP_OP_69_123_7159_1)
+                                          3.098    8.840 7.17e+05   12.655   8.2
+  DP_OP_68_122_3245 (omsp_alu_DP_OP_68_122_3245_1)
+                                          1.837    9.152 2.33e+06   13.316   8.6
+1

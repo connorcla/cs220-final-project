@@ -1,5 +1,5 @@
 # change the following to your home directory
-set HOME      "/home/xxx"
+set HOME      "/home/cegrad/cclab002"
 set DIRECTORY   "cs220-final-project"
 
 # Set search and library paths

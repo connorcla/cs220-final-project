@@ -1,0 +1,83 @@
+ 
+****************************************
+Report : qor
+Design : omsp_alu
+Version: W-2024.09-SP5-4
+Date   : Fri May  1 15:20:02 2026
+****************************************
+
+
+  Timing Path Group (none)
+  -----------------------------------
+  Levels of Logic:              70.00
+  Critical Path Length:          7.82
+  Critical Path Slack:         uninit
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          5
+  Hierarchical Port Count:        140
+  Leaf Cell Count:                533
+  Buf/Inv Cell Count:              45
+  Buf Cell Count:                   0
+  Inv Cell Count:                  45
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       533
+  Sequential Cell Count:            0
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     1314.941086
+  Noncombinational Area:     0.000000
+  Buf/Inv Area:             57.182400
+  Total Buffer Area:             0.00
+  Total Inverter Area:          57.18
+  Macro/Black Box Area:      0.000000
+  Net Area:                236.475562
+  -----------------------------------
+  Cell Area:              1314.941086
+  Design Area:            1551.416647
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           648
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: bender.engr.ucr.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.17
+  Logic Optimization:                  0.07
+  Mapping Optimization:                0.24
+  -----------------------------------------
+  Overall Compile Time:                3.01
+  Overall Compile Wall Clock Time:     3.43
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

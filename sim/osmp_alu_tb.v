@@ -60,7 +60,7 @@ module alu_tb ();
         #1;
 
         //Test Case 1: ADD Operation (16-bit)
-        inst_alu   = 12'b0010_0000_0000; 
+        inst_alu   = 12'b0000_0000_1000; 
         exec_cycle = 1'b1;
         op_src     = 16'd100;
         op_dst     = 16'd250;
@@ -85,7 +85,7 @@ module alu_tb ();
         // Testing Overflow and Negative flags for 8-bit ADD
         @(posedge clk); #1;
         inst_bw    = 1'b1; // Byte mode
-        inst_alu   = 12'b0010_0000_0000; // ALU_ADD
+        inst_alu   = 12'b0000_0000_1000; // ALU_ADD
         op_src     = 16'h0070; // 112
         op_dst     = 16'h0020; // 32
         #5;
