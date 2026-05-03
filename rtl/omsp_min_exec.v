@@ -99,8 +99,8 @@ wire                 cpu_halt_cmd;
 wire                 cpu_en_s;
 wire                 decode_noirq;
 
-input                dma_en;                 // Direct Memory Access enable (high active)
-input                dma_wkup;
+wire                 dma_en;                 // Direct Memory Access enable (high active)
+wire                 dma_wkup;
 
 // CPU & Clock logic
 assign cpu_mclk    = mclk;

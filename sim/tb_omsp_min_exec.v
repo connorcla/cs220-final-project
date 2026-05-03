@@ -53,7 +53,7 @@ module omsp_min_exec_tb;
         end
     end
 
-]
+
     always @(*) begin
         dmem_dout = 16'h1234; // dummy data for any memory reads
     end
