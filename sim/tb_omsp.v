@@ -176,15 +176,8 @@ module openMSP430_mini_tb;
     //------------------------------
     initial
     begin
-        dco_clk          = 1'b0;
-        dco_local_enable = 1'b0;
-        forever
-        begin
-            #25;   // 20 MHz
-            dco_local_enable = (dco_enable===1) ? dco_enable : (dco_wkup===1);
-            if (dco_local_enable | scan_mode)
-                dco_clk = ~dco_clk;
-        end
+        dco_clk = 1'b0;
+        forever #25 dco_clk = ~dco_clk;
     end
 
     initial
@@ -200,8 +193,21 @@ module openMSP430_mini_tb;
         end
     end
 
+    initial begin
+    dco_local_enable = 1'b1;
+    force dut.aclk_en = 1'b1;
+    #500;
+    release dut.aclk_en;
+end
+
     initial
     begin
+	scan_mode   = 1'b0;
+        scan_enable = 1'b0;
+        wkup        = 14'h0000;
+        nmi         = 1'b0;
+        irq         = {`IRQ_NR-2{1'b0}};
+
         reset_n       = 1'b1;
         #93;
         reset_n       = 1'b0;
@@ -258,6 +264,7 @@ module openMSP430_mini_tb;
         scan_mode               = 1'b0;
     end
 
+    assign wkup_in = wkup;
 
     openMSP430 dut (
     // OUTPUTs
@@ -347,7 +354,7 @@ module openMSP430_mini_tb;
     initial begin
         $display("--- Starting Manual ADD Test ---");
 
-        wait (uut.puc_rst == 1'b0);
+        wait (dut.puc_rst == 1'b0);
     
         repeat(10) @(posedge mclk);
 

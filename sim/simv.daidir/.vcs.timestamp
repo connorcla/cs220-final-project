@@ -1,7 +1,7 @@
 2        
 0 openMSP430_defines.v
 0 /usr/local/synopsys/vcs/W-2024.09-SP2-5/etc/systemverilog/openMSP430_defines.v
-48
+37
 +incdir+../rtl
 +itf+/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/vcsdp_lite.tab
 +vcsd1
@@ -31,28 +31,17 @@
 -picarchive
 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/bin/vcs1
 /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/verdi.tab
-tb_omsp.v
+tb_omsp_min_exec.v
 ../rtl/omsp_alu.v
 ../rtl/omsp_and_gate.v
 ../rtl/omsp_clock_gate.v
-../rtl/omsp_clock_module.v
-../rtl/omsp_clock_mux.v
-../rtl/omsp_execution_unit.v
 ../rtl/omsp_frontend.v
-../rtl/omsp_mem_backbone.v
-../rtl/omsp_multiplier.v
+../rtl/omsp_min_exec.v
 ../rtl/omsp_register_file.v
-../rtl/omsp_scan_mux.v
-../rtl/omsp_sfr.v
-../rtl/omsp_sync_cell.v
-../rtl/omsp_sync_reset.v
-../rtl/omsp_wakeup_cell.v
-../rtl/openMSP430.v
-../rtl/openMSP430_defines.v
-../rtl/openMSP430_undefines.v
+../rtl/omsp_execution_unit.v
 54
 which_declare=declare -f
-XDG_SESSION_ID=208
+XDG_SESSION_ID=266
 XDG_RUNTIME_DIR=/run/user/20931
 XDG_DATA_DIRS=/home/cegrad/cclab002/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -71,9 +60,9 @@ VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64
 SYNOPSYS=/usr/local/synopsys
-SSH_TTY=/dev/pts/3
-SSH_CONNECTION=172.114.200.200 50592 169.235.16.45 22
-SSH_CLIENT=172.114.200.200 50592 22
+SSH_TTY=/dev/pts/4
+SSH_CONNECTION=172.114.200.200 50526 169.235.16.45 22
+SSH_CLIENT=172.114.200.200 50526 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/bin/Python3/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/clang
@@ -100,33 +89,23 @@ GDK_BACKEND=x11
 EMX_HOME=/usr/local/cadence/EMX20241
 DEBUGINFOD_URLS=https://debuginfod.centos.org/ 
 DC_HOME=/usr/local/synopsys/syn/W-2024.09-SP5-4
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-84FsEkc8Fm,guid=eda9ac06381cf583c2e491c969f6b379
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-H85gz6oWnx,guid=9d8147ef27fdb210333eb99369f7c2af
 CDS_LIC_FILE=5280@cadence.engr.ucr.edu
 CDS_LICENSE_FILE=5280@cadence.engr.ucr.edu
 CDS_INST_DIR=/usr/local/cadence/IC618
 BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
 0
 0
-21
-1777671867 ../rtl/openMSP430_undefines.v
+11
 1777671867 ../rtl/openMSP430_defines.v
-1777776015 ../rtl/openMSP430.v
-1777776015 ../rtl/omsp_wakeup_cell.v
-1777776015 ../rtl/omsp_sync_reset.v
-1777776015 ../rtl/omsp_sync_cell.v
-1777776015 ../rtl/omsp_sfr.v
-1777776015 ../rtl/omsp_scan_mux.v
-1777776015 ../rtl/omsp_register_file.v
-1777776015 ../rtl/omsp_multiplier.v
-1777776015 ../rtl/omsp_mem_backbone.v
-1777776015 ../rtl/omsp_frontend.v
 1777776015 ../rtl/omsp_execution_unit.v
-1777776015 ../rtl/omsp_clock_mux.v
-1777776015 ../rtl/omsp_clock_module.v
+1777776015 ../rtl/omsp_register_file.v
+1777848203 ../rtl/omsp_min_exec.v
+1777776015 ../rtl/omsp_frontend.v
 1777776015 ../rtl/omsp_clock_gate.v
 1777776015 ../rtl/omsp_and_gate.v
 1777671544 ../rtl/omsp_alu.v
-1777779352 tb_omsp.v
+1777848545 tb_omsp_min_exec.v
 1757588796 /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/verdi.tab
 1758337605 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/vcsdp_lite.tab
 5
@@ -135,5 +114,5 @@ BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty
 1758338525 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libsnpsmalloc.so
 1758338521 /usr/local/synopsys/vcs/W-2024.09-SP2-5/linux64/lib/libvfs.so
 1757587509 /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a
-1777779361 simv.daidir
+1777848552 simv.daidir
 -1 partitionlib

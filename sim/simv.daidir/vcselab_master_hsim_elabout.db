@@ -591,7 +591,7 @@ fHsimVpdOptXmr                     	1
 fHsimVpdOptMoreLevels              	1
 fHsimSWave                         	0
 fHsimNoSched0InCell                	1
-fHsimPartialMdb                    	1
+fHsimPartialMdb                    	0
 hsimPdbLargeOffsetThreshold        	1048576
 fHsimFlatCell                      	0
 fHsimFlatCellLimit                 	0

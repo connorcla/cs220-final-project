@@ -117,17 +117,21 @@ assign wdt_irq      = 1'b0;
 assign wdt_wkup     = 1'b0;
 assign irq          = {`IRQ_NR-2{1'b0}};
 
-// Simulate Memory backbone
-assign dmem_addr = eu_mab;
-assign pmem_addr = eu_mb_en ? eu_mab[15:1] : fe_mab[15:1]; 
+assign dma_en = 1'b0;
+assign dma_wkup = 1'b0;
 
-assign pmem_en   = eu_mb_en | fe_mb_en;
-assign dmem_en   = eu_mb_en;
-assign dmem_wen  = eu_mb_wr;
-assign dmem_din  = eu_mdb_out;
+// Simulate Memory backbone
+wire eu_addr_hi = eu_mab[15]; 
+
+assign pmem_en   = fe_mb_en | (eu_mb_en &  eu_addr_hi);
+assign dmem_en   =             eu_mb_en & ~eu_addr_hi;
+assign eu_mdb_in = eu_addr_hi ? pmem_dout : dmem_dout;
 
 assign fe_mdb_in = pmem_dout;
-assign eu_mdb_in = dmem_dout;
+assign pmem_addr = (eu_mb_en & eu_addr_hi) ? eu_mab[15:1] : fe_mab[15:1];
+assign dmem_addr = eu_mab;
+assign dmem_wen  = eu_mb_wr;
+assign dmem_din  = eu_mdb_out;
 assign fe_pmem_wait = 1'b0;
 
 //Debug...

@@ -7,8 +7,6 @@ module omsp_min_exec_tb;
     reg         puc_rst;
     reg  [15:0] pmem_dout;
     reg  [15:0] dmem_dout;
-    reg         dma_en;
-    reg         dma_wkup;
 
 
     wire [14:0] pmem_addr;
@@ -28,44 +26,45 @@ module omsp_min_exec_tb;
         .dmem_addr(dmem_addr),
         .dmem_din(dmem_din),
         .dmem_wen(dmem_wen),
-        .dmem_en(dmem_en),
-        .dma_en(dma_en),
-        .dma_wkup(dma_wkup)
+        .dmem_en(dmem_en)
     );
+
+    always @(posedge mclk) begin
+    if (dut.frontend_0.pc === 16'hDEAD) begin
+        $display("!!! WARNING: PC went DEAD. Forcing to 0000 !!!");
+        force dut.frontend_0.pc = 16'h0000;
+        #10;
+        release dut.frontend_0.pc;
+    end
+end
 
     initial mclk = 0;
     always #10 mclk = ~mclk; // 50MHz Clock
 
     always @(*) begin
-        if (!pmem_en) begin
+    if (!pmem_en) begin
+        pmem_dout = 16'h0000;
+    end else begin
+        if (pmem_addr == 15'h7FFF) begin
             pmem_dout = 16'h0000;
         end else begin
             case (pmem_addr)
-                // Since pmem_addr is word-aligned [15:1], 0xFFFE >> 1 = 0x7FFF
-                15'h7FFF: pmem_dout = 16'h0000; // Start PC at 0x0000
-                
-                // Program starts here
                 15'h0000: pmem_dout = 16'h4303; // NOP
-                15'h0001: pmem_dout = 16'h5506; // ADD R5, R6 (R6 = R6 + R5)
+                15'h0001: pmem_dout = 16'h5506; // ADD R5, R6
                 15'h0002: pmem_dout = 16'h4303; // NOP
-                default:  pmem_dout = 16'h4303; // Default to NOP
+                default:  pmem_dout = 16'hDEAD; 
             endcase
         end
     end
+end
 
-
-    always @(*) begin
-        dmem_dout = 16'h1234; // dummy data for any memory reads
-    end
 
     initial begin
-        puc_rst  = 1'b1; // Start in reset 
-        dma_en   = 1'b0;
-        dma_wkup = 1'b0;
-
-        $display("Resetting Min-Core");
-        repeat (5) @(posedge mclk);
-        puc_rst = 1'b0; // Release reset
+	dmem_dout = 16'h0000;
+        puc_rst  <= 1'b1; // Start in reset 
+	repeat (5) @(posedge mclk);
+	#1
+        puc_rst <= 1'b0; // Release reset
         
         $display("Core Released at %t", $time);
 

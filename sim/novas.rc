@@ -222,7 +222,7 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-LoadSimulationResults = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
+LoadSimulationResults = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb\""
 [Form]
 version = Verdi_W-2024.09-SP2-5
 [General]
@@ -233,8 +233,8 @@ SyncBrowserDir = TRUE
 FindBarVisible = 
 ColorThemeModern = bright
 version = Verdi_W-2024.09-SP2-5
-recent_commands_Verdi = hbLoadFsdbFile
-recent_commands_nWave = zoomAll,getSignal
+recent_commands_nWave = getSignal,zoomAll
+recent_commands_Verdi = hbLoadFsdbFile,hbCloseFsdbFile,srcShowFile,srcCompile
 prevColorThemeModern = bright
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -387,8 +387,11 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-loadFile = 653,398,614,432
-qWaveSignalDialog = 560,375,800,479
+CompileDesignUi = 110,172,691,410
+Verdi_OpenFile = 665,444,590,340
+QwWarnMsgDlg = 660,515,600,250
+qWaveSignalDialog = 380,327,800,479
+loadFile = 759,200,614,432
 QwUserAskDlg = 798,522,324,128
 [Relationship]
 hideRecursiceNode = FALSE
@@ -686,24 +689,24 @@ isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Type"
 width = 60
 visualIndex = 4
 isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
@@ -714,10 +717,10 @@ isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.ruleHistory]
@@ -796,7 +799,7 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 560 375 800 479 88 387 468 91
+getSignalForm = 380 327 800 479 242 387 314 91
 viewPort = 0 11 1908 513 143 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
@@ -963,9 +966,10 @@ printBasic = 1 0 0 TRUE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
-RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\""
-RecentFile3 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
+RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb\""
+RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
+RecentFile3 = "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\""
+RecentFile4 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5

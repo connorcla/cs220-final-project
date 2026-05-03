@@ -6,7 +6,7 @@ viewPort 0 11 1908 513 143 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb"
+openDirFile -d / "" "/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,7 +16,7 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 148975.000000
+zoom 0.000000 494900.000000
 cursor 0.000000
 marker 0.000000
 
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 3
+markerPos 10
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,23 +46,35 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb"
-addSignal -h 16 /openMSP430_mini_tb/mclk
-addSignal -h 16 -UNSIGNED -HEX -holdScope inst_pc[15:0]
-addSignal -h 16 -UNSIGNED -HEX -holdScope inst_full[255:0]
+activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb"
+addSignal -h 16 /omsp_min_exec_tb/mclk
+addSignal -h 16 -UNSIGNED -HEX -holdScope dmem_dout[15:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope pmem_addr[14:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope pmem_dout[15:0]
+addSignal -h 16 -holdScope puc_rst
+addSignal -h 16 -UNSIGNED -HEX /omsp_min_exec_tb/dut/execution_unit_0/pc[15:0]
+addSignal -h 16 -UNSIGNED -HEX /omsp_min_exec_tb/dut/frontend_0/pc[15:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope pc_nxt[15:0]
+addSignal -h 16 /omsp_min_exec_tb/pmem_en
+addSignal -h 16 /omsp_min_exec_tb/dut/execution_unit_0/mb_en
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
-activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb"
+activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb"
 
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
-"/openMSP430_mini_tb"
+"/omsp_min_exec_tb"
+"/omsp_min_exec_tb/dut"
+"/omsp_min_exec_tb/dut/execution_unit_0"
 
 SCOPE_LIST_BEGIN
-"/openMSP430_mini_tb"
+"/omsp_min_exec_tb"
+"/omsp_min_exec_tb/dut/execution_unit_0"
+"/omsp_min_exec_tb/dut/frontend_0"
+"/omsp_min_exec_tb/dut"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END
