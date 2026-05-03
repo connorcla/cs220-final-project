@@ -78,6 +78,46 @@ module openMSP430_mini_tb;
         .wkup              (1'b0)                // Hardwired: Disable wake-up
     );
 
+    //
+    // Generate Clock & Reset
+    //------------------------------
+    initial
+    begin
+        dco_clk          = 1'b0;
+        dco_local_enable = 1'b0;
+        forever
+        begin
+            #25;   // 20 MHz
+            dco_local_enable = (dco_enable===1) ? dco_enable : (dco_wkup===1);
+            if (dco_local_enable | scan_mode)
+                dco_clk = ~dco_clk;
+        end
+    end
+
+    initial
+    begin
+        lfxt_clk          = 1'b0;
+        lfxt_local_enable = 1'b0;
+        forever
+        begin
+            #763;  // 655 kHz
+            lfxt_local_enable = (lfxt_enable===1) ? lfxt_enable : (lfxt_wkup===1);
+            if (lfxt_local_enable)
+                lfxt_clk = ~lfxt_clk;
+        end
+    end
+
+    initial // Timeout
+    begin
+        #500000;
+        $display(" ===============================================");
+        $display("|               SIMULATION FAILED               |");
+        $display("|              (simulation Timeout)             |");
+        $display(" ===============================================");
+        $display("");
+        $finish;
+    end
+
     always @(*) begin
         if (pmem_addr == 15'h7FFF) // Address 0xFFFE (Reset Vector)
             pmem_dout = 16'h0000;  // Jump to start of memory
@@ -94,8 +134,6 @@ module openMSP430_mini_tb;
         reset_n = 0;
         #500;
         reset_n = 1;
-
-        wait (dut.puc_rst == 1'b0); 
     
         repeat(10) @(posedge mclk);
 
