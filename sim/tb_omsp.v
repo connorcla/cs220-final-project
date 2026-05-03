@@ -14,6 +14,11 @@ module openMSP430_mini_tb;
     initial dco_clk = 0;
     always #25 dco_clk = ~dco_clk;
 
+    initial begin
+        $fsdbDumpfile("dump.fsdb");
+        $fsdbDumpvars(0, openMSP430_mini_tb);
+    end
+
     openMSP430 uut (
 
     // OUTPUTs
