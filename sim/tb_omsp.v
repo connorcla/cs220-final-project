@@ -97,17 +97,17 @@ module openMSP430_mini_tb;
         reset_n = 1;
 
         // R5 having 0x1111 and R6 having 0x2222
-        force uut.reg_hi.r5 = 16'h1111;
-        force uut.reg_hi.r6 = 16'h2222;
+        force uut.omsp_cpu_0.omsp_execution_unit_0.omsp_register_file_0.r5 = 16'h1111;
+        force uut.omsp_cpu_0.omsp_execution_unit_0.omsp_register_file_0.r6 = 16'h2222;
         #10;
-        release uut.reg_hi.r5;
-        release uut.reg_hi.r6;
+        release uut.omsp_cpu_0.omsp_execution_unit_0.omsp_register_file_0.r5;
+        release uut.omsp_cpu_0.omsp_execution_unit_0.omsp_register_file_0.r6;
 
         // CPU fetch and execute
         repeat(10) @(posedge mclk);
 
         // Expected: 0x1111 + 0x2222 = 0x3333
-        if (uut.reg_hi.r6 == 16'h3333)
+        if (uut.omsp_cpu_0.omsp_execution_unit_0.omsp_register_file_0.r6 == 16'h3333)
             $display("SUCCESS: ADD Result is %h", uut.reg_hi.r6);
         else
             $display("FAILURE: ADD Result is %h (Expected 3333)", uut.reg_hi.r6);
