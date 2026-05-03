@@ -222,7 +222,7 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-LoadSimulationResults = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
+LoadSimulationResults = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\"" "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
 [Form]
 version = Verdi_W-2024.09-SP2-5
 [General]
@@ -679,24 +679,24 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = "Severity"
+width = 60
+visualIndex = 2
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Time"
-width = 60
-visualIndex = 0
+name = "Message"
+width = 2000
+visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Code"
+name = "Time"
 width = 60
-visualIndex = 3
-isHidden = TRUE
+visualIndex = 0
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
@@ -707,17 +707,17 @@ isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.ruleHistory]
@@ -796,7 +796,7 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 560 375 800 479 165 387 391 91
+getSignalForm = 560 375 800 479 88 387 468 91
 viewPort = 0 11 1908 513 143 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
@@ -963,7 +963,9 @@ printBasic = 1 0 0 TRUE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
+RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
+RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\""
+RecentFile3 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5

@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1777778794.819042603, "rt":0.18, "ut":0.09, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1777778793.804681348}
+{"VCS_COMP_START_TIME": 1777778793.804681348}
+{"VCS_COMP_END_TIME": 1777778795.142932682}
+{"VCS_USER_OPTIONS": "tb_omsp.v ../rtl/omsp_alu.v ../rtl/omsp_and_gate.v ../rtl/omsp_clock_gate.v ../rtl/omsp_clock_module.v ../rtl/omsp_clock_mux.v ../rtl/omsp_execution_unit.v ../rtl/omsp_frontend.v ../rtl/omsp_mem_backbone.v ../rtl/omsp_multiplier.v ../rtl/omsp_register_file.v ../rtl/omsp_scan_mux.v ../rtl/omsp_sfr.v ../rtl/omsp_sync_cell.v ../rtl/omsp_sync_reset.v ../rtl/omsp_wakeup_cell.v ../rtl/openMSP430.v ../rtl/openMSP430_defines.v ../rtl/openMSP430_undefines.v +incdir+../rtl -full64 -debug_access /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a"}
+{"vcs1": {"peak_mem": 387436}}

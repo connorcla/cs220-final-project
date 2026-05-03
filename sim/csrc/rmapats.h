@@ -2849,6 +2849,68 @@ static inline U asm_bsf (U in)
 }
 
 
+void  rmaPropagate0_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate1_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate2_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate3_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate4_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate5_p_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate5_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate5_t0_simv_daidir (UB  * pcode, U  I999);
+void  rmaPropagate6_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate7_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate8_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate9_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate10_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate11_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate12_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate13_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate14_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate15_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate16_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate17_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate18_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate19_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate20_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate21_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate21_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate22_p_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate22_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate22_t0_simv_daidir (UB  * pcode, U  I999);
+void  rmaPropagate23_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate23_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate24_p_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate24_simv_daidir (UB  * pcode, vec32  * I1128, U  I999);
+void  rmaPropagate24_t0_simv_daidir (UB  * pcode, U  I999);
+void  rmaPropagate25_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate26_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate27_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate27_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate28_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate29_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate30_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate31_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate31_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate32_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate32_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate33_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate34_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate35_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate36_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate37_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate38_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate38_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate39_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate39_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate40_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate40_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate41_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate42_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate42_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate43_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate43_t0_simv_daidir (UB  * pcode, UB  val);
+void  rmaPropagate44_simv_daidir (UB  * pcode, scalar  val);
+void  rmaPropagate44_t0_simv_daidir (UB  * pcode, UB  val);
 void  schedNewEvent (struct dummyq_struct * I1468, EBLK  * I1463, U  I623);
 
 #ifdef __cplusplus

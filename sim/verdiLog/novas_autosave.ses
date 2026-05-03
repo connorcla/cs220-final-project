@@ -25,8 +25,8 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb
-syncTime = 3100
+postSimFile = /home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb
+syncTime = 0
 viewport = 0 0 1908 1175 0 0 486 1906
 interactiveMode = False
 viewType = Source
@@ -51,7 +51,7 @@ SourceVerticalScrollLines = 5
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [nMemoryManager]
-WaveformFile = /home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb
+WaveformFile = /home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]

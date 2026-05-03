@@ -1,5 +1,10 @@
 `timescale 1ns / 10ps
 
+`ifdef OMSP_NO_INCLUDE
+`else
+`include "openMSP430_defines.v"
+`endif
+
 module openMSP430_mini_tb;
 
     //
@@ -18,7 +23,7 @@ module openMSP430_mini_tb;
     wire               pmem_cen;
     wire        [15:0] pmem_din;
     wire         [1:0] pmem_wen;
-    wire        [15:0] pmem_dout;
+    reg        [15:0] pmem_dout;
 
     // Peripherals interface
     wire        [13:0] per_addr;
@@ -197,8 +202,6 @@ module openMSP430_mini_tb;
 
     initial
     begin
-        tmp_seed                = `SEED;
-        tmp_seed                = $urandom(tmp_seed);
         error                   = 0;
         stimulus_done           = 1;
         irq                     = {`IRQ_NR-2{1'b0}};
@@ -210,7 +213,6 @@ module openMSP430_mini_tb;
         dma_priority            = 1'b0;
         dma_we                  = 2'b00;
         dma_wkup                = 1'b0;
-        dma_tfx_cancel          = 1'b0;
         cpu_en                  = 1'b1;
         dbg_en                  = 1'b0;
         dbg_uart_rxd_sel        = 1'b0;

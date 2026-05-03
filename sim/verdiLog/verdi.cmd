@@ -1,61 +1,35 @@
 verdiWindowResize -win $_Verdi_1 "0" "0" "900" "700"
 verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
 verdiWindowResize -win $_Verdi_1 "0" "0" "900" "700"
-debLoadSimResult /home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb
+debLoadSimResult /home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb
 verdiSetActWin -win $_nWave2
 wvGetSignalOpen -win $_nWave2
-wvGetSignalSetScope -win $_nWave2 "/alu_tb"
-wvSetPosition -win $_nWave2 {("G1" 8)}
-wvSetPosition -win $_nWave2 {("G1" 8)}
+wvGetSignalSetScope -win $_nWave2 "/openMSP430_mini_tb"
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
 wvAddSignal -win $_nWave2 -clear
 wvAddSignal -win $_nWave2 -group {"G1" \
-{/alu_tb/alu_out\[15:0\]} -height 16 \
-{/alu_tb/alu_out_add\[15:0\]} -height 16 \
-{/alu_tb/clk} -height 16 \
-{/alu_tb/exec_cycle} -height 16 \
-{/alu_tb/inst_alu\[11:0\]} -height 16 \
-{/alu_tb/inst_so\[7:0\]} -height 16 \
-{/alu_tb/op_dst\[15:0\]} -height 16 \
-{/alu_tb/op_src\[15:0\]} -height 16 \
+{/openMSP430_mini_tb/mclk} -height 16 \
+{/openMSP430_mini_tb/inst_pc\[15:0\]} -height 16 \
+{/openMSP430_mini_tb/inst_full\[255:0\]} -height 16 \
 }
 wvAddSignal -win $_nWave2 -group {"G2" \
 }
-wvSelectSignal -win $_nWave2 {( "G1" 1 2 3 4 5 6 7 8 )} 
-wvSetPosition -win $_nWave2 {("G1" 8)}
-wvSetPosition -win $_nWave2 {("G1" 8)}
-wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
 wvAddSignal -win $_nWave2 -clear
 wvAddSignal -win $_nWave2 -group {"G1" \
-{/alu_tb/alu_out\[15:0\]} -height 16 \
-{/alu_tb/alu_out_add\[15:0\]} -height 16 \
-{/alu_tb/clk} -height 16 \
-{/alu_tb/exec_cycle} -height 16 \
-{/alu_tb/inst_alu\[11:0\]} -height 16 \
-{/alu_tb/inst_so\[7:0\]} -height 16 \
-{/alu_tb/op_dst\[15:0\]} -height 16 \
-{/alu_tb/op_src\[15:0\]} -height 16 \
+{/openMSP430_mini_tb/mclk} -height 16 \
+{/openMSP430_mini_tb/inst_pc\[15:0\]} -height 16 \
+{/openMSP430_mini_tb/inst_full\[255:0\]} -height 16 \
 }
 wvAddSignal -win $_nWave2 -group {"G2" \
 }
-wvSelectSignal -win $_nWave2 {( "G1" 1 2 3 4 5 6 7 8 )} 
-wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSetPosition -win $_nWave2 {("G1" 3)}
 wvGetSignalClose -win $_nWave2
 wvZoomAll -win $_nWave2
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvSetCursor -win $_nWave2 3092.056238 -snap {("G1" 4)}
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
-wvScrollDown -win $_nWave2 0
+wvSetCursor -win $_nWave2 18445.364336 -snap {("G2" 0)}
 debExit

@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1777777708.976336245, "rt":1.27, "ut":0.60, "st":0.16}}
+{"vcselab":{"timestamp_begin":1777777710.414600084, "rt":0.51, "ut":0.23, "st":0.12}}
+{"link":{"timestamp_begin":1777777711.061098747, "rt":0.62, "ut":0.17, "st":0.13}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1777777707.944918649}
+{"VCS_COMP_START_TIME": 1777777707.944918649}
+{"VCS_COMP_END_TIME": 1777777711.989273903}
+{"VCS_USER_OPTIONS": "tb_omsp.v ../rtl/omsp_alu.v ../rtl/omsp_and_gate.v ../rtl/omsp_clock_gate.v ../rtl/omsp_clock_module.v ../rtl/omsp_clock_mux.v ../rtl/omsp_execution_unit.v ../rtl/omsp_frontend.v ../rtl/omsp_mem_backbone.v ../rtl/omsp_multiplier.v ../rtl/omsp_register_file.v ../rtl/omsp_scan_mux.v ../rtl/omsp_sfr.v ../rtl/omsp_sync_cell.v ../rtl/omsp_sync_reset.v ../rtl/omsp_wakeup_cell.v ../rtl/openMSP430.v ../rtl/openMSP430_defines.v ../rtl/openMSP430_undefines.v +incdir+../rtl -full64 -debug_access /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a"}
+{"vcs1": {"peak_mem": 408964}}
+{"vcselab": {"peak_mem": 265372}}

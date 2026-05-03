@@ -115,8 +115,8 @@ VCS compile option:
  option[26]: /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/verdi.tab
  option[27]: -fsdb
  option[28]: -gen_obj
- option[29]: osmp_alu_tb.v
- option[30]: +incdir+../rtl/
+ option[29]: tb_omsp.v
+ option[30]: +incdir+../rtl
  option[31]: -load
  option[32]: /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
 Chronologic Simulation VCS Release W-2024.09-SP2-5_Full64
@@ -138,13 +138,13 @@ maxproc		1027914
 (Special)Runtime environment variables:
 
 Runtime environment variables:
-LD_LIBRARY_PATH=/usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/
+LD_LIBRARY_PATH=/usr/local/lib:/inst/lib:/usr/openwin/lib:/opt/lib
 LS_COLORS=rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
-SSH_CONNECTION=10.13.21.41 49482 169.235.16.45 22
+SSH_CONNECTION=172.114.200.200 50592 169.235.16.45 22
 EMX_HOME=/usr/local/cadence/EMX20241
 LANG=C.UTF-8
 HISTCONTROL=ignoredups
-DISPLAY=localhost:11.0
+DISPLAY=localhost:10.0
 HOSTNAME=bender.engr.ucr.edu
 QUANTUMATK_HOME=/usr/local/synopsys/quantumatk/V-2023.12-SP1
 OLDPWD=/home/cegrad/cclab002
@@ -152,7 +152,7 @@ EDITOR=vi
 SNPSLMD_LICENSE_FILE=27000@synopsys.engr.ucr.edu
 KDEDIRS=/usr
 which_declare=declare -f
-XDG_SESSION_ID=147
+XDG_SESSION_ID=208
 USER=cclab002
 PAGER=more
 DC_HOME=/usr/local/synopsys/syn/W-2024.09-SP5-4
@@ -161,7 +161,7 @@ PWD=/home/cegrad/cclab002/cs220-final-project/sim
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 HOME=/home/cegrad/cclab002
 HOST=bender.engr.ucr.edu
-SSH_CLIENT=10.13.21.41 49482 22
+SSH_CLIENT=172.114.200.200 50592 22
 SELINUX_LEVEL_REQUESTED=
 KRB5CCNAME=KCM:
 XDG_DATA_DIRS=/home/cegrad/cclab002/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
@@ -181,7 +181,7 @@ VERDI_HOME=/usr/local/synopsys/verdi/W-2024.09-SP2-5
 SHLVL=2
 GDK_BACKEND=x11
 LOGNAME=cclab002
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-p0RSvTxJLp,guid=2aac55f00608828711e6f95d69f51d51
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-84FsEkc8Fm,guid=eda9ac06381cf583c2e491c969f6b379
 XDG_RUNTIME_DIR=/run/user/20931
 PATH=/usr/local/synopsys/vcs/W-2024.09-SP2-5/bin:/usr/local/synopsys/verdi/W-2024.09-SP2-5/bin:/usr/local/synopsys/syn/W-2024.09-SP5-4/bin:/usr/local/synopsys/prime/V-2023.12-SP5-4/bin:/usr/local/synopsys/quantumatk/V-2023.12-SP1/bin:/usr/local/cadence/EMX20241/bin:/usr/local/cadence/IC618/tools.lnx86/bin/64bit:/usr/local/cadence/IC618/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/bin/:/usr/ucb:/usr/bsd:/usr/sbin:/inst/bin:/usr/local/bin/X11:/usr/local/bin:/usr/openwin/bin:/usr/etc:/bin:/usr/bin/X11:/sbin:/usr/X11R6/bin:/home/cegrad/cclab002/bin
 VCS_HOME=/usr/local/synopsys/vcs/W-2024.09-SP2-5
@@ -198,7 +198,7 @@ VENDOR=unknown
 OSTYPE=linux
 MACHTYPE=x86_64
 GROUP=cegrad
-REMOTEHOST=10.13.21.41
+REMOTEHOST=172.114.200.200
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_STACK_EXEC=true
 VCS_EXEC_DONE=1
@@ -209,8 +209,8 @@ FLEXLM_BORROWFILE=/home/cegrad/cclab002/.bender.engr.ucr.edu-borrow.txt
 Runtime command line arguments:
 argv[0]=./simv
 208 profile - 100
-          CPU/Mem usage: 0.040 sys,  0.200 user,  324.34M mem
-209 Elapsed time:    0:00:01    Fri May  1 15:07:11 2026
+          CPU/Mem usage: 0.040 sys,  0.200 user,  328.86M mem
+209 Elapsed time:    0:00:01    Sat May  2 20:36:13 2026
 210 User CPU time used: 0 seconds
 211 System CPU time used: 0 seconds
 212 pliAppInit
@@ -230,74 +230,76 @@ argv[0]=./simv
 226 LIBSSCORE=found /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/lib/LINUXAMD64/libsscore_vcs202409.so through $NOVAS_HOME setting.
 227 FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2-5, Linux x86_64/64bit, 09/11/2025
 228 (C) 1996 - 2025 by Synopsys, Inc.
-229 sps_call_fsdbDumpfile_main at 0 : osmp_alu_tb.v(115)
-230 argv[0]: (alu.fsdb)
+229 sps_call_fsdbDumpfile_main at 0 : tb_omsp.v(313)
+230 argv[0]: (dump.fsdb)
 231 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-233 *Verdi* : Create FSDB file 'alu.fsdb'
-234 [spi_vcs_vd_ppi_create_root]: no upf option
-235 DUMPER_MEMORY_REDUCTION is enabled.
-236 compile option from '/home/cegrad/cclab002/cs220-final-project/sim/simv.daidir/vcs_rebuild'.
-237   "vcs 'osmp_alu_tb.v' '../rtl/omsp_alu.v' '-full64' '+incdir+../rtl/' '-debug_access' '/usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a' 2>&1"
-238 DVDI_is_vir_unload_enabled is enable
-239 FSDB_VCS_ENABLE_NATIVE_VC is enable
-240 FSDB_VCS_ENABLE_MEMORY_NATIVE_VC is enabled
-241 sps_call_fsdbDumpvars_vd_main at 0 : osmp_alu_tb.v(116)
-242 argv[0]: (0)
-243 argv[1]: (handle) alu_tb
-244 *Verdi* : Begin traversing the scope (alu_tb), layer (0).
-245 *Verdi* : End of traversing.
-246 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.050 sys,  0.210 user,  426.09M mem
-                   incr: 0.000 sys,  0.000 user,  11.33M mem
-                   accu: 0.000 sys,  0.000 user,  11.33M mem
-              accu incr: 0.000 sys,  0.000 user,  11.33M mem
+233 *Verdi* FSDB WARNING: Simv_lock file is locked (dump.fsdb.slock). Attempt to overwrite the FSDB (dump.fsdb.slock) which is currently written by other process is not permitted
+235 *Verdi* ERROR: Failed to create FSDB file: 'dump.fsdb'.
+237 DVDI_is_vir_unload_enabled is enable
+238 FSDB_VCS_ENABLE_NATIVE_VC is enable
+239 FSDB_VCS_ENABLE_MEMORY_NATIVE_VC is enabled
+240 sps_call_fsdbDumpvars_vd_main at 0 : tb_omsp.v(314)
+241 argv[0]: (0)
+242 argv[1]: (handle) openMSP430_mini_tb
+243 *Verdi* : Create FSDB file 'novas.fsdb'
+244 [spi_vcs_vd_ppi_create_root]: no upf option
+245 DUMPER_MEMORY_REDUCTION is enabled.
+246 compile option from '/home/cegrad/cclab002/cs220-final-project/sim/simv.daidir/vcs_rebuild'.
+247   "vcs 'tb_omsp.v' '../rtl/omsp_alu.v' '../rtl/omsp_and_gate.v' '../rtl/omsp_clock_gate.v' '../rtl/omsp_clock_module.v' '../rtl/omsp_clock_mux.v' '../rtl/omsp_execution_unit.v' '../rtl/omsp_frontend.v' '../rtl/omsp_mem_backbone.v' '../rtl/omsp_multiplier.v' '../rtl/omsp_register_file.v' '../rtl/omsp_scan_mux.v' '../rtl/omsp_sfr.v' '../rtl/omsp_sync_cell.v' '../rtl/omsp_sync_reset.v' '../rtl/omsp_wakeup_cell.v' '../rtl/openMSP430.v' '../rtl/openMSP430_defines.v' '../rtl/openMSP430_undefines.v' '+incdir+../rtl' '-full64' '-debug_access' '/usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a' 2>&1"
+248 *Verdi* : Begin traversing the scope (openMSP430_mini_tb), layer (0).
+249 *Verdi* : End of traversing.
+250 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.220 user,  431.82M mem
+                   incr: 0.010 sys,  0.010 user,  12.58M mem
+                   accu: 0.010 sys,  0.010 user,  12.58M mem
+              accu incr: 0.010 sys,  0.010 user,  12.58M mem
 
-          Count usage: 64 var,  54 idcode,  14 callback
-                 incr: 64 var,  54 idcode,  14 callback
-                 accu: 64 var,  54 idcode,  14 callback
-            accu incr: 64 var,  54 idcode,  14 callback
-247 Idcode  0 - bc1:0  mda:0
-248 Elapsed time:    0:00:01    Fri May  1 15:07:11 2026
-249 User CPU time used: 0 seconds
-250 System CPU time used: 0 seconds
-251 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.050 sys,  0.210 user,  426.09M mem
+          Count usage: 927 var,  529 idcode,  173 callback
+                 incr: 927 var,  529 idcode,  173 callback
+                 accu: 927 var,  529 idcode,  173 callback
+            accu incr: 927 var,  529 idcode,  173 callback
+251 Idcode  0 - bc1:0  mda:0
+252 Elapsed time:    0:00:06    Sat May  2 20:36:18 2026
+253 User CPU time used: 0 seconds
+254 System CPU time used: 0 seconds
+255 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.220 user,  431.82M mem
                    incr: 0.000 sys,  0.000 user,  0.00M mem
-                   accu: 0.000 sys,  0.000 user,  11.33M mem
+                   accu: 0.010 sys,  0.010 user,  12.58M mem
               accu incr: 0.000 sys,  0.000 user,  0.00M mem
 
-          Count usage: 64 var,  54 idcode,  14 callback
+          Count usage: 927 var,  529 idcode,  173 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 64 var,  54 idcode,  14 callback
+                 accu: 927 var,  529 idcode,  173 callback
             accu incr: 0 var,  0 idcode,  0 callback
-252 Idcode  0 - bc1:0  mda:0
-253 Elapsed time:    0:00:01    Fri May  1 15:07:11 2026
-254 User CPU time used: 0 seconds
-255 System CPU time used: 0 seconds
-256 End of simulation at 9600
-257 Memory usage: 426.095 M
-258 Maximum resident set size: 124 MB
-259 Hard page faults: 0
-260 Soft page faults: 13357
-261 Elapsed time:    0:00:01    Fri May  1 15:07:11 2026
-262 User CPU time used: 0 seconds
-263 System CPU time used: 0 seconds
-264 Begin FSDB profile info:
-265 FSDB Writer : bc1(12) bcn(40) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.012423) io wait(0.000000) theadpool wait(0.000000)
+256 Idcode  0 - bc1:0  mda:0
+257 Elapsed time:    0:00:06    Sat May  2 20:36:18 2026
+258 User CPU time used: 0 seconds
+259 System CPU time used: 0 seconds
+260 End of simulation at 147500
+261 Memory usage: 431.817 M
+262 Maximum resident set size: 129 MB
+263 Hard page faults: 5
+264 Soft page faults: 13397
+265 Elapsed time:    0:00:06    Sat May  2 20:36:18 2026
+266 User CPU time used: 0 seconds
+267 System CPU time used: 0 seconds
+268 Begin FSDB profile info:
+269 FSDB Writer : bc1(119) bcn(197) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.009281) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-266 End FSDB profile info
-267 FSDB closed. Name: alu.fsdb Size: 11902
-268 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-269                      - BlockUsed:1 Acquire:0 BufferUsed:1038
-270                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:0
-271                      - MainProducerTime:0.281952725 TotalConsumerTime:0.000000000
-272                      - ElapsedTime:0.080493000
-273 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:1038
-274 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-275                      - BlockUsed:2 Acquire:0 BufferUsed:1038
-276 SimExit
-277 Elapsed time:    0:00:01    Fri May  1 15:07:11 2026
-278 User CPU time used: 0 seconds
-279 System CPU time used: 0 seconds
-280 Sim process exit
+270 End FSDB profile info
+271 FSDB closed. Name: novas.fsdb Size: 35592
+272 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+273                      - BlockUsed:1 Acquire:0 BufferUsed:5615
+274                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:0
+275                      - MainProducerTime:0.292970984 TotalConsumerTime:0.000000000
+276                      - ElapsedTime:5.087093000
+277 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:5615
+278 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+279                      - BlockUsed:2 Acquire:0 BufferUsed:5615
+280 SimExit
+281 Elapsed time:    0:00:06    Sat May  2 20:36:18 2026
+282 User CPU time used: 0 seconds
+283 System CPU time used: 0 seconds
+284 Sim process exit

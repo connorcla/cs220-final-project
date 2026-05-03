@@ -1,7 +1,7 @@
 #######################################################################################
 # fsdb.xxxxx.log : log primitive debug message of FSDB Reader
 # This is for R&D to analyze when there are issues happening when FSDB reading
-# The corresponding FSDB file is /home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb
+# The corresponding FSDB file is /home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb
 #######################################################################################
 [BASIC]Reader version : Chronologic Simulation VCS Release W-2024.09-SP2-5_Full64
 [BASIC]simulator version : Chronologic Simulation VCS Release W-2024.09-SP2-5_Full64
