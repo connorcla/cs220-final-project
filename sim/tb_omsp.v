@@ -202,6 +202,15 @@ module openMSP430_mini_tb;
 
     initial
     begin
+        reset_n       = 1'b1;
+        #93;
+        reset_n       = 1'b0;
+        #593;
+        reset_n       = 1'b1;
+    end
+
+    initial
+    begin
         error                   = 0;
         stimulus_done           = 1;
         irq                     = {`IRQ_NR-2{1'b0}};
@@ -337,18 +346,15 @@ module openMSP430_mini_tb;
 
     initial begin
         $display("--- Starting Manual ADD Test ---");
-        
-        //Trigger Reset
-        reset_n = 0;
-        #500;
-        reset_n = 1;
+
+        wait (uut.puc_rst == 1'b0);
     
         repeat(10) @(posedge mclk);
 
         // R5 having 0x1111 and R6 having 0x2222
         force dut.execution_unit_0.register_file_0.r5 = 16'h1111;
         force dut.execution_unit_0.register_file_0.r6 = 16'h2222;
-        #10;
+        repeat(20) @(posedge mclk);
         release dut.execution_unit_0.register_file_0.r5;
         release dut.execution_unit_0.register_file_0.r6;
 
