@@ -1,7 +1,7 @@
 fHsimDesignHasDebugNodes           	13
 fNSParam                           	256
 fLargeSizeSdfTest                  	0
-fHsimDelayGateMbme                 	0
+fHsimDelayGateMbme                 	1
 fNoMergeDelays                     	0
 fHsimAllMtmPat                     	0
 fSharedMasterElab                  	0
@@ -56,7 +56,7 @@ fHsimICDelayCCN                    	0
 fHsimICDiag                        	0
 fHsimMsidSched                     	0
 fHsimNewCSDF                       	1
-vcselabIncrMode                    	2
+vcselabIncrMode                    	1
 fHsimMPPackDelay                   	0
 fHsimMultDriver                    	0
 fHsimPart                          	0
@@ -179,7 +179,7 @@ fHsimViWire                        	1
 fHsimPcCbOpt                       	1
 fHsimAmsTunneling                  	0
 fHsimAmsTunnelingDiag              	0
-fHsimScUpwardXmrNoSplit            	1
+fHsimScUpwardXmrNoSplit            	0
 fHsimOrigNdbViewOnly               	0
 fHsimVcsInterface                  	1
 fHsimVcsInterfaceAlias             	0
@@ -787,7 +787,7 @@ fHsimSchedMinput                   	0
 fHsimSchedSeqPrim                  	0
 fHsimSchedSelectFanout             	0
 fHsimSchedSelectFanoutDebug        	0
-fSpecifyInDesign                   	0
+fSpecifyInDesign                   	1
 fFgpDynamicReadOn                  	0
 fHsCgOptAllUc                      	0
 fHsimXmrRepl                       	0
@@ -847,7 +847,7 @@ fHsimPreInlineInstNum64            	0
 fHsimAutoInstNum64Limit            	-7
 fHsimAutoEnableInstNum64PC         	0
 fHsCgOptFixLeaf                    	1
-fHsimDumpVars                      	0
+fHsimDumpVars                      	1
 fFgpTbReactiveLite                 	1
 fHsCgOptCongLite                   	1
 fHsimGateDiag                      	0

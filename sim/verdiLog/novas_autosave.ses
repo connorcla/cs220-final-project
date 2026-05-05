@@ -27,7 +27,7 @@ fdb_tool =
 [hb]
 postSimFile = /home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb
 syncTime = 0
-viewport = 0 0 1908 1175 0 0 249 898
+viewport = 2560 427 1908 1175 0 0 486 1906
 interactiveMode = False
 viewType = Source
 simulatorMode = False

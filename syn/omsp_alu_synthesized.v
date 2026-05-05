@@ -1,11 +1,92 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Ultra(TM) in wire load mode
 // Version   : W-2024.09-SP5-4
-// Date      : Fri May  1 15:20:02 2026
+// Date      : Tue May  5 00:17:38 2026
 /////////////////////////////////////////////////////////////
 
 
-module omsp_alu_DP_OP_68_122_3245_1 ( I1, I2, I3, O1, O2 );
+module omsp_alu_DP_OP_72_126_7159_0 ( I1, I2, I3, I4, O1, O2 );
+  input [3:0] I1;
+  input [3:0] I2;
+  input [2:0] I4;
+  output [4:0] O2;
+  input I3;
+  output O1;
+  wire   n2, n3, n7, n32, n33, n34, n41, n42, n43, n44, n63, n64, n65;
+
+  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
+  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
+  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
+  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
+  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
+  AOI221X1_RVT U44 ( .A1(n43), .A2(n41), .A3(n43), .A4(n42), .A5(n44), .Y(O1)
+         );
+  FADDX1_RVT U45 ( .A(n44), .B(n2), .CI(n7), .S(O2[4]) );
+  HADDX1_RVT U46 ( .A0(n42), .B0(n63), .SO(O2[2]) );
+  AO22X1_RVT U47 ( .A1(I4[2]), .A2(n64), .A3(n7), .A4(n41), .Y(O2[1]) );
+  INVX0_RVT U48 ( .A(I4[2]), .Y(n7) );
+  NAND2X0_RVT U49 ( .A1(n63), .A2(n65), .Y(n3) );
+  INVX0_RVT U50 ( .A(n42), .Y(n65) );
+  AND2X1_RVT U51 ( .A1(I4[2]), .A2(n64), .Y(n63) );
+  INVX0_RVT U52 ( .A(n41), .Y(n64) );
+endmodule
+
+
+module omsp_alu_DP_OP_71_125_7159_0 ( I1, I2, I3, I4, O1, O2 );
+  input [3:0] I1;
+  input [3:0] I2;
+  input [2:0] I4;
+  output [4:0] O2;
+  input I3;
+  output O1;
+  wire   n2, n3, n7, n32, n33, n34, n41, n42, n43, n44, n63, n64, n65;
+
+  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
+  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
+  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
+  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
+  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
+  AOI221X1_RVT U44 ( .A1(n43), .A2(n41), .A3(n43), .A4(n42), .A5(n44), .Y(O1)
+         );
+  FADDX1_RVT U45 ( .A(n44), .B(n2), .CI(n7), .S(O2[4]) );
+  HADDX1_RVT U46 ( .A0(n42), .B0(n63), .SO(O2[2]) );
+  AO22X1_RVT U47 ( .A1(I4[2]), .A2(n64), .A3(n7), .A4(n41), .Y(O2[1]) );
+  INVX0_RVT U48 ( .A(I4[2]), .Y(n7) );
+  NAND2X0_RVT U49 ( .A1(n63), .A2(n65), .Y(n3) );
+  INVX0_RVT U50 ( .A(n42), .Y(n65) );
+  AND2X1_RVT U51 ( .A1(I4[2]), .A2(n64), .Y(n63) );
+  INVX0_RVT U52 ( .A(n41), .Y(n64) );
+endmodule
+
+
+module omsp_alu_DP_OP_69_123_7159_0 ( I1, I2, I3, I4, O1, O2 );
+  input [3:0] I1;
+  input [3:0] I2;
+  input [2:0] I4;
+  output [4:0] O2;
+  input I3;
+  output O1;
+  wire   n2, n3, n7, n32, n33, n34, n41, n42, n43, n44, n63, n64, n65;
+
+  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
+  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
+  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
+  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
+  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
+  AOI221X1_RVT U44 ( .A1(n43), .A2(n41), .A3(n43), .A4(n42), .A5(n44), .Y(O1)
+         );
+  FADDX1_RVT U45 ( .A(n44), .B(n2), .CI(n7), .S(O2[4]) );
+  HADDX1_RVT U46 ( .A0(n42), .B0(n63), .SO(O2[2]) );
+  AO22X1_RVT U47 ( .A1(I4[2]), .A2(n64), .A3(n7), .A4(n41), .Y(O2[1]) );
+  INVX0_RVT U48 ( .A(I4[2]), .Y(n7) );
+  NAND2X0_RVT U49 ( .A1(n63), .A2(n65), .Y(n3) );
+  INVX0_RVT U50 ( .A(n42), .Y(n65) );
+  AND2X1_RVT U51 ( .A1(I4[2]), .A2(n64), .Y(n63) );
+  INVX0_RVT U52 ( .A(n41), .Y(n64) );
+endmodule
+
+
+module omsp_alu_DP_OP_68_122_3245_0 ( I1, I2, I3, O1, O2 );
   input [16:0] I1;
   input [15:0] I2;
   output [16:0] O1;
@@ -15,7 +96,6 @@ module omsp_alu_DP_OP_68_122_3245_1 ( I1, I2, I3, O1, O2 );
          n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,
          n31, n69;
 
-  XOR2X1_RVT U1 ( .A1(n1), .A2(n69), .Y(O2[16]) );
   HADDX1_RVT U2 ( .A0(n2), .B0(O1[15]), .C1(n1), .SO(O2[15]) );
   HADDX1_RVT U3 ( .A0(n3), .B0(O1[14]), .C1(n2), .SO(O2[14]) );
   HADDX1_RVT U4 ( .A0(n4), .B0(O1[13]), .C1(n3), .SO(O2[13]) );
@@ -48,34 +128,7 @@ module omsp_alu_DP_OP_68_122_3245_1 ( I1, I2, I3, O1, O2 );
   FADDX1_RVT U31 ( .A(I2[2]), .B(I1[2]), .CI(n30), .CO(n29), .S(O1[2]) );
   FADDX1_RVT U32 ( .A(I2[1]), .B(I1[1]), .CI(n31), .CO(n30), .S(O1[1]) );
   HADDX1_RVT U33 ( .A0(I2[0]), .B0(I1[0]), .C1(n31), .SO(O1[0]) );
-endmodule
-
-
-module omsp_alu_DP_OP_69_123_7159_1 ( I1, I2, I3, I4, O1, O2 );
-  input [3:0] I1;
-  input [3:0] I2;
-  input [2:0] I4;
-  output [4:0] O2;
-  input I3;
-  output O1;
-  wire   n1, n2, n3, n4, n7, n17, n21, n22, n32, n33, n34, n41, n42, n43, n44;
-
-  XOR2X1_RVT U1 ( .A1(n2), .A2(n1), .Y(O2[4]) );
-  XOR2X1_RVT U2 ( .A1(n44), .A2(n7), .Y(n1) );
-  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
-  XNOR2X1_RVT U4 ( .A1(n42), .A2(n4), .Y(O2[2]) );
-  OR2X1_RVT U5 ( .A1(n4), .A2(n42), .Y(n3) );
-  XNOR2X1_RVT U6 ( .A1(n41), .A2(n7), .Y(O2[1]) );
-  OR2X1_RVT U7 ( .A1(n7), .A2(n41), .Y(n4) );
-  INVX0_RVT U18 ( .A(n44), .Y(n17) );
-  INVX0_RVT U25 ( .A(n43), .Y(n21) );
-  NOR2X0_RVT U27 ( .A1(n41), .A2(n42), .Y(n22) );
-  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
-  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
-  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
-  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
-  INVX0_RVT U44 ( .A(I4[1]), .Y(n7) );
-  OA21X1_RVT U45 ( .A1(n22), .A2(n21), .A3(n17), .Y(O1) );
+  HADDX1_RVT U37 ( .A0(n69), .B0(n1), .SO(O2[16]) );
 endmodule
 
 
@@ -86,82 +139,66 @@ module omsp_alu_DP_OP_70_124_7159_1 ( I1, I2, I3, I4, O1, O2 );
   output [4:0] O2;
   input I3;
   output O1;
-  wire   n1, n2, n3, n4, n7, n17, n21, n22, n32, n33, n34, n41, n42, n43, n44;
+  wire   n1, n2, n3, n4, n5, n7, n8, n9, n10, n11, n12, n13, n18, n19, n20,
+         n21, n22, n23, n24, n28, n29, n30, n32, n33, n35, n36, n37, n38, n39,
+         n40, n48, n49, n54, n63, n64, n65, n66, n84, n85, n91, n92, n93, n94,
+         n102, n103, n110, n111, n112, n113, n115, n143, n144;
 
-  XOR2X1_RVT U1 ( .A1(n2), .A2(n1), .Y(O2[4]) );
-  XOR2X1_RVT U2 ( .A1(n44), .A2(n7), .Y(n1) );
-  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
-  XNOR2X1_RVT U4 ( .A1(n42), .A2(n4), .Y(O2[2]) );
-  OR2X1_RVT U5 ( .A1(n4), .A2(n42), .Y(n3) );
-  XNOR2X1_RVT U6 ( .A1(n41), .A2(n7), .Y(O2[1]) );
-  OR2X1_RVT U7 ( .A1(n7), .A2(n41), .Y(n4) );
-  INVX0_RVT U18 ( .A(n44), .Y(n17) );
-  INVX0_RVT U25 ( .A(n43), .Y(n21) );
-  NOR2X0_RVT U27 ( .A1(n41), .A2(n42), .Y(n22) );
-  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
-  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
-  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
-  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
-  INVX0_RVT U44 ( .A(I4[1]), .Y(n7) );
-  OA21X1_RVT U45 ( .A1(n22), .A2(n21), .A3(n17), .Y(O1) );
-endmodule
-
-
-module omsp_alu_DP_OP_71_125_7159_1 ( I1, I2, I3, I4, O1, O2 );
-  input [3:0] I1;
-  input [3:0] I2;
-  input [2:0] I4;
-  output [4:0] O2;
-  input I3;
-  output O1;
-  wire   n1, n2, n3, n4, n7, n17, n21, n22, n32, n33, n34, n41, n42, n43, n44;
-
-  XOR2X1_RVT U1 ( .A1(n2), .A2(n1), .Y(O2[4]) );
-  XOR2X1_RVT U2 ( .A1(n44), .A2(n7), .Y(n1) );
-  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
-  XNOR2X1_RVT U4 ( .A1(n42), .A2(n4), .Y(O2[2]) );
-  OR2X1_RVT U5 ( .A1(n4), .A2(n42), .Y(n3) );
-  XNOR2X1_RVT U6 ( .A1(n41), .A2(n7), .Y(O2[1]) );
-  OR2X1_RVT U7 ( .A1(n7), .A2(n41), .Y(n4) );
-  INVX0_RVT U18 ( .A(n44), .Y(n17) );
-  INVX0_RVT U25 ( .A(n43), .Y(n21) );
-  NOR2X0_RVT U27 ( .A1(n41), .A2(n42), .Y(n22) );
-  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
-  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
-  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
-  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
-  INVX0_RVT U44 ( .A(I4[1]), .Y(n7) );
-  OA21X1_RVT U45 ( .A1(n22), .A2(n21), .A3(n17), .Y(O1) );
-endmodule
-
-
-module omsp_alu_DP_OP_72_126_7159_1 ( I1, I2, I3, I4, O1, O2 );
-  input [3:0] I1;
-  input [3:0] I2;
-  input [2:0] I4;
-  output [4:0] O2;
-  input I3;
-  output O1;
-  wire   n1, n2, n3, n4, n7, n13, n17, n21, n22, n32, n33, n34, n41, n42, n43,
-         n44;
-
-  XOR2X1_RVT U1 ( .A1(n2), .A2(n1), .Y(O2[4]) );
-  XOR2X1_RVT U2 ( .A1(n44), .A2(n7), .Y(n1) );
-  FADDX1_RVT U3 ( .A(n7), .B(n3), .CI(n43), .CO(n2), .S(O2[3]) );
-  XNOR2X1_RVT U4 ( .A1(n42), .A2(n4), .Y(O2[2]) );
-  OR2X1_RVT U5 ( .A1(n4), .A2(n42), .Y(n3) );
-  XNOR2X1_RVT U6 ( .A1(n41), .A2(n7), .Y(O2[1]) );
-  OR2X1_RVT U7 ( .A1(n7), .A2(n41), .Y(n4) );
-  INVX0_RVT U11 ( .A(n13), .Y(O1) );
-  OAI21X1_RVT U13 ( .A1(n22), .A2(n21), .A3(n17), .Y(n13) );
-  INVX0_RVT U18 ( .A(n44), .Y(n17) );
-  INVX0_RVT U25 ( .A(n43), .Y(n21) );
-  NOR2X0_RVT U27 ( .A1(n41), .A2(n42), .Y(n22) );
-  FADDX1_RVT U35 ( .A(I1[3]), .B(I2[3]), .CI(n32), .CO(n44), .S(n43) );
-  FADDX1_RVT U36 ( .A(I1[2]), .B(I2[2]), .CI(n33), .CO(n32), .S(n42) );
-  FADDX1_RVT U37 ( .A(I1[1]), .B(I2[1]), .CI(n34), .CO(n33), .S(n41) );
-  FADDX1_RVT U38 ( .A(I1[0]), .B(I2[0]), .CI(I3), .CO(n34), .S(O2[0]) );
-  INVX0_RVT U44 ( .A(I4[1]), .Y(n7) );
+  NAND2X0_RVT U2 ( .A1(n144), .A2(n7), .Y(n2) );
+  NAND2X0_RVT U5 ( .A1(n35), .A2(n32), .Y(n7) );
+  XNOR2X1_RVT U6 ( .A1(n13), .A2(n3), .Y(O2[3]) );
+  AOI21X1_RVT U7 ( .A1(n21), .A2(n9), .A3(n10), .Y(n8) );
+  NAND2X0_RVT U10 ( .A1(n28), .A2(n12), .Y(n3) );
+  NAND2X0_RVT U13 ( .A1(n33), .A2(I4[1]), .Y(n12) );
+  XOR2X1_RVT U14 ( .A1(n20), .A2(n4), .Y(O2[2]) );
+  OAI21X1_RVT U15 ( .A1(n18), .A2(n20), .A3(n19), .Y(n13) );
+  NAND2X0_RVT U20 ( .A1(n29), .A2(n19), .Y(n4) );
+  NAND2X0_RVT U23 ( .A1(n38), .A2(n37), .Y(n19) );
+  XNOR2X1_RVT U24 ( .A1(n5), .A2(n24), .Y(O2[1]) );
+  NAND2X0_RVT U28 ( .A1(n30), .A2(n23), .Y(n5) );
+  NAND2X0_RVT U31 ( .A1(n39), .A2(n40), .Y(n23) );
+  FADDX1_RVT U32 ( .A(I2[0]), .B(I1[0]), .CI(I3), .CO(n24), .S(O2[0]) );
+  FADDX1_RVT U36 ( .A(n35), .B(I1[3]), .CI(n36), .CO(n32), .S(n33) );
+  OR2X1_RVT U39 ( .A1(I2[2]), .A2(I1[2]), .Y(n36) );
+  OR2X1_RVT U41 ( .A1(I2[1]), .A2(I1[1]), .Y(n38) );
+  AOI21X1_RVT U45 ( .A1(I3), .A2(n143), .A3(n48), .Y(O1) );
+  NAND2X0_RVT U47 ( .A1(n49), .A2(n54), .Y(n48) );
+  AOI21X1_RVT U55 ( .A1(n92), .A2(n63), .A3(n64), .Y(n54) );
+  NAND2X0_RVT U69 ( .A1(n111), .A2(I1[3]), .Y(n66) );
+  NOR2X1_RVT U90 ( .A1(n113), .A2(I1[2]), .Y(n84) );
+  NAND2X0_RVT U91 ( .A1(n113), .A2(I1[2]), .Y(n85) );
+  NOR2X1_RVT U98 ( .A1(n93), .A2(n102), .Y(n91) );
+  NAND2X0_RVT U103 ( .A1(n115), .A2(I1[1]), .Y(n94) );
+  NOR2X1_RVT U114 ( .A1(I2[0]), .A2(I1[0]), .Y(n102) );
+  NAND2X0_RVT U115 ( .A1(I2[0]), .A2(I1[0]), .Y(n103) );
+  HADDX1_RVT U118 ( .A0(I2[3]), .B0(n112), .C1(n110), .SO(n111) );
+  OR2X1_RVT U120 ( .A1(I2[2]), .A2(I2[1]), .Y(n112) );
+  NOR2X1_RVT U102 ( .A1(n115), .A2(I1[1]), .Y(n93) );
+  NOR2X1_RVT U68 ( .A1(n111), .A2(I1[3]), .Y(n65) );
+  NOR2X1_RVT U30 ( .A1(n39), .A2(n40), .Y(n22) );
+  NOR2X1_RVT U12 ( .A1(n33), .A2(I4[1]), .Y(n11) );
+  NOR2X1_RVT U8 ( .A1(n18), .A2(n11), .Y(n9) );
+  OAI21X1_RVT U9 ( .A1(n19), .A2(n11), .A3(n12), .Y(n10) );
+  OAI21X1_RVT U99 ( .A1(n103), .A2(n93), .A3(n94), .Y(n92) );
+  NOR2X1_RVT U64 ( .A1(n84), .A2(n65), .Y(n63) );
+  XNOR2X1_RVT U40 ( .A1(I1[1]), .A2(I2[1]), .Y(n39) );
+  OAI21X1_RVT U26 ( .A1(n1), .A2(n22), .A3(n23), .Y(n21) );
+  XNOR2X1_RVT U126 ( .A1(I2[1]), .A2(I2[2]), .Y(n113) );
+  OAI21X1_RVT U127 ( .A1(n85), .A2(n65), .A3(n66), .Y(n64) );
+  INVX0_RVT U128 ( .A(I2[3]), .Y(n35) );
+  INVX0_RVT U129 ( .A(I4[2]), .Y(n40) );
+  XNOR2X1_RVT U130 ( .A1(I1[2]), .A2(I2[2]), .Y(n37) );
+  NOR2X0_RVT U131 ( .A1(n38), .A2(n37), .Y(n18) );
+  XOR2X1_RVT U132 ( .A1(n8), .A2(n2), .Y(O2[4]) );
+  AND2X1_RVT U133 ( .A1(n91), .A2(n63), .Y(n143) );
+  OR2X1_RVT U134 ( .A1(n35), .A2(n32), .Y(n144) );
+  INVX1_RVT U135 ( .A(n110), .Y(n49) );
+  INVX0_RVT U136 ( .A(n22), .Y(n30) );
+  INVX0_RVT U137 ( .A(n18), .Y(n29) );
+  INVX0_RVT U138 ( .A(n11), .Y(n28) );
+  INVX0_RVT U139 ( .A(n21), .Y(n20) );
+  INVX1_RVT U140 ( .A(I2[1]), .Y(n115) );
+  INVX1_RVT U141 ( .A(n24), .Y(n1) );
 endmodule
 
 
@@ -179,40 +216,40 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   input [15:0] op_src;
   input [3:0] status;
   input dbg_halt_st, exec_cycle, inst_bw;
-  wire   op_src_inv_cmd, op_bit8_msk, N5, alu_inc, N16, N17, N29, N30, N42,
-         N43, N55, N56, N59, N61, alu_shift_15_, alu_shift_7, alu_short_thro,
-         N62, N64, N66, N67, N68, N69, N70, N71, N74, N76, N79, N81, N82, N83,
-         N84, N85, N86, N89, N90, N91, N92, N93, N94, N95, N96, N97, N98, N99,
-         N100, N101, N102, N105, N106, N107, N108, N109, N110, N111, N112,
-         N113, N114, N115, N116, N117, N118, N119, N120, N121, N122, N124,
-         N125, N126, N127, N128, N129, N130, N143, N144, N145, N146, N147,
-         N148, N149, N150, N151, N152, N153, N154, N155, N156, N157, N158,
-         N159, N160, N161, N162, N163, N164, N165, N166, N167, N168, N169,
-         N170, N171, N172, N173, N174, N175, N176, N177, N178, N179, N180,
-         N181, N182, N183, N184, N185, N186, N187, N188, N189, N190, N191,
-         N192, N193, N194, N195, N196, N197, N198, N199, N200, N201, N202,
-         N203, N204, N205, N206, N207, N208, N209, N210, N211, N212, N213,
-         N214, N215, N216, N217, N218, N219, N220, N221, N222, N223, N224,
-         N225, N226, N227, N228, N229, N230, N231, N232, N233, N234, N235,
-         N236, N237, N238, N239, N240, N241, N242, N243, N244, N245, N246,
-         N247, N248, N249, N250, N251, N252, N253, N254, N255, N256, N257,
-         N258, N259, N260, N261, N262, N263, N264, N265, N266, N267, N268,
-         N269, N270, N271, N272, N273, N274, N275, N276, N277, N278, N279,
-         N280, N281, N282, N283, N284, N285, N286, N287, N288, N289, N290,
-         N291, N292, N293, N294, N295, N296, N297, N298, N299, N300, N301,
-         N302, N303, N304, N305, N306, N307, N308, N309, N310, N311, N312,
-         N313, N314, N315, N316, N317, N318, N319, N320, N321, N322, N323,
-         N324, N325, N326, N327, N328, N329, N330, N331, N332, N333, N334,
-         N335, N336, N337, N338, N339, N340, N341, N342, N343, N344, N345,
-         N346, N347, N348, N349, N78, N77, N75, N73, N72, N65, N63, N60, N58,
-         alu_dadd2_4_, alu_dadd1_4_, alu_dadd0_4_, n3, n5, n6, n7, n10, n11,
-         n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25,
-         n26, n27, SYNOPSYS_UNCONNECTED_1;
+  wire   op_src_inv_cmd, op_bit8_msk, N5, jmp_not_taken, alu_inc, N16, N17,
+         N29, N30, N42, N43, N55, N56, N59, N61, alu_shift_15_, alu_shift_7,
+         alu_short_thro, N62, N64, N66, N69, N70, N71, N74, N76, N79, N81, N82,
+         N83, N84, N85, N86, N89, N90, N91, N92, N93, N94, N95, N96, N97, N98,
+         N99, N100, N101, N102, N105, N106, N107, N108, N109, N110, N111, N112,
+         N113, N114, N115, N116, N117, N118, N119, N120, N121, N122, N123,
+         N124, N125, N126, N127, N128, N129, N130, N143, N144, N145, N146,
+         N147, N148, N149, N150, N151, N152, N153, N154, N155, N156, N157,
+         N158, N159, N160, N161, N162, N163, N164, N165, N166, N167, N168,
+         N169, N170, N171, N172, N173, N174, N175, N176, N177, N178, N179,
+         N180, N181, N182, N183, N184, N185, N186, N187, N188, N189, N190,
+         N191, N192, N193, N194, N195, N196, N197, N198, N199, N200, N201,
+         N202, N203, N204, N205, N206, N207, N208, N209, N210, N211, N212,
+         N213, N214, N215, N216, N217, N218, N219, N220, N221, N222, N223,
+         N224, N225, N226, N227, N228, N229, N230, N231, N232, N233, N234,
+         N235, N236, N237, N238, N239, N240, N241, N242, N243, N244, N245,
+         N246, N247, N248, N249, N250, N251, N252, N253, N254, N255, N256,
+         N257, N258, N259, N260, N261, N262, N263, N264, N265, N266, N267,
+         N268, N269, N270, N271, N272, N273, N274, N275, N276, N277, N278,
+         N279, N280, N281, N282, N283, N284, N285, N286, N287, N288, N289,
+         N290, N291, N292, N293, N294, N295, N296, N297, N298, N299, N300,
+         N301, N302, N303, N304, N305, N306, N307, N308, N309, N310, N311,
+         N312, N313, N314, N315, N316, N317, N318, N319, N320, N321, N322,
+         N323, N324, N325, N326, N327, N328, N329, N330, N331, N332, N333,
+         N334, N335, N336, N337, N338, N339, N340, N341, N342, N343, N344,
+         N345, N346, N347, N348, N349, N78, N77, N75, N73, N72, N65, N63, N60,
+         N58, alu_dadd2_4_, alu_dadd1_4_, alu_dadd0_4_, n3, n5, n6, n7, n8,
+         n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n25, n26,
+         SYNOPSYS_UNCONNECTED_1;
   wire   [15:8] op_src_inv;
   wire   [15:8] op_src_in;
   wire   [15:8] op_dst_in;
   wire   [15:0] op_src_in_jmp;
-  wire   [15:0] alu_and;
+  wire   [14:0] alu_and;
   wire   [15:0] alu_or;
   wire   [15:0] alu_xor;
   wire   [16:0] alu_add_inc;
@@ -230,17 +267,11 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   INVX0_RVT I_25 ( .A(N73), .Y(N74) );
   OR2X1_RVT C745 ( .A1(inst_alu[6]), .A2(N72), .Y(N73) );
   OR2X1_RVT C744 ( .A1(inst_alu[8]), .A2(inst_alu[10]), .Y(N72) );
-  AND2X1_RVT C718 ( .A1(inst_alu[7]), .A2(N65), .Y(N66) );
+  INVX2_RVT I_16 ( .A(N63), .Y(N64) );
   OR2X1_RVT C715 ( .A1(inst_alu[7]), .A2(N62), .Y(N63) );
   AND2X1_RVT C483 ( .A1(inst_bw), .A2(N60), .Y(N61) );
   OR2X1_RVT C480 ( .A1(inst_bw), .A2(inst_so[0]), .Y(N58) );
-  INVX0_RVT I_12 ( .A(N55), .Y(N56) );
-  INVX0_RVT I_11 ( .A(N42), .Y(N43) );
-  INVX0_RVT I_10 ( .A(N29), .Y(N30) );
-  INVX0_RVT I_9 ( .A(N16), .Y(N17) );
   AND2X1_RVT C752 ( .A1(inst_alu[9]), .A2(exec_cycle), .Y(alu_stat_wr[1]) );
-  INVX0_RVT I_24 ( .A(alu_stat[1]), .Y(N71) );
-  INVX0_RVT I_23 ( .A(alu_out[15]), .Y(N348) );
   AND2X1_RVT C735 ( .A1(op_src_in[15]), .A2(op_dst_in[15]), .Y(N347) );
   AND2X1_RVT C734 ( .A1(N347), .A2(N348), .Y(N349) );
   INVX0_RVT I_22 ( .A(op_dst_in[15]), .Y(N344) );
@@ -256,8 +287,6 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   AND2X1_RVT C723 ( .A1(N336), .A2(N337), .Y(N338) );
   AND2X1_RVT C722 ( .A1(N338), .A2(alu_out[7]), .Y(N339) );
   OR2X1_RVT C721 ( .A1(N339), .A2(N342), .Y(N69) );
-  AND2X1_RVT C720 ( .A1(op_src_in[15]), .A2(op_dst_in[15]), .Y(N68) );
-  AND2X1_RVT C719 ( .A1(n13), .A2(op_dst[7]), .Y(N67) );
   OR2X1_RVT C712 ( .A1(inst_so[7]), .A2(dbg_halt_st), .Y(N335) );
   OR2X1_RVT C711 ( .A1(N335), .A2(inst_alu[3]), .Y(N62) );
   AND2X1_RVT C710 ( .A1(alu_short_thro), .A2(n16), .Y(N334) );
@@ -357,7 +386,7 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   AND2X1_RVT C616 ( .A1(inst_alu[10]), .A2(alu_shift_7), .Y(N244) );
   AND2X1_RVT C615 ( .A1(inst_alu[6]), .A2(alu_xor[7]), .Y(N242) );
   AND2X1_RVT C614 ( .A1(inst_alu[5]), .A2(alu_or[7]), .Y(N240) );
-  AND2X1_RVT C613 ( .A1(inst_alu[4]), .A2(alu_and[7]), .Y(N239) );
+  AND2X1_RVT C613 ( .A1(inst_alu[4]), .A2(N340), .Y(N239) );
   OR2X1_RVT C612 ( .A1(N239), .A2(N240), .Y(N241) );
   OR2X1_RVT C611 ( .A1(N241), .A2(N242), .Y(N243) );
   OR2X1_RVT C610 ( .A1(N243), .A2(N244), .Y(N245) );
@@ -461,7 +490,7 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   AND2X1_RVT C512 ( .A1(inst_alu[10]), .A2(alu_shift_15_), .Y(N148) );
   AND2X1_RVT C511 ( .A1(inst_alu[6]), .A2(alu_xor[15]), .Y(N146) );
   AND2X1_RVT C510 ( .A1(inst_alu[5]), .A2(alu_or[15]), .Y(N144) );
-  AND2X1_RVT C509 ( .A1(inst_alu[4]), .A2(alu_and[15]), .Y(N143) );
+  AND2X1_RVT C509 ( .A1(inst_alu[4]), .A2(N347), .Y(N143) );
   OR2X1_RVT C508 ( .A1(N143), .A2(N144), .Y(N145) );
   OR2X1_RVT C507 ( .A1(N145), .A2(N146), .Y(N147) );
   OR2X1_RVT C506 ( .A1(N147), .A2(N148), .Y(N149) );
@@ -473,6 +502,7 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   OR2X1_RVT C487 ( .A1(N127), .A2(inst_alu[10]), .Y(N128) );
   OR2X1_RVT C486 ( .A1(N128), .A2(inst_so[1]), .Y(N129) );
   OR2X1_RVT C485 ( .A1(N129), .A2(inst_so[3]), .Y(N130) );
+  INVX2_RVT I_15 ( .A(N130), .Y(alu_short_thro) );
   AND2X1_RVT C466 ( .A1(inst_alu[2]), .A2(status[0]), .Y(N124) );
   OR2X1_RVT C465 ( .A1(N124), .A2(inst_alu[1]), .Y(N125) );
   AND2X1_RVT C464 ( .A1(exec_cycle), .A2(N125), .Y(alu_inc) );
@@ -499,7 +529,6 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   AND2X1_RVT C425 ( .A1(n18), .A2(op_dst[4]), .Y(alu_and[4]) );
   AND2X1_RVT C424 ( .A1(n17), .A2(op_dst[5]), .Y(alu_and[5]) );
   AND2X1_RVT C423 ( .A1(n15), .A2(op_dst[6]), .Y(alu_and[6]) );
-  AND2X1_RVT C422 ( .A1(n13), .A2(op_dst[7]), .Y(alu_and[7]) );
   AND2X1_RVT C421 ( .A1(op_src_in[8]), .A2(op_dst_in[8]), .Y(alu_and[8]) );
   AND2X1_RVT C420 ( .A1(op_src_in[9]), .A2(op_dst_in[9]), .Y(alu_and[9]) );
   AND2X1_RVT C419 ( .A1(op_src_in[10]), .A2(op_dst_in[10]), .Y(alu_and[10]) );
@@ -507,23 +536,22 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   AND2X1_RVT C417 ( .A1(op_src_in[12]), .A2(op_dst_in[12]), .Y(alu_and[12]) );
   AND2X1_RVT C416 ( .A1(op_src_in[13]), .A2(op_dst_in[13]), .Y(alu_and[13]) );
   AND2X1_RVT C415 ( .A1(op_src_in[14]), .A2(op_dst_in[14]), .Y(alu_and[14]) );
-  AND2X1_RVT C414 ( .A1(op_src_in[15]), .A2(op_dst_in[15]), .Y(alu_and[15]) );
-  AND2X1_RVT C411 ( .A1(n16), .A2(n22), .Y(op_src_in_jmp[0]) );
-  AND2X1_RVT C409 ( .A1(n14), .A2(n22), .Y(op_src_in_jmp[1]) );
-  AND2X1_RVT C407 ( .A1(n20), .A2(n22), .Y(op_src_in_jmp[2]) );
-  AND2X1_RVT C405 ( .A1(n19), .A2(n22), .Y(op_src_in_jmp[3]) );
-  AND2X1_RVT C403 ( .A1(n18), .A2(n22), .Y(op_src_in_jmp[4]) );
-  AND2X1_RVT C401 ( .A1(n17), .A2(n22), .Y(op_src_in_jmp[5]) );
-  AND2X1_RVT C399 ( .A1(n15), .A2(n22), .Y(op_src_in_jmp[6]) );
-  AND2X1_RVT C397 ( .A1(n13), .A2(n22), .Y(op_src_in_jmp[7]) );
-  AND2X1_RVT C395 ( .A1(op_src_in[8]), .A2(n22), .Y(op_src_in_jmp[8]) );
-  AND2X1_RVT C393 ( .A1(op_src_in[9]), .A2(n22), .Y(op_src_in_jmp[9]) );
-  AND2X1_RVT C391 ( .A1(op_src_in[10]), .A2(n22), .Y(op_src_in_jmp[10]) );
-  AND2X1_RVT C389 ( .A1(op_src_in[11]), .A2(n22), .Y(op_src_in_jmp[11]) );
-  AND2X1_RVT C387 ( .A1(op_src_in[12]), .A2(n22), .Y(op_src_in_jmp[12]) );
-  AND2X1_RVT C385 ( .A1(op_src_in[13]), .A2(n22), .Y(op_src_in_jmp[13]) );
-  AND2X1_RVT C383 ( .A1(op_src_in[14]), .A2(n22), .Y(op_src_in_jmp[14]) );
-  AND2X1_RVT C381 ( .A1(op_src_in[15]), .A2(n22), .Y(op_src_in_jmp[15]) );
+  AND2X1_RVT C411 ( .A1(n16), .A2(N123), .Y(op_src_in_jmp[0]) );
+  AND2X1_RVT C409 ( .A1(n14), .A2(N123), .Y(op_src_in_jmp[1]) );
+  AND2X1_RVT C407 ( .A1(n20), .A2(N123), .Y(op_src_in_jmp[2]) );
+  AND2X1_RVT C405 ( .A1(n19), .A2(N123), .Y(op_src_in_jmp[3]) );
+  AND2X1_RVT C403 ( .A1(n18), .A2(N123), .Y(op_src_in_jmp[4]) );
+  AND2X1_RVT C401 ( .A1(n17), .A2(N123), .Y(op_src_in_jmp[5]) );
+  AND2X1_RVT C399 ( .A1(n15), .A2(N123), .Y(op_src_in_jmp[6]) );
+  AND2X1_RVT C397 ( .A1(n13), .A2(N123), .Y(op_src_in_jmp[7]) );
+  AND2X1_RVT C395 ( .A1(op_src_in[8]), .A2(N123), .Y(op_src_in_jmp[8]) );
+  AND2X1_RVT C393 ( .A1(op_src_in[9]), .A2(N123), .Y(op_src_in_jmp[9]) );
+  AND2X1_RVT C391 ( .A1(op_src_in[10]), .A2(N123), .Y(op_src_in_jmp[10]) );
+  AND2X1_RVT C389 ( .A1(op_src_in[11]), .A2(N123), .Y(op_src_in_jmp[11]) );
+  AND2X1_RVT C387 ( .A1(op_src_in[12]), .A2(N123), .Y(op_src_in_jmp[12]) );
+  AND2X1_RVT C385 ( .A1(op_src_in[13]), .A2(N123), .Y(op_src_in_jmp[13]) );
+  AND2X1_RVT C383 ( .A1(op_src_in[14]), .A2(N123), .Y(op_src_in_jmp[14]) );
+  AND2X1_RVT C381 ( .A1(op_src_in[15]), .A2(N123), .Y(op_src_in_jmp[15]) );
   AND2X1_RVT C378 ( .A1(inst_jmp[0]), .A2(status[1]), .Y(N122) );
   INVX0_RVT I_7 ( .A(status[1]), .Y(N119) );
   AND2X1_RVT C376 ( .A1(inst_jmp[1]), .A2(N119), .Y(N120) );
@@ -540,6 +568,7 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   OR2X1_RVT C365 ( .A1(N113), .A2(N115), .Y(N116) );
   OR2X1_RVT C364 ( .A1(N116), .A2(N117), .Y(N118) );
   OR2X1_RVT C363 ( .A1(N118), .A2(N120), .Y(N121) );
+  OR2X1_RVT C362 ( .A1(N121), .A2(N122), .Y(jmp_not_taken) );
   XOR2X1_RVT C361 ( .A1(status[3]), .A2(status[2]), .Y(N5) );
   AND2X1_RVT C360 ( .A1(op_dst[8]), .A2(op_bit8_msk), .Y(op_dst_in[8]) );
   AND2X1_RVT C359 ( .A1(op_dst[9]), .A2(op_bit8_msk), .Y(op_dst_in[9]) );
@@ -588,22 +617,24 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   NAND2X0_RVT U7 ( .A1(n10), .A2(N74), .Y(n3) );
   NAND2X0_RVT U8 ( .A1(N79), .A2(N71), .Y(n5) );
   AO22X1_RVT U9 ( .A1(n6), .A2(N74), .A3(n7), .A4(N79), .Y(alu_stat[3]) );
-  OA22X1_RVT U10 ( .A1(N68), .A2(inst_bw), .A3(N67), .A4(N106), .Y(n7) );
-  OA22X1_RVT U11 ( .A1(N70), .A2(inst_bw), .A3(N69), .A4(N106), .Y(n6) );
-  AO22X1_RVT U12 ( .A1(inst_bw), .A2(alu_out[7]), .A3(N106), .A4(alu_out[15]), 
+  OA22X1_RVT U10 ( .A1(N347), .A2(inst_bw), .A3(N340), .A4(n8), .Y(n7) );
+  OA22X1_RVT U11 ( .A1(N70), .A2(inst_bw), .A3(N69), .A4(n8), .Y(n6) );
+  AO22X1_RVT U12 ( .A1(inst_bw), .A2(alu_out[7]), .A3(n8), .A4(alu_out[15]), 
         .Y(alu_stat[2]) );
-  AO22X1_RVT U13 ( .A1(inst_bw), .A2(n24), .A3(N106), .A4(n23), .Y(alu_stat[1]) );
-  OA22X1_RVT U14 ( .A1(n11), .A2(inst_bw), .A3(alu_out[8]), .A4(N106), .Y(n10)
+  AO22X1_RVT U13 ( .A1(inst_bw), .A2(n25), .A3(n8), .A4(n26), .Y(alu_stat[1])
          );
-  AO22X1_RVT U15 ( .A1(alu_dadd3[4]), .A2(n26), .A3(alu_add_inc[16]), .A4(n12), 
+  OA22X1_RVT U14 ( .A1(n11), .A2(inst_bw), .A3(alu_out[8]), .A4(n8), .Y(n10)
+         );
+  AO22X1_RVT U15 ( .A1(alu_dadd3[4]), .A2(N66), .A3(alu_add_inc[16]), .A4(n12), 
         .Y(n11) );
-  AO22X1_RVT U17 ( .A1(inst_bw), .A2(alu_shift_15_), .A3(N106), .A4(op_src[8]), 
+  AO22X1_RVT U17 ( .A1(inst_bw), .A2(alu_shift_15_), .A3(n8), .A4(op_src[8]), 
         .Y(alu_shift_7) );
+  INVX0_RVT U18 ( .A(inst_bw), .Y(n8) );
   AO222X1_RVT U19 ( .A1(inst_so[0]), .A2(status[0]), .A3(N59), .A4(op_src[15]), 
         .A5(N61), .A6(op_src[7]), .Y(alu_shift_15_) );
   AO222X1_RVT U20 ( .A1(n12), .A2(alu_add_inc[9]), .A3(N64), .A4(alu_short[9]), 
         .A5(alu_dadd2[1]), .A6(N66), .Y(alu_out[9]) );
-  AO222X1_RVT U21 ( .A1(n12), .A2(alu_add_inc[8]), .A3(n26), .A4(alu_dadd2[0]), 
+  AO222X1_RVT U21 ( .A1(n12), .A2(alu_add_inc[8]), .A3(N66), .A4(alu_dadd2[0]), 
         .A5(N64), .A6(alu_short[8]), .Y(alu_out[8]) );
   AO222X1_RVT U22 ( .A1(n12), .A2(alu_add_inc[7]), .A3(N64), .A4(alu_short[7]), 
         .A5(alu_dadd1[3]), .A6(N66), .Y(alu_out[7]) );
@@ -620,85 +651,91 @@ module omsp_alu ( alu_out, alu_out_add, alu_stat, alu_stat_wr, dbg_halt_st,
   AO222X1_RVT U28 ( .A1(n12), .A2(alu_add_inc[1]), .A3(N64), .A4(alu_short[1]), 
         .A5(alu_dadd0[1]), .A6(N66), .Y(alu_out[1]) );
   AO222X1_RVT U29 ( .A1(n12), .A2(alu_add_inc[15]), .A3(N64), .A4(
-        alu_short[15]), .A5(alu_dadd3[3]), .A6(n26), .Y(alu_out[15]) );
+        alu_short[15]), .A5(alu_dadd3[3]), .A6(N66), .Y(alu_out[15]) );
   AO222X1_RVT U30 ( .A1(n12), .A2(alu_add_inc[14]), .A3(N64), .A4(
-        alu_short[14]), .A5(alu_dadd3[2]), .A6(n26), .Y(alu_out[14]) );
+        alu_short[14]), .A5(alu_dadd3[2]), .A6(N66), .Y(alu_out[14]) );
   AO222X1_RVT U31 ( .A1(n12), .A2(alu_add_inc[13]), .A3(N64), .A4(
-        alu_short[13]), .A5(alu_dadd3[1]), .A6(n26), .Y(alu_out[13]) );
+        alu_short[13]), .A5(alu_dadd3[1]), .A6(N66), .Y(alu_out[13]) );
   AO222X1_RVT U32 ( .A1(n12), .A2(alu_add_inc[12]), .A3(N64), .A4(
-        alu_short[12]), .A5(alu_dadd3[0]), .A6(n26), .Y(alu_out[12]) );
+        alu_short[12]), .A5(alu_dadd3[0]), .A6(N66), .Y(alu_out[12]) );
   AO222X1_RVT U33 ( .A1(n12), .A2(alu_add_inc[11]), .A3(N64), .A4(
-        alu_short[11]), .A5(alu_dadd2[3]), .A6(n26), .Y(alu_out[11]) );
+        alu_short[11]), .A5(alu_dadd2[3]), .A6(N66), .Y(alu_out[11]) );
   AO222X1_RVT U34 ( .A1(n12), .A2(alu_add_inc[10]), .A3(N64), .A4(
-        alu_short[10]), .A5(alu_dadd2[2]), .A6(n26), .Y(alu_out[10]) );
+        alu_short[10]), .A5(alu_dadd2[2]), .A6(N66), .Y(alu_out[10]) );
   AO222X1_RVT U35 ( .A1(n12), .A2(alu_add_inc[0]), .A3(N64), .A4(alu_short[0]), 
-        .A5(alu_dadd0[0]), .A6(n26), .Y(alu_out[0]) );
+        .A5(alu_dadd0[0]), .A6(N66), .Y(alu_out[0]) );
   INVX0_RVT U36 ( .A(N65), .Y(n12) );
-  omsp_alu_DP_OP_68_122_3245_1 DP_OP_68_122_3245 ( .I1({1'b0, op_src_in_jmp}), 
-        .I2({op_dst_in, op_dst[7:0]}), .I3(alu_inc), .O1({
-        SYNOPSYS_UNCONNECTED_1, alu_out_add}), .O2(alu_add_inc) );
-  omsp_alu_DP_OP_69_123_7159_1 DP_OP_69_123_7159 ( .I1({n19, n20, n14, n16}), 
+  omsp_alu_DP_OP_72_126_7159_0 DP_OP_72_126_7159 ( .I1(op_src_in[15:12]), .I2(
+        op_dst_in[15:12]), .I3(alu_dadd2_4_), .I4({N56, N56, 1'b0}), .O1(N55), 
+        .O2(alu_dadd3) );
+  omsp_alu_DP_OP_71_125_7159_0 DP_OP_71_125_7159 ( .I1(op_src_in[11:8]), .I2(
+        op_dst_in[11:8]), .I3(alu_dadd1_4_), .I4({N43, N43, 1'b0}), .O1(N42), 
+        .O2({alu_dadd2_4_, alu_dadd2}) );
+  omsp_alu_DP_OP_69_123_7159_0 DP_OP_69_123_7159 ( .I1({n19, n20, n14, n16}), 
         .I2(op_dst[3:0]), .I3(status[0]), .I4({N17, N17, 1'b0}), .O1(N16), 
         .O2({alu_dadd0_4_, alu_dadd0}) );
+  omsp_alu_DP_OP_68_122_3245_0 DP_OP_68_122_3245 ( .I1({1'b0, op_src_in_jmp}), 
+        .I2({op_dst_in, op_dst[7:0]}), .I3(alu_inc), .O1({
+        SYNOPSYS_UNCONNECTED_1, alu_out_add}), .O2(alu_add_inc) );
   omsp_alu_DP_OP_70_124_7159_1 DP_OP_70_124_7159 ( .I1({n13, n15, n17, n18}), 
         .I2(op_dst[7:4]), .I3(alu_dadd0_4_), .I4({N30, N30, 1'b0}), .O1(N29), 
         .O2({alu_dadd1_4_, alu_dadd1}) );
-  omsp_alu_DP_OP_71_125_7159_1 DP_OP_71_125_7159 ( .I1(op_src_in[11:8]), .I2(
-        op_dst_in[11:8]), .I3(alu_dadd1_4_), .I4({N43, N43, 1'b0}), .O1(N42), 
-        .O2({alu_dadd2_4_, alu_dadd2}) );
-  omsp_alu_DP_OP_72_126_7159_1 DP_OP_72_126_7159 ( .I1(op_src_in[15:12]), .I2(
-        op_dst_in[15:12]), .I3(alu_dadd2_4_), .I4({N56, N56, 1'b0}), .O1(N55), 
-        .O2(alu_dadd3) );
+  INVX1_RVT I_10 ( .A(N29), .Y(N30) );
   INVX0_RVT I_2 ( .A(exec_cycle), .Y(N105) );
+  INVX0_RVT I_3 ( .A(inst_bw), .Y(N106) );
+  XOR2X1_RVT C333 ( .A1(op_src_inv_cmd), .A2(op_src[8]), .Y(op_src_inv[8]) );
+  XOR2X1_RVT C331 ( .A1(op_src_inv_cmd), .A2(op_src[10]), .Y(op_src_inv[10])
+         );
+  XOR2X1_RVT C330 ( .A1(op_src_inv_cmd), .A2(op_src[11]), .Y(op_src_inv[11])
+         );
+  INVX1_RVT I_11 ( .A(N42), .Y(N43) );
+  XOR2X1_RVT C328 ( .A1(op_src_inv_cmd), .A2(op_src[13]), .Y(op_src_inv[13])
+         );
+  XOR2X1_RVT C327 ( .A1(op_src_inv_cmd), .A2(op_src[14]), .Y(op_src_inv[14])
+         );
   INVX0_RVT I_13 ( .A(N58), .Y(N59) );
   XOR2X1_RVT C449 ( .A1(op_src_in[14]), .A2(op_dst_in[14]), .Y(alu_xor[14]) );
   XOR2X1_RVT C448 ( .A1(op_src_in[15]), .A2(op_dst_in[15]), .Y(alu_xor[15]) );
   XOR2X1_RVT C451 ( .A1(op_src_in[12]), .A2(op_dst_in[12]), .Y(alu_xor[12]) );
-  INVX0_RVT I_17 ( .A(N62), .Y(N65) );
   XOR2X1_RVT C453 ( .A1(op_src_in[10]), .A2(op_dst_in[10]), .Y(alu_xor[10]) );
   XOR2X1_RVT C452 ( .A1(op_src_in[11]), .A2(op_dst_in[11]), .Y(alu_xor[11]) );
   XOR2X1_RVT C454 ( .A1(op_src_in[9]), .A2(op_dst_in[9]), .Y(alu_xor[9]) );
   XOR2X1_RVT U52 ( .A1(op_dst[6]), .A2(n15), .Y(alu_xor[6]) );
   XOR2X1_RVT U58 ( .A1(op_dst[7]), .A2(n13), .Y(alu_xor[7]) );
-  XOR2X1_RVT U43 ( .A1(op_dst[4]), .A2(n18), .Y(alu_xor[4]) );
   XOR2X1_RVT U46 ( .A1(op_dst[5]), .A2(n17), .Y(alu_xor[5]) );
   XOR2X1_RVT U37 ( .A1(op_dst[2]), .A2(n20), .Y(alu_xor[2]) );
+  XOR2X1_RVT U40 ( .A1(op_dst[3]), .A2(n19), .Y(alu_xor[3]) );
   XOR2X1_RVT U55 ( .A1(op_dst[1]), .A2(n14), .Y(alu_xor[1]) );
   INVX0_RVT U61 ( .A(inst_so[0]), .Y(N60) );
   XOR2X1_RVT U62 ( .A1(op_dst[0]), .A2(n16), .Y(alu_xor[0]) );
-  XOR2X1_RVT U63 ( .A1(op_dst[3]), .A2(n19), .Y(alu_xor[3]) );
+  XOR2X1_RVT U63 ( .A1(op_dst[4]), .A2(n18), .Y(alu_xor[4]) );
   XOR2X1_RVT U64 ( .A1(op_src_in[8]), .A2(op_dst_in[8]), .Y(alu_xor[8]) );
   XOR2X1_RVT U65 ( .A1(op_src_in[13]), .A2(op_dst_in[13]), .Y(alu_xor[13]) );
-  XOR2X1_RVT U66 ( .A1(op_src_inv_cmd), .A2(op_src[9]), .Y(op_src_inv[9]) );
-  AND2X2_RVT U67 ( .A1(exec_cycle), .A2(inst_alu[0]), .Y(op_src_inv_cmd) );
-  XOR2X1_RVT U68 ( .A1(op_src_inv_cmd), .A2(op_src[8]), .Y(op_src_inv[8]) );
-  INVX0_RVT U69 ( .A(N130), .Y(alu_short_thro) );
-  INVX0_RVT U70 ( .A(N63), .Y(N64) );
-  XOR2X1_RVT U71 ( .A1(op_src_inv_cmd), .A2(op_src[7]), .Y(n13) );
-  XOR2X1_RVT U72 ( .A1(op_src_inv_cmd), .A2(op_src[1]), .Y(n14) );
-  XOR2X1_RVT U73 ( .A1(op_src_inv_cmd), .A2(op_src[6]), .Y(n15) );
-  XOR2X1_RVT U74 ( .A1(op_src_inv_cmd), .A2(op_src[0]), .Y(n16) );
-  XOR2X1_RVT U75 ( .A1(op_src_inv_cmd), .A2(op_src[5]), .Y(n17) );
-  XOR2X1_RVT U76 ( .A1(op_src_inv_cmd), .A2(op_src[4]), .Y(n18) );
-  XOR2X1_RVT U77 ( .A1(op_src_inv_cmd), .A2(op_src[3]), .Y(n19) );
-  XOR2X1_RVT U78 ( .A1(op_src_inv_cmd), .A2(op_src[2]), .Y(n20) );
-  AOI22X1_RVT U79 ( .A1(N71), .A2(N76), .A3(inst_alu[10]), .A4(n16), .Y(n21)
+  INVX0_RVT U66 ( .A(alu_out[15]), .Y(N348) );
+  XOR2X1_RVT U67 ( .A1(op_src_inv_cmd), .A2(op_src[9]), .Y(op_src_inv[9]) );
+  XOR2X1_RVT U68 ( .A1(op_src_inv_cmd), .A2(op_src[15]), .Y(op_src_inv[15]) );
+  XOR2X1_RVT U69 ( .A1(op_src_inv_cmd), .A2(op_src[12]), .Y(op_src_inv[12]) );
+  INVX0_RVT U70 ( .A(alu_stat[1]), .Y(N71) );
+  INVX0_RVT U71 ( .A(jmp_not_taken), .Y(N123) );
+  INVX0_RVT U72 ( .A(N16), .Y(N17) );
+  INVX0_RVT U73 ( .A(N55), .Y(N56) );
+  AOI22X1_RVT U74 ( .A1(N71), .A2(N76), .A3(inst_alu[10]), .A4(n16), .Y(n21)
          );
-  NOR2X1_RVT U80 ( .A1(N121), .A2(N122), .Y(n22) );
-  NOR2X1_RVT U81 ( .A1(alu_out[0]), .A2(N102), .Y(n23) );
-  NOR2X1_RVT U82 ( .A1(alu_out[0]), .A2(N86), .Y(n24) );
-  INVX0_RVT U83 ( .A(inst_bw), .Y(N106) );
-  INVX0_RVT U84 ( .A(N66), .Y(n25) );
-  INVX0_RVT U85 ( .A(n25), .Y(n26) );
-  XOR2X1_RVT U86 ( .A1(op_src_inv_cmd), .A2(op_src[15]), .Y(op_src_inv[15]) );
-  XOR2X1_RVT U87 ( .A1(op_src_inv_cmd), .A2(op_src[14]), .Y(op_src_inv[14]) );
-  XOR2X1_RVT U88 ( .A1(op_src_inv_cmd), .A2(op_src[13]), .Y(op_src_inv[13]) );
-  XOR2X1_RVT U89 ( .A1(op_src_inv_cmd), .A2(op_src[12]), .Y(op_src_inv[12]) );
-  XOR2X1_RVT U90 ( .A1(op_src_inv_cmd), .A2(op_src[11]), .Y(op_src_inv[11]) );
-  XOR2X1_RVT U91 ( .A1(op_src_inv_cmd), .A2(op_src[10]), .Y(op_src_inv[10]) );
-  INVX0_RVT U92 ( .A(alu_stat_wr[1]), .Y(n27) );
-  INVX0_RVT U93 ( .A(n27), .Y(alu_stat_wr[2]) );
-  INVX0_RVT U94 ( .A(n27), .Y(alu_stat_wr[3]) );
-  INVX0_RVT U95 ( .A(n27), .Y(alu_stat_wr[0]) );
+  AND2X2_RVT U75 ( .A1(inst_alu[7]), .A2(N65), .Y(N66) );
+  INVX0_RVT U76 ( .A(N62), .Y(N65) );
+  XOR2X1_RVT U77 ( .A1(op_src_inv_cmd), .A2(op_src[0]), .Y(n16) );
+  AND2X2_RVT U78 ( .A1(exec_cycle), .A2(inst_alu[0]), .Y(op_src_inv_cmd) );
+  NBUFFX2_RVT U79 ( .A(alu_stat_wr[1]), .Y(alu_stat_wr[2]) );
+  NBUFFX2_RVT U80 ( .A(alu_stat_wr[1]), .Y(alu_stat_wr[3]) );
+  NBUFFX2_RVT U81 ( .A(alu_stat_wr[1]), .Y(alu_stat_wr[0]) );
+  XOR2X1_RVT U82 ( .A1(op_src_inv_cmd), .A2(op_src[7]), .Y(n13) );
+  XOR2X1_RVT U83 ( .A1(op_src_inv_cmd), .A2(op_src[1]), .Y(n14) );
+  XOR2X1_RVT U84 ( .A1(op_src_inv_cmd), .A2(op_src[6]), .Y(n15) );
+  XOR2X1_RVT U85 ( .A1(op_src_inv_cmd), .A2(op_src[5]), .Y(n17) );
+  XOR2X1_RVT U86 ( .A1(op_src_inv_cmd), .A2(op_src[4]), .Y(n18) );
+  XOR2X1_RVT U87 ( .A1(op_src_inv_cmd), .A2(op_src[3]), .Y(n19) );
+  NOR2X0_RVT U88 ( .A1(alu_out[0]), .A2(N86), .Y(n25) );
+  XOR2X1_RVT U89 ( .A1(op_src_inv_cmd), .A2(op_src[2]), .Y(n20) );
+  NOR2X0_RVT U90 ( .A1(alu_out[0]), .A2(N102), .Y(n26) );
 endmodule
 

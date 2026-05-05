@@ -1,0 +1,416 @@
+Information: Reading file min_exec.vcd to annotate toggle rates on the design...
+Information: Reading vcd file '/home/cegrad/cclab002/cs220-final-project/sim/min_exec.vcd'
+Warning: Possible issue with annotation, check -strip_path argument.  (PSW-218)
+Error: No activity is available in the VCD file for the given time interval for power calculation. (PWR-255)
+Error: No switching activity has been annotated.  (PSW-130)
+****************************************
+Report : Switching Activity
+	-list_not_annotated
+Design : omsp_min_exec
+Version: V-2023.12-SP5-4
+Date   : Mon May  4 21:37:22 2026
+****************************************
+
+ Switching Activity Overview Statistics for "omsp_min_exec"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                  From Activity     From         From         From             From            From                                                            Not           From Annotated
+Object Type       File (%)          SSA (%)      SSA Force (%) SSA Force (%)   SCA (%)         Clock (%)       Default (%)     Propagated(%)   Implied(%)      Annotated(%)  Waveform(%)         Total
+                                                 Annotated    Implied                                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nets             0(0.00%)          0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        1(0.28%)        341(93.94%)     20(5.51%)       1(0.28%)        0(0.00%)      0(0.00%)            363
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nets Driven by
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Primary Input     0(0.00%)          0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        1(2.94%)        33(97.06%)      0(0.00%)        0(0.00%)        0(0.00%)      0(0.00%)            34
+Tri-State         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Black Box         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Sequential        0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Combinational     0(0.00%)          0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        308(93.62%)     20(6.08%)       1(0.30%)        0(0.00%)      0(0.00%)            329
+Memory            0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Clock Gate        0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Static Probability Overview Statistics for "omsp_min_exec"
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                  From Activity     From         From         From             From            From                                                            Not           From Annotated
+Object Type       File (%)          SSA (%)      SSA Force (%) SSA Force (%)   SCA (%)         Clock (%)       Default (%)     Propagated(%)   Implied(%)      Annotated(%)  Waveform(%)         Total
+                                                 Annotated    Implied                                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Nets             0(0.00%)          0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        1(0.28%)        341(93.94%)     20(5.51%)       1(0.28%)        0(0.00%)      0(0.00%)            363
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nets Driven by
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Primary Input     0(0.00%)          0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        1(2.94%)        33(97.06%)      0(0.00%)        0(0.00%)        0(0.00%)      0(0.00%)            34
+Tri-State         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Black Box         0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Sequential        0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Combinational     0(0.00%)          0(0.00%)     0(0.00%)     0(0.00%)         0(0.00%)        0(0.00%)        308(93.62%)     20(6.08%)       1(0.30%)        0(0.00%)      0(0.00%)            329
+Memory            0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+Clock Gate        0(0%)             0(0%)        0(0%)        0(0%)            0(0%)           0(0%)           0(0%)           0(0%)           0(0%)           0(0%)         0(0%)               0
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+List of nonannotated nets :
+	inst_alu[2]
+	inst_jmp[2]
+	inst_src[3]
+	inst_dext[7]
+	SYNOPSYS_UNCONNECTED_28
+	inst_sext[6]
+	fe_mab[3]
+	fe_mab[15]
+	pc[10]
+	inst_dest[6]
+	inst_as[4]
+	inst_jmp[5]
+	inst_dest[15]
+	inst_dext[10]
+	inst_jmp[0]
+	inst_src[15]
+	inst_sext[9]
+	inst_dest[3]
+	inst_alu[4]
+	inst_sext[4]
+	pc[0]
+	inst_dest[1]
+	inst_dest[8]
+	fe_mab[10]
+	SYNOPSYS_UNCONNECTED_6
+	inst_so[5]
+	inst_alu[11]
+	SYNOPSYS_UNCONNECTED_30
+	pc[15]
+	net13644
+	pmem_dout[0]
+	inst_ad[4]
+	inst_dext[0]
+	SYNOPSYS_UNCONNECTED_21
+	inst_alu[9]
+	SYNOPSYS_UNCONNECTED_4
+	pc_nxt[14]
+	pc_nxt[7]
+	pc_sw[6]
+	inst_so[7]
+	inst_src[5]
+	fe_mab[1]
+	dmem_din[1]
+	SYNOPSYS_UNCONNECTED_35
+	pc_sw[11]
+	net13661
+	pmem_addr[2]
+	dmem_dout[3]
+	pc[5]
+	SYNOPSYS_UNCONNECTED_23
+	inst_ad[3]
+	dmem_din[10]
+	eu_mdb_in[4]
+	pmem_addr[14]
+	exec_done
+	eu_mdb_in[14]
+	dmem_din[15]
+	net13646
+	pc_nxt[9]
+	pmem_dout[14]
+	dmem_addr[11]
+	dmem_din[0]
+	eu_mdb_in[13]
+	net13651
+	dmem_din[7]
+	net13631
+	net13658
+	eu_mdb_in[7]
+	pmem_dout[2]
+	net13639
+	SYNOPSYS_UNCONNECTED_15
+	net13632
+	pmem_dout[9]
+	inst_dest[13]
+	dmem_dout[11]
+	dmem_dout[4]
+	inst_src[8]
+	e_state[1]
+	dmem_dout[10]
+	pc_nxt[2]
+	inst_sext[11]
+	dmem_addr[6]
+	fe_mab[13]
+	eu_mdb_in[6]
+	pmem_addr[7]
+	pc_nxt[1]
+	SYNOPSYS_UNCONNECTED_9
+	dmem_addr[13]
+	SYNOPSYS_UNCONNECTED_16
+	pc[12]
+	net13653
+	SYNOPSYS_UNCONNECTED_37
+	SYNOPSYS_UNCONNECTED_25
+	dmem_addr[4]
+	inst_as[5]
+	pc[4]
+	fe_mab[4]
+	SYNOPSYS_UNCONNECTED_13
+	inst_src[14]
+	n_Logic0_
+	pc_sw[15]
+	inst_type[0]
+	inst_bw
+	pc_nxt[11]
+	dmem_din[6]
+	pc[7]
+	inst_dext[14]
+	e_state[0]
+	SYNOPSYS_UNCONNECTED_8
+	pc_nxt[13]
+	pmem_dout[7]
+	fe_mab[7]
+	dmem_addr[14]
+	inst_sext[0]
+	inst_src[9]
+	pc_sw[3]
+	N5
+	pc_sw[10]
+	inst_src[2]
+	SYNOPSYS_UNCONNECTED_1
+	pmem_addr[9]
+	inst_alu[6]
+	inst_sext[2]
+	SYNOPSYS_UNCONNECTED_34
+	inst_alu[8]
+	inst_dext[3]
+	inst_type[2]
+	SYNOPSYS_UNCONNECTED_27
+	inst_ad[1]
+	net13649
+	pmem_dout[5]
+	dmem_dout[9]
+	inst_mov
+	eu_mdb_in[1]
+	pmem_addr[4]
+	dmem_addr[9]
+	pc_sw[8]
+	SYNOPSYS_UNCONNECTED_11
+	pc_sw[13]
+	net13637
+	dmem_din[13]
+	pc_sw[1]
+	pmem_addr[11]
+	SYNOPSYS_UNCONNECTED_32
+	pc[2]
+	net13663
+	eu_mdb_in[8]
+	SYNOPSYS_UNCONNECTED_18
+	net13642
+	dmem_addr[2]
+	SYNOPSYS_UNCONNECTED_20
+	pc_nxt[6]
+	inst_dext[12]
+	pc[9]
+	dmem_dout[14]
+	pmem_dout[12]
+	inst_dext[5]
+	inst_sext[7]
+	eu_mdb_in[10]
+	inst_alu[1]
+	dmem_din[4]
+	fe_mab[9]
+	pc_nxt[4]
+	inst_sext[14]
+	inst_src[4]
+	SYNOPSYS_UNCONNECTED_39
+	fe_mab[2]
+	net13656
+	eu_mdb_in[3]
+	inst_dest[10]
+	inst_src[11]
+	dmem_dout[7]
+	net13635
+	inst_ad[0]
+	net13659
+	dmem_dout[5]
+	dmem_wen[1]
+	dmem_din[11]
+	pc_nxt[5]
+	inst_ad[5]
+	pmem_dout[15]
+	dmem_addr[10]
+	eu_mdb_in[0]
+	eu_mdb_in[15]
+	SYNOPSYS_UNCONNECTED_7
+	net13633
+	pmem_addr[3]
+	pc_sw[9]
+	net13645
+	pc[13]
+	pmem_dout[13]
+	SYNOPSYS_UNCONNECTED_19
+	SYNOPSYS_UNCONNECTED_31
+	pmem_dout[1]
+	inst_src[6]
+	net13657
+	pc[1]
+	pc_sw[7]
+	SYNOPSYS_UNCONNECTED_5
+	fe_mab[12]
+	pmem_dout[10]
+	inst_so[3]
+	dmem_addr[5]
+	pc_nxt[3]
+	pmem_addr[13]
+	dmem_en
+	dmem_addr[0]
+	SYNOPSYS_UNCONNECTED_17
+	pc[11]
+	pmem_addr[8]
+	dmem_dout[0]
+	inst_as[1]
+	net13654
+	pmem_addr[6]
+	pmem_dout[3]
+	dmem_din[14]
+	fe_mab[14]
+	inst_jmp[3]
+	inst_dest[5]
+	fe_mb_en
+	net13647
+	inst_dest[4]
+	inst_so[0]
+	inst_as[3]
+	dmem_dout[2]
+	pc_sw_wr
+	dmem_addr[7]
+	inst_src[1]
+	inst_jmp[4]
+	inst_alu[3]
+	inst_jmp[1]
+	inst_sext[5]
+	fe_mab[5]
+	inst_dest[7]
+	e_state[2]
+	pc_nxt[10]
+	inst_as[6]
+	inst_src[13]
+	fe_mab[11]
+	dmem_dout[12]
+	inst_src[7]
+	SYNOPSYS_UNCONNECTED_14
+	pc_nxt[0]
+	net13640
+	pc[14]
+	inst_alu[10]
+	inst_sext[10]
+	inst_dest[14]
+	net13652
+	pmem_dout[8]
+	inst_so[6]
+	dmem_addr[12]
+	e_state[3]
+	eu_mdb_in[5]
+	inst_dext[15]
+	inst_sext[12]
+	SYNOPSYS_UNCONNECTED_36
+	SYNOPSYS_UNCONNECTED_29
+	net13660
+	dmem_din[9]
+	pc_sw[4]
+	SYNOPSYS_UNCONNECTED_2
+	pc_nxt[15]
+	inst_dest[12]
+	inst_dext[8]
+	puc_rst
+	inst_ad[2]
+	eu_mdb_in[12]
+	dmem_din[2]
+	SYNOPSYS_UNCONNECTED_22
+	pc[6]
+	inst_dext[9]
+	inst_dext[2]
+	pmem_addr[1]
+	pc_sw[12]
+	pmem_addr[0]
+	net13662
+	inst_alu[5]
+	inst_src[0]
+	dmem_dout[8]
+	inst_dext[4]
+	pc_nxt[8]
+	dmem_din[8]
+	inst_src[12]
+	inst_dest[0]
+	net13650
+	net13638
+	inst_sext[1]
+	inst_dext[1]
+	inst_dext[13]
+	inst_as[7]
+	fe_mab[6]
+	inst_sext[3]
+	inst_sext[15]
+	inst_dest[9]
+	pmem_addr[10]
+	dmem_addr[3]
+	SYNOPSYS_UNCONNECTED_3
+	inst_dest[11]
+	dmem_din[3]
+	N3
+	inst_irq_rst
+	SYNOPSYS_UNCONNECTED_24
+	eu_mdb_in[11]
+	dmem_addr[1]
+	inst_sext[13]
+	pmem_dout[6]
+	pmem_dout[4]
+	pc_sw[5]
+	net13648
+	pmem_addr[12]
+	eu_mb_en
+	dmem_dout[13]
+	pmem_en
+	net13641
+	SYNOPSYS_UNCONNECTED_10
+	dmem_dout[6]
+	SYNOPSYS_UNCONNECTED_38
+	dmem_wen[0]
+	pc_sw[14]
+	pmem_addr[5]
+	net13664
+	pc_sw[2]
+	inst_alu[0]
+	inst_type[1]
+	fe_mab[8]
+	inst_sext[8]
+	net13634
+	inst_dext[6]
+	N4
+	SYNOPSYS_UNCONNECTED_12
+	pmem_dout[11]
+	dmem_dout[15]
+	inst_so[4]
+	inst_dext[11]
+	inst_as[0]
+	net13643
+	dmem_addr[8]
+	inst_jmp[6]
+	inst_dest[2]
+	SYNOPSYS_UNCONNECTED_26
+	pc[8]
+	pc_nxt[12]
+	dmem_din[12]
+	eu_mdb_in[2]
+	cpuoff
+	inst_so[2]
+	net13655
+	inst_alu[7]
+	dmem_addr[15]
+	eu_mdb_in[9]
+	dmem_din[5]
+	pc[3]
+	inst_so[1]
+	inst_as[2]
+	dmem_dout[1]
+	SYNOPSYS_UNCONNECTED_33
+	pc_sw[0]
+	inst_src[10]
+	inst_ad[6]
+	net13636
+
+361 nets with no annotation
+1

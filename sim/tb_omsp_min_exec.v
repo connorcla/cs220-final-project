@@ -52,6 +52,7 @@ end
                 15'h0000: pmem_dout = 16'h4303; // NOP
                 15'h0001: pmem_dout = 16'h5506; // ADD R5, R6
                 15'h0002: pmem_dout = 16'h4303; // NOP
+		15'h0003: pmem_dout = 16'h3FFF; //
                 default:  pmem_dout = 16'hDEAD; 
             endcase
         end
@@ -77,7 +78,9 @@ end
     // --- Verdi/VCS Dump ---
     initial begin
         $fsdbDumpfile("min_exec.fsdb");
-        $fsdbDumpvars(0, omsp_min_exec_tb);
+        $fsdbDumpvars(0, omsp_min_exec_tb, "+all");
+	$dumpfile("min_exec.vcd");
+	$dumpvars(0, omsp_min_exec_tb);
     end
 
 endmodule

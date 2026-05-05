@@ -1,4 +1,3 @@
-Information: Updating design information... (UID-85)
  
 ****************************************
 Report : timing
@@ -7,133 +6,133 @@ Report : timing
         -max_paths 1
 Design : omsp_alu
 Version: W-2024.09-SP5-4
-Date   : Fri May  1 15:20:02 2026
+Date   : Tue May  5 00:17:38 2026
 ****************************************
 
-Operating Conditions: tt0p78v25c   Library: saed32rvt_tt0p78v25c
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
 Wire Load Model Mode: enclosed
 
-  Startpoint: exec_cycle (input port)
+  Startpoint: inst_alu[0]
+              (input port clocked by v_clk)
   Endpoint: alu_stat[0]
-            (output port)
-  Path Group: (none)
+            (output port clocked by v_clk)
+  Path Group: v_clk
   Path Type: max
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  omsp_alu           8000                  saed32rvt_tt0p78v25c
-  omsp_alu_DP_OP_69_123_7159_1
-                     ForQA                 saed32rvt_tt0p78v25c
+  omsp_alu           8000                  saed32rvt_ss0p75v125c
+  omsp_alu_DP_OP_69_123_7159_0
+                     ForQA                 saed32rvt_ss0p75v125c
   omsp_alu_DP_OP_70_124_7159_1
-                     ForQA                 saed32rvt_tt0p78v25c
-  omsp_alu_DP_OP_71_125_7159_1
-                     ForQA                 saed32rvt_tt0p78v25c
-  omsp_alu_DP_OP_72_126_7159_1
-                     ForQA                 saed32rvt_tt0p78v25c
+                     ForQA                 saed32rvt_ss0p75v125c
+  omsp_alu_DP_OP_71_125_7159_0
+                     ForQA                 saed32rvt_ss0p75v125c
+  omsp_alu_DP_OP_72_126_7159_0
+                     ForQA                 saed32rvt_ss0p75v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  input external delay                                    0.00       0.00 r
-  exec_cycle (in)                                         0.00       0.00 r
-  U67/Y (AND2X2_RVT)                                      0.13       0.13 r
-  U74/Y (XOR2X1_RVT)                                      0.26       0.39 f
-  DP_OP_69_123_7159/I1[0] (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       0.39 f
-  DP_OP_69_123_7159/U38/CO (FADDX1_RVT)                   0.21       0.61 f
-  DP_OP_69_123_7159/U37/CO (FADDX1_RVT)                   0.14       0.75 f
-  DP_OP_69_123_7159/U36/CO (FADDX1_RVT)                   0.14       0.89 f
-  DP_OP_69_123_7159/U35/S (FADDX1_RVT)                    0.22       1.11 r
-  DP_OP_69_123_7159/U25/Y (INVX0_RVT)                     0.05       1.16 f
-  DP_OP_69_123_7159/U45/Y (OA21X1_RVT)                    0.10       1.25 f
-  DP_OP_69_123_7159/O1 (omsp_alu_DP_OP_69_123_7159_1)     0.00       1.25 f
-  I_9/Y (INVX0_RVT)                                       0.05       1.30 r
-  DP_OP_69_123_7159/I4[1] (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       1.30 r
-  DP_OP_69_123_7159/U44/Y (INVX0_RVT)                     0.08       1.38 f
-  DP_OP_69_123_7159/U7/Y (OR2X1_RVT)                      0.13       1.51 f
-  DP_OP_69_123_7159/U5/Y (OR2X1_RVT)                      0.10       1.62 f
-  DP_OP_69_123_7159/U3/CO (FADDX1_RVT)                    0.14       1.75 f
-  DP_OP_69_123_7159/U1/Y (XOR2X1_RVT)                     0.16       1.91 r
-  DP_OP_69_123_7159/O2[4] (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       1.91 r
-  DP_OP_70_124_7159/I3 (omsp_alu_DP_OP_70_124_7159_1)     0.00       1.91 r
-  DP_OP_70_124_7159/U38/CO (FADDX1_RVT)                   0.14       2.05 r
-  DP_OP_70_124_7159/U37/CO (FADDX1_RVT)                   0.14       2.20 r
-  DP_OP_70_124_7159/U36/CO (FADDX1_RVT)                   0.14       2.34 r
-  DP_OP_70_124_7159/U35/S (FADDX1_RVT)                    0.21       2.55 f
-  DP_OP_70_124_7159/U25/Y (INVX0_RVT)                     0.06       2.62 r
-  DP_OP_70_124_7159/U45/Y (OA21X1_RVT)                    0.09       2.71 r
-  DP_OP_70_124_7159/O1 (omsp_alu_DP_OP_70_124_7159_1)     0.00       2.71 r
-  I_10/Y (INVX0_RVT)                                      0.04       2.74 f
-  DP_OP_70_124_7159/I4[1] (omsp_alu_DP_OP_70_124_7159_1)
-                                                          0.00       2.74 f
-  DP_OP_70_124_7159/U44/Y (INVX0_RVT)                     0.09       2.84 r
-  DP_OP_70_124_7159/U7/Y (OR2X1_RVT)                      0.12       2.96 r
-  DP_OP_70_124_7159/U5/Y (OR2X1_RVT)                      0.10       3.05 r
-  DP_OP_70_124_7159/U3/CO (FADDX1_RVT)                    0.15       3.20 r
-  DP_OP_70_124_7159/U1/Y (XOR2X1_RVT)                     0.17       3.37 f
+  clock v_clk (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    0.20       0.20 r
+  inst_alu[0] (in)                                        0.00       0.20 r
+  U78/Y (AND2X2_RVT)                                      0.23       0.43 r
+  U77/Y (XOR2X1_RVT)                                      0.34       0.77 f
+  DP_OP_69_123_7159/I1[0] (omsp_alu_DP_OP_69_123_7159_0)
+                                                          0.00       0.77 f
+  DP_OP_69_123_7159/U38/CO (FADDX1_RVT)                   0.24       1.00 f
+  DP_OP_69_123_7159/U37/CO (FADDX1_RVT)                   0.18       1.19 f
+  DP_OP_69_123_7159/U36/CO (FADDX1_RVT)                   0.18       1.37 f
+  DP_OP_69_123_7159/U35/S (FADDX1_RVT)                    0.33       1.70 r
+  DP_OP_69_123_7159/U44/Y (AOI221X1_RVT)                  0.26       1.96 f
+  DP_OP_69_123_7159/O1 (omsp_alu_DP_OP_69_123_7159_0)     0.00       1.96 f
+  U72/Y (INVX0_RVT)                                       0.07       2.03 r
+  DP_OP_69_123_7159/I4[2] (omsp_alu_DP_OP_69_123_7159_0)
+                                                          0.00       2.03 r
+  DP_OP_69_123_7159/U51/Y (AND2X1_RVT)                    0.12       2.14 r
+  DP_OP_69_123_7159/U49/Y (NAND2X0_RVT)                   0.10       2.24 f
+  DP_OP_69_123_7159/U3/CO (FADDX1_RVT)                    0.20       2.45 f
+  DP_OP_69_123_7159/U45/S (FADDX1_RVT)                    0.31       2.75 r
+  DP_OP_69_123_7159/O2[4] (omsp_alu_DP_OP_69_123_7159_0)
+                                                          0.00       2.75 r
+  DP_OP_70_124_7159/I3 (omsp_alu_DP_OP_70_124_7159_1)     0.00       2.75 r
+  DP_OP_70_124_7159/U45/Y (AOI21X1_RVT)                   0.18       2.93 f
+  DP_OP_70_124_7159/O1 (omsp_alu_DP_OP_70_124_7159_1)     0.00       2.93 f
+  I_10/Y (INVX1_RVT)                                      0.05       2.99 r
+  DP_OP_70_124_7159/I4[2] (omsp_alu_DP_OP_70_124_7159_1)
+                                                          0.00       2.99 r
+  DP_OP_70_124_7159/U129/Y (INVX0_RVT)                    0.06       3.04 f
+  DP_OP_70_124_7159/U30/Y (NOR2X1_RVT)                    0.15       3.20 r
+  DP_OP_70_124_7159/U26/Y (OAI21X1_RVT)                   0.21       3.41 f
+  DP_OP_70_124_7159/U7/Y (AOI21X1_RVT)                    0.21       3.62 r
+  DP_OP_70_124_7159/U132/Y (XOR2X1_RVT)                   0.24       3.86 f
   DP_OP_70_124_7159/O2[4] (omsp_alu_DP_OP_70_124_7159_1)
-                                                          0.00       3.37 f
-  DP_OP_71_125_7159/I3 (omsp_alu_DP_OP_71_125_7159_1)     0.00       3.37 f
-  DP_OP_71_125_7159/U38/CO (FADDX1_RVT)                   0.15       3.52 f
-  DP_OP_71_125_7159/U37/CO (FADDX1_RVT)                   0.14       3.66 f
-  DP_OP_71_125_7159/U36/CO (FADDX1_RVT)                   0.14       3.80 f
-  DP_OP_71_125_7159/U35/S (FADDX1_RVT)                    0.22       4.02 r
-  DP_OP_71_125_7159/U25/Y (INVX0_RVT)                     0.05       4.07 f
-  DP_OP_71_125_7159/U45/Y (OA21X1_RVT)                    0.10       4.16 f
-  DP_OP_71_125_7159/O1 (omsp_alu_DP_OP_71_125_7159_1)     0.00       4.16 f
-  I_11/Y (INVX0_RVT)                                      0.05       4.21 r
-  DP_OP_71_125_7159/I4[1] (omsp_alu_DP_OP_71_125_7159_1)
-                                                          0.00       4.21 r
-  DP_OP_71_125_7159/U44/Y (INVX0_RVT)                     0.08       4.29 f
-  DP_OP_71_125_7159/U7/Y (OR2X1_RVT)                      0.13       4.42 f
-  DP_OP_71_125_7159/U5/Y (OR2X1_RVT)                      0.10       4.52 f
-  DP_OP_71_125_7159/U3/CO (FADDX1_RVT)                    0.14       4.66 f
-  DP_OP_71_125_7159/U1/Y (XOR2X1_RVT)                     0.16       4.82 r
-  DP_OP_71_125_7159/O2[4] (omsp_alu_DP_OP_71_125_7159_1)
-                                                          0.00       4.82 r
-  DP_OP_72_126_7159/I3 (omsp_alu_DP_OP_72_126_7159_1)     0.00       4.82 r
-  DP_OP_72_126_7159/U38/CO (FADDX1_RVT)                   0.14       4.96 r
-  DP_OP_72_126_7159/U37/CO (FADDX1_RVT)                   0.14       5.11 r
-  DP_OP_72_126_7159/U36/CO (FADDX1_RVT)                   0.14       5.25 r
-  DP_OP_72_126_7159/U35/S (FADDX1_RVT)                    0.21       5.46 f
-  DP_OP_72_126_7159/U25/Y (INVX0_RVT)                     0.06       5.53 r
-  DP_OP_72_126_7159/U13/Y (OAI21X1_RVT)                   0.14       5.66 f
-  DP_OP_72_126_7159/U11/Y (INVX0_RVT)                     0.05       5.71 r
-  DP_OP_72_126_7159/O1 (omsp_alu_DP_OP_72_126_7159_1)     0.00       5.71 r
-  I_12/Y (INVX0_RVT)                                      0.03       5.75 f
-  DP_OP_72_126_7159/I4[1] (omsp_alu_DP_OP_72_126_7159_1)
-                                                          0.00       5.75 f
-  DP_OP_72_126_7159/U44/Y (INVX0_RVT)                     0.09       5.84 r
-  DP_OP_72_126_7159/U7/Y (OR2X1_RVT)                      0.12       5.96 r
-  DP_OP_72_126_7159/U5/Y (OR2X1_RVT)                      0.10       6.05 r
-  DP_OP_72_126_7159/U3/S (FADDX1_RVT)                     0.20       6.25 f
-  DP_OP_72_126_7159/O2[3] (omsp_alu_DP_OP_72_126_7159_1)
-                                                          0.00       6.25 f
-  U29/Y (AO222X1_RVT)                                     0.11       6.36 f
-  C290/Y (OR2X1_RVT)                                      0.09       6.45 f
-  C291/Y (OR2X1_RVT)                                      0.08       6.53 f
-  C292/Y (OR2X1_RVT)                                      0.07       6.60 f
-  C293/Y (OR2X1_RVT)                                      0.07       6.68 f
-  C294/Y (OR2X1_RVT)                                      0.07       6.75 f
-  C295/Y (OR2X1_RVT)                                      0.07       6.83 f
-  C296/Y (OR2X1_RVT)                                      0.07       6.90 f
-  C297/Y (OR2X1_RVT)                                      0.07       6.97 f
-  C298/Y (OR2X1_RVT)                                      0.07       7.05 f
-  C299/Y (OR2X1_RVT)                                      0.07       7.12 f
-  C300/Y (OR2X1_RVT)                                      0.07       7.20 f
-  C301/Y (OR2X1_RVT)                                      0.07       7.27 f
-  C302/Y (OR2X1_RVT)                                      0.07       7.35 f
-  C303/Y (OR2X1_RVT)                                      0.07       7.42 f
-  U81/Y (NOR2X1_RVT)                                      0.10       7.52 r
-  U13/Y (AO22X1_RVT)                                      0.08       7.61 r
-  I_24/Y (INVX0_RVT)                                      0.04       7.65 f
-  U79/Y (AOI22X1_RVT)                                     0.13       7.77 r
-  U5/Y (NAND3X0_RVT)                                      0.05       7.82 f
-  alu_stat[0] (out)                                       0.00       7.82 f
-  data arrival time                                                  7.82
+                                                          0.00       3.86 f
+  DP_OP_71_125_7159/I3 (omsp_alu_DP_OP_71_125_7159_0)     0.00       3.86 f
+  DP_OP_71_125_7159/U38/CO (FADDX1_RVT)                   0.18       4.04 f
+  DP_OP_71_125_7159/U37/CO (FADDX1_RVT)                   0.18       4.22 f
+  DP_OP_71_125_7159/U36/CO (FADDX1_RVT)                   0.18       4.40 f
+  DP_OP_71_125_7159/U35/S (FADDX1_RVT)                    0.33       4.73 r
+  DP_OP_71_125_7159/U44/Y (AOI221X1_RVT)                  0.26       5.00 f
+  DP_OP_71_125_7159/O1 (omsp_alu_DP_OP_71_125_7159_0)     0.00       5.00 f
+  I_11/Y (INVX1_RVT)                                      0.06       5.06 r
+  DP_OP_71_125_7159/I4[2] (omsp_alu_DP_OP_71_125_7159_0)
+                                                          0.00       5.06 r
+  DP_OP_71_125_7159/U51/Y (AND2X1_RVT)                    0.11       5.17 r
+  DP_OP_71_125_7159/U49/Y (NAND2X0_RVT)                   0.10       5.27 f
+  DP_OP_71_125_7159/U3/CO (FADDX1_RVT)                    0.20       5.47 f
+  DP_OP_71_125_7159/U45/S (FADDX1_RVT)                    0.30       5.77 r
+  DP_OP_71_125_7159/O2[4] (omsp_alu_DP_OP_71_125_7159_0)
+                                                          0.00       5.77 r
+  DP_OP_72_126_7159/I3 (omsp_alu_DP_OP_72_126_7159_0)     0.00       5.77 r
+  DP_OP_72_126_7159/U38/CO (FADDX1_RVT)                   0.18       5.95 r
+  DP_OP_72_126_7159/U37/CO (FADDX1_RVT)                   0.19       6.14 r
+  DP_OP_72_126_7159/U36/CO (FADDX1_RVT)                   0.19       6.33 r
+  DP_OP_72_126_7159/U35/S (FADDX1_RVT)                    0.31       6.64 f
+  DP_OP_72_126_7159/U44/Y (AOI221X1_RVT)                  0.28       6.92 r
+  DP_OP_72_126_7159/O1 (omsp_alu_DP_OP_72_126_7159_0)     0.00       6.92 r
+  U73/Y (INVX0_RVT)                                       0.05       6.97 f
+  DP_OP_72_126_7159/I4[2] (omsp_alu_DP_OP_72_126_7159_0)
+                                                          0.00       6.97 f
+  DP_OP_72_126_7159/U51/Y (AND2X1_RVT)                    0.12       7.08 f
+  DP_OP_72_126_7159/U49/Y (NAND2X0_RVT)                   0.13       7.21 r
+  DP_OP_72_126_7159/U3/S (FADDX1_RVT)                     0.31       7.52 f
+  DP_OP_72_126_7159/O2[3] (omsp_alu_DP_OP_72_126_7159_0)
+                                                          0.00       7.52 f
+  U29/Y (AO222X1_RVT)                                     0.15       7.67 f
+  C290/Y (OR2X1_RVT)                                      0.11       7.78 f
+  C291/Y (OR2X1_RVT)                                      0.10       7.88 f
+  C292/Y (OR2X1_RVT)                                      0.10       7.98 f
+  C293/Y (OR2X1_RVT)                                      0.10       8.07 f
+  C294/Y (OR2X1_RVT)                                      0.10       8.17 f
+  C295/Y (OR2X1_RVT)                                      0.10       8.27 f
+  C296/Y (OR2X1_RVT)                                      0.10       8.37 f
+  C297/Y (OR2X1_RVT)                                      0.10       8.46 f
+  C298/Y (OR2X1_RVT)                                      0.10       8.56 f
+  C299/Y (OR2X1_RVT)                                      0.10       8.66 f
+  C300/Y (OR2X1_RVT)                                      0.10       8.75 f
+  C301/Y (OR2X1_RVT)                                      0.10       8.85 f
+  C302/Y (OR2X1_RVT)                                      0.10       8.95 f
+  C303/Y (OR2X1_RVT)                                      0.10       9.05 f
+  U90/Y (NOR2X0_RVT)                                      0.14       9.18 r
+  U13/Y (AO22X1_RVT)                                      0.12       9.30 r
+  U70/Y (INVX0_RVT)                                       0.05       9.35 f
+  U74/Y (AOI22X1_RVT)                                     0.18       9.53 r
+  U5/Y (NAND3X0_RVT)                                      0.06       9.60 f
+  alu_stat[0] (out)                                       0.00       9.60 f
+  data arrival time                                                  9.60
+
+  clock v_clk (rise edge)                                10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.20       9.80
+  output external delay                                  -0.20       9.60
+  data required time                                                 9.60
   --------------------------------------------------------------------------
-  (Path is unconstrained)
+  data required time                                                 9.60
+  data arrival time                                                 -9.60
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
 
 
 1

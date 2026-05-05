@@ -1,0 +1,64 @@
+Information: Reading file min_exec.vcd to annotate toggle rates on the design...
+Information: Reading vcd file '/home/cegrad/cclab002/cs220-final-project/sim/min_exec.vcd'
+Warning: Possible issue with annotation, check -strip_path argument.  (PSW-218)
+Error: No activity is available in the VCD file for the given time interval for power calculation. (PWR-255)
+Error: No switching activity has been annotated.  (PSW-130)
+Information: Using automatic max wire load selection group 'predcaps'. (ENV-003)
+Information: Using automatic min wire load selection group 'predcaps'. (ENV-003)
+Information: Building multi voltage information for entire design. (MV-022)
+Warning: Neither event file or switching activity data present for power estimation. The command will propagate switching activity values for power calculation.  (PWR-246)
+Information: Running averaged power analysis... (PWR-601)
+Information: Running power calculation with 4 threads. (PWR-602)
+****************************************
+Report : Averaged Power
+	-verbose
+	-nosplit
+Design : omsp_min_exec
+Version: V-2023.12-SP5-4
+Date   : Mon May  4 21:37:22 2026
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
+
+
+Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
+Wire Load Model Mode: enclosed
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   omsp_min_exec ForQA      saed32rvt_ss0p75v125c automatic-by-area
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 0.001 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
+register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+combinational           1.883e-06 7.644e-07 1.306e-06 3.954e-06 (86.77%)  
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000 6.028e-07    0.0000 6.028e-07 (13.23%)  
+
+  Net Switching Power  = 1.367e-06   (30.01%)
+  Cell Internal Power  = 1.883e-06   (41.33%)
+  Cell Leakage Power   = 1.306e-06   (28.66%)
+                         ---------
+Total Power            = 4.556e-06  (100.00%)
+
+1

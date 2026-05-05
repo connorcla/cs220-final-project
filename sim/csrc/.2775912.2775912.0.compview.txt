@@ -1,0 +1,7 @@
+Command exited with non-zero status 1
+{"vcs1":{"timestamp_begin":1777965532.194213492, "rt":0.58, "ut":0.15, "st":0.09}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1777965531.576622105}
+{"VCS_COMP_START_TIME": 1777965531.576622105}
+{"VCS_COMP_END_TIME": 1777965532.911443255}
+{"VCS_USER_OPTIONS": "osmp_alu_tb.v ../syn/omsp_alu_synthesized.v -full64 -debug_access /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a +neg_tchk -sdf max:osmp_alu_tb.dut:../syn/omsp_alu_const.sdf -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v"}
+{"vcs1": {"peak_mem": 408104}}

@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1778002146.086488157, "rt":0.96, "ut":0.39, "st":0.17}}
+{"vcselab":{"timestamp_begin":1778002147.203810646, "rt":0.35, "ut":0.17, "st":0.04}}
+{"link":{"timestamp_begin":1778002147.700573793, "rt":0.51, "ut":0.25, "st":0.17}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778002145.383659168}
+{"VCS_COMP_START_TIME": 1778002145.383659168}
+{"VCS_COMP_END_TIME": 1778002148.507534063}
+{"VCS_USER_OPTIONS": "osmp_alu_tb.v ../syn/omsp_alu_synthesized.v -full64 -debug_access /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a +neg_tchk -sdf max:alu_tb.dut:../syn/omsp_alu_const.sdf -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v"}
+{"vcs1": {"peak_mem": 423224}}
+{"vcselab": {"peak_mem": 275648}}

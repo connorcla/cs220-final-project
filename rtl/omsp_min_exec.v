@@ -125,6 +125,7 @@ wire eu_addr_hi = eu_mab[15];
 
 assign pmem_en   = fe_mb_en | (eu_mb_en &  eu_addr_hi);
 assign dmem_en   =             eu_mb_en & ~eu_addr_hi;
+//assign dmem_en = mb_en & (eu_mab < 16'h2000);
 assign eu_mdb_in = eu_addr_hi ? pmem_dout : dmem_dout;
 
 assign fe_mdb_in = pmem_dout;

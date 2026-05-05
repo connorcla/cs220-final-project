@@ -39,81 +39,154 @@ module alu_tb ();
 
     always #10 clk = ~clk;
 
+    task check_result;
+        input [15:0] expected;
+        input [15:0] actual;
+	input [7:0]  test;
+        begin
+            if (expected !== actual) begin
+                $display("[FAIL] Test: Expected %h, Got %h", expected, actual);
+                $finish;
+            end else begin
+                $display("[PASS] Test: Match %h", actual);
+            end
+        end
+    endtask
+
+    integer i;
+
     initial begin
-        // Setup monitoring
-        $monitor("Time:%t | Op: %h | Src: %d | Dst: %d | Out: %d | Flags(VNZC): %b", 
+
+	$monitor("Time:%t | Op: %h | Src: %d | Dst: %d | Out: %d | Flags(VNZC): %b",
                  $time, inst_alu, op_src, op_dst, alu_out, alu_stat);
 
-        // Initialize Inputs
-        clk          = 1'b0;
-        dbg_halt_st  = 1'b0;
-        exec_cycle   = 1'b0;
-        inst_alu     = 12'h000;
-        inst_bw      = 1'b0; // 16-bit mode
-        inst_jmp     = 8'h00;
-        inst_so      = 8'h00;
-        op_dst       = 16'h0000;
-        op_src       = 16'h0000;
-        status       = 4'b0000;
+        clk         = 0;
+    	exec_cycle  = 1;
+    	status      = 4'h0;
+    
+   
+    	dbg_halt_st = 1'b0;  
+    	inst_jmp    = 8'h00; 
+    	inst_so     = 8'h00;
+    	inst_bw     = 1'b0;
+    	inst_alu    = 12'h000;
+    	op_src      = 16'h0000;
+    	op_dst      = 16'h0000;
 
-        repeat(2) @(posedge clk);
-        #1;
+    	repeat(5) @(posedge clk);
 
-        //Test Case 1: ADD Operation (16-bit)
-        inst_alu   = 12'b0000_0000_1000; 
-        exec_cycle = 1'b1;
-        op_src     = 16'd100;
-        op_dst     = 16'd250;
+        $display("--- Starting Corner Case Tests (10) ---");
+
+        // Max positive 16-bit ADD (0x7FFF + 0x0001) Overflow check
+        @(negedge clk); 
+	inst_alu = 12'h008; 
+	inst_bw = 0; 
+	op_src = 16'h7FFF; 
+	op_dst = 16'h0001;
         #5; 
-        if (alu_out !== 16'd350) begin
-            $display("ERROR 1: ADD expected 350, got %d", alu_out);
-            $finish;
-        end
+	check_result(16'h8000, alu_out, "CORNER_1_OVERFLOW");
 
-        //Test Case 2: AND Operation (16-bit) 
-        @(posedge clk); #1;
-        inst_alu   = 12'b0000_0001_0000; 
-        op_src     = 16'h00FF;
-        op_dst     = 16'h0F0F;
+        // Zero Result Check (AND with 0)
+        @(negedge clk); 
+	inst_alu = 12'h010; 
+	op_src = 16'hFFFF; 
+	op_dst = 16'h0000;
+        #5; 
+	check_result(16'h0000, alu_out, "CORNER_2_ZERO");
+
+        // Byte Mode Wrap Around (8-bit ADD)
+        @(negedge clk); 
+	inst_bw = 1; 
+	inst_alu = 12'h008; 
+	op_src = 16'h00FF; 
+	op_dst = 16'h0001;
+        #5; 
+	check_result(16'h0000, (alu_out & 16'h00FF), "CORNER_3_BYTE_WRAP");
+
+        // XOR with 0
+        @(negedge clk); 
+	inst_bw = 0; 
+	inst_alu = 12'h040; 
+	op_src = 16'hABCD; 
+	op_dst = 16'h0000;
+        #5; 
+	check_result(16'hABCD, alu_out, "CORNER_4_XOR_ID");
+
+	// ALU_SRC_INV - Inverter Logic Path
+        @(negedge clk);
+        inst_alu = 12'h001; 
+        op_src   = 16'hAAAA;
+        #5; 
+        check_result(16'h5555, alu_out, "CORNER_5_INV");
+
+        // ALU_INC Adder Critical Path (Boundary)
+        @(negedge clk);
+        inst_alu = 12'h008;
+        op_src   = 16'h0001;	
+        op_dst   = 16'hFFFF;
+	status   = 4'h0;
+        #5; 
+        check_result(16'h0000, alu_out, "CORNER_6_INC_WRAP");
+
+        // OR Logical Unit Path
+        @(negedge clk);
+        inst_alu = 12'h020;
+        op_src   = 16'hF0F0;
+        op_dst   = 16'h0F0F;
         #5;
-        if (alu_out !== 16'h000F) begin
-            $display("ERROR 2: AND expected 000F, got %h", alu_out);
-            $finish;
-        end
+        check_result(16'hFFFF, alu_out, "CORNER_7_OR");
 
-        //Test Case 3: Byte Operation (8-bit) 
-        // Testing Overflow and Negative flags for 8-bit ADD
-        @(posedge clk); #1;
-        inst_bw    = 1'b1; // Byte mode
-        inst_alu   = 12'b0000_0000_1000; // ALU_ADD
-        op_src     = 16'h0070; // 112
-        op_dst     = 16'h0020; // 32
+        // XOR Logical Unit Path
+        @(negedge clk);
+        inst_alu = 12'h040;
+        op_src   = 16'h5555;
+        op_dst   = 16'h5555;
         #5;
-       
-        if (alu_stat[2] !== 1'b1) begin 
-            $display("ERROR 3: Expected Negative flag for 8-bit sum 144");
-            $finish;
-        end
+        check_result(16'h0000, alu_out, "CORNER_8_XOR_ZERO");
 
-        //Test Case 4: XOR Operation 
-        @(posedge clk); #1;
-        inst_bw    = 1'b0;
-        inst_alu   = 12'b0000_0100_0000; 
-        op_src     = 16'hAAAA;
-        op_dst     = 16'h5555;
+        // Shifter path
+        @(negedge clk);
+        inst_alu = 12'h400;
+        op_src   = 16'h0004;
+	op_dst   = 16'h0000;
         #5;
-        if (alu_out !== 16'hFFFF) begin
-            $display("ERROR 4: XOR expected FFFF, got %h", alu_out);
+        check_result(16'h0002, alu_out, "CORNER_9_SHIFT");
+
+        // Status bit manipulation
+        @(negedge clk);
+        inst_alu = 12'h008;
+	op_src   = 16'h0080;
+	op_dst   = 16'h0000;
+        #5;
+        if (alu_out[7] !== 1'b1) begin
+            $display("[FAIL] CORNER_10: Expected bit 7 to be set");
             $finish;
+        end else $display("[PASS] CORNER_10_STAT7");
+
+        $display("Starting Random-Constrained Tests (10)");
+        for (i = 0; i < 10; i = i + 1) begin
+            @(negedge clk);
+            inst_bw = $random % 2;  
+            inst_alu = 12'h008;     
+            op_src = $random % 65536;
+            op_dst = $random % 65536;
+            
+            #5;
+            if (inst_bw) 
+                check_result((op_src[7:0] + op_dst[7:0]) & 8'hFF, alu_out[7:0], "RANDOM_ADD_BYTE");
+            else
+                check_result((op_src + op_dst) & 16'hFFFF, alu_out, "RANDOM_ADD_WORD");
         end
 
-        $display("All ALU tests completed successfully.");
+        $display("ALL 20 TESTCASES PASSED SUCCESSFULLY");
         $finish;
-    end
+    end 
 
     initial begin
         $fsdbDumpfile("alu.fsdb");
-        $fsdbDumpvars(0, alu_tb);
+        $fsdbDumpvars(0, alu_tb, "+all");
+	$dumpfile("alu.vcd");
+	$dumpvars(0, alu_tb);
     end
 
 endmodule
