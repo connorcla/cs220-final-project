@@ -3,56 +3,47 @@
 Report : area
 Design : omsp_min_exec
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 21:46:56 2026
+Date   : Tue May  5 22:51:26 2026
 ****************************************
 
 Library(s) Used:
 
     saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
 
-Number of ports:                         1054
-Number of nets:                          3673
-Number of cells:                         2654
-Number of combinational cells:           2016
-Number of sequential cells:               375
+Number of ports:                          275
+Number of nets:                          4106
+Number of cells:                         3793
+Number of combinational cells:           3407
+Number of sequential cells:               374
 Number of macros/black boxes:               0
-Number of buf/inv:                        322
-Number of references:                       6
+Number of buf/inv:                        273
+Number of references:                      45
 
-Combinational area:               4935.984787
-Buf/Inv area:                      436.873540
-Noncombinational area:            2794.567447
+Combinational area:               7804.762469
+Buf/Inv area:                      377.912133
+Noncombinational area:            2664.954030
 Macro/Black Box area:                0.000000
-Net Interconnect area:            2287.521448
+Net Interconnect area:            2651.725237
 
-Total cell area:                  7730.552234
-Total area:                      10018.073682
+Total cell area:                 10469.716498
+Total area:                      13121.441736
 
 Hierarchical area distribution
 ------------------------------
 
-                                  Global cell area          Local cell area
-                                  ------------------  ---------------------------- 
-Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
-                                  Total      Total    national   national   boxes   Design
---------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------
-omsp_min_exec                     7730.5522    100.0    87.4255     0.0000  0.0000  omsp_min_exec
-execution_unit_0                  5733.9970     74.2   611.4705   249.0611  0.0000  omsp_execution_unit
-execution_unit_0/alu_0            1207.1840     15.6   527.6029     0.0000  0.0000  omsp_alu
-execution_unit_0/alu_0/DP_OP_68_122_3245
-                                   132.4090      1.7   132.4090     0.0000  0.0000  omsp_alu_DP_OP_68_122_3245_0
-execution_unit_0/alu_0/DP_OP_69_123_7159
-                                   130.8842      1.7   130.8842     0.0000  0.0000  omsp_alu_DP_OP_69_123_7159_1
-execution_unit_0/alu_0/DP_OP_70_124_7159
-                                   141.0499      1.8   141.0499     0.0000  0.0000  omsp_alu_DP_OP_70_124_7159_2
-execution_unit_0/alu_0/DP_OP_71_125_7159
-                                   139.7792      1.8   139.7792     0.0000  0.0000  omsp_alu_DP_OP_71_125_7159_2
-execution_unit_0/alu_0/DP_OP_72_126_7159
-                                   135.4588      1.8   135.4588     0.0000  0.0000  omsp_alu_DP_OP_72_126_7159_1
-execution_unit_0/register_file_0  3666.2814     47.4  1905.5717  1760.7096  0.0000  omsp_register_file
-frontend_0                        1909.1297     24.7  1003.6147   784.7967  0.0000  omsp_frontend
-frontend_0/add_x_83                120.7184      1.6   120.7184     0.0000  0.0000  omsp_frontend_DW01_add_3
---------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------
-Total                                                 4935.9848  2794.5674  0.0000
+                                  Global cell area           Local cell area
+                                  -------------------  ---------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-  Black-
+                                  Total       Total    national   national   boxes   Design
+--------------------------------  ----------  -------  ---------  ---------  ------  ----------------------------------
+omsp_min_exec                     10469.7165    100.0  7003.4464  2664.9540  0.0000  omsp_min_exec
+DP_OP_262_122_9732                  131.9007      1.3   131.9007     0.0000  0.0000  omsp_min_exec_DP_OP_262_122_9732_0
+DP_OP_263_123_7087                  129.8676      1.2   129.8676     0.0000  0.0000  omsp_min_exec_DP_OP_263_123_7087_2
+DP_OP_264_124_7087                  136.9836      1.3   136.9836     0.0000  0.0000  omsp_min_exec_DP_OP_264_124_7087_2
+DP_OP_265_125_7087                  134.6963      1.3   134.6963     0.0000  0.0000  omsp_min_exec_DP_OP_265_125_7087_1
+DP_OP_266_126_7087                  135.7129      1.3   135.7129     0.0000  0.0000  omsp_min_exec_DP_OP_266_126_7087_1
+add_x_91                            132.1549      1.3   132.1549     0.0000  0.0000  omsp_min_exec_DW01_add_4
+--------------------------------  ----------  -------  ---------  ---------  ------  ----------------------------------
+Total                                                  7804.7625  2664.9540  0.0000
 
 1

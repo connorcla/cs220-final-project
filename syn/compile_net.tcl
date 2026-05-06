@@ -1,0 +1,84 @@
+# change the following to your home directory
+set HOME      "/home/cegrad/cclab002"
+set DIRECTORY   "cs220-final-project"
+
+# Set search and library paths
+set_app_var search_path ${HOME}/${DIRECTORY}/rtl
+set_app_var link_path /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db
+set_app_var target_library /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db
+
+# Power grid settings
+set dc_allow_rtl_pg       true
+set mw_logic1_net "VDD"
+set mw_logic0_net "VSS"
+
+# Define the design name
+set DESIGN_NAME     "omsp_min_exec"
+
+# Analyze the Verilog source files
+analyze -format verilog "omsp_min_exec.v omsp_execution_unit.v omsp_frontend.v omsp_register_file.v omsp_clock_gate.v omsp_and_gate.v omsp_alu.v"
+
+# Elaborate the design
+elaborate ${DESIGN_NAME} -architecture verilog -library DEFAULT
+
+# Link the design to ensure all references are resolved
+link
+
+ungroup -all -flatten -simple_names
+
+set CLOCK_PERIOD  10.0; 
+create_clock -name "mclk" -period $CLOCK_PERIOD -waveform "0 [expr $CLOCK_PERIOD/2]" [get_ports mclk]
+set_dont_touch_network [get_clocks "mclk"]
+
+# Clock uncertainty for setup and hold times
+set_clock_uncertainty 0.2 -setup [get_clocks "mclk"]
+set_clock_uncertainty 0.2 -hold [get_clocks "mclk"]
+
+# General design constraints
+set_max_fanout 100 [get_designs "*"]
+set_fix_multiple_port_nets -all -buffer_constants
+
+set_input_delay  0.2 -max -clock "mclk" [get_ports puc_rst]
+set_input_delay  2.25 -max -clock "mclk" [get_ports pmem_dout[*]]
+set_input_delay  2.25 -max -clock "mclk" [get_ports dmem_dout[*]]
+
+set_output_delay 0.64 -max -clock "mclk" [get_ports pmem_addr[*]]
+set_output_delay 0.5  -max -clock "mclk" [get_ports pmem_en]
+set_output_delay 0.64 -max -clock "mclk" [get_ports dmem_addr[*]]
+set_output_delay 0.39 -max -clock "mclk" [get_ports dmem_din[*]]
+set_output_delay 0.44 -max -clock "mclk" [get_ports dmem_wen[*]]
+set_output_delay 0.5  -max -clock "mclk" [get_ports dmem_en]
+
+set_input_transition 0.1 [get_ports pmem_dout[*]]
+set_load 0.005 [get_ports pmem_addr[*]]
+
+group_path -name REGOUT      -to   [all_outputs] 
+group_path -name REGIN       -from [remove_from_collection [all_inputs] [get_ports mclk]]
+group_path -name FEEDTHROUGH -from [remove_from_collection [all_inputs] [get_ports mclk]] -to [all_outputs]
+
+set_false_path -from [get_ports puc_rst]
+
+# Check the design for issues
+check_design
+
+# Perform synthesis with optimization
+compile_ultra -incremental
+
+# Fix naming and hierarchy for output
+change_names -rules verilog -hierarchy
+
+write -format ddc -output "${DESIGN_NAME}_synthesized.ddc"
+write -format verilog -output "${DESIGN_NAME}_synthesized.v"
+write_sdc -nosplit "${DESIGN_NAME}_const.sdc"
+# Standard Delay Format for gate-level simulation
+write_sdf "${DESIGN_NAME}_const.sdf"
+
+# Generate reports
+report_timing > ${HOME}/${DIRECTORY}/syn/reports/${DESIGN_NAME}_timing_reports.log
+report_qor > ${HOME}/${DIRECTORY}/syn/reports/${DESIGN_NAME}_qor_reports.log
+report_area -hierarchy > ${HOME}/${DIRECTORY}/syn/reports/${DESIGN_NAME}_area_reports.log
+report_power -hierarchy > ${HOME}/${DIRECTORY}/syn/reports/${DESIGN_NAME}_power_reports.log
+report_reference -hierarchy > ${HOME}/${DIRECTORY}/syn/reports/${DESIGN_NAME}_reference_reports.log
+
+# Exit the synthesis tool
+exit

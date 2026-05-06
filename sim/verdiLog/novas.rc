@@ -236,7 +236,7 @@ ColorThemeModern = bright
 prevColorThemeModern = bright
 version = Verdi_W-2024.09-SP2-5
 recent_commands_Verdi = hbLoadFsdbFile,hbCloseFsdbFile,srcShowFile,srcCompile
-recent_commands_nWave = zoomAll,getSignal,zoomIn,zoomOut
+recent_commands_nWave = zoomAll,getAllSignals,getSignal,zoomIn,zoomOut
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]
@@ -394,6 +394,7 @@ QwUserAskDlg = 3358,949,324,128
 tipViewerDlg = 3321,938,398,259
 loadFile = 3213,825,614,432
 qWaveSignalDialog = 3120,802,800,479
+QwQuestionMsgDlg = 3317,993,406,101
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -683,45 +684,45 @@ DefaultLogTimeUnit = "1.000000ns"
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Type"
-width = 60
-visualIndex = 4
+name = "Block's First Line"
+width = 120
+visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Severity"
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Type"
 width = 60
-visualIndex = 2
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Message"
+width = 2000
+visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = "Severity"
+width = 60
+visualIndex = 2
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.ruleHistory]

@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1778045186.679252620, "rt":0.15, "ut":0.07, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1778045185.859107144}
+{"VCS_COMP_START_TIME": 1778045185.859107144}
+{"VCS_COMP_END_TIME": 1778045186.987719538}
+{"VCS_USER_OPTIONS": "tb_omsp_min_exec.v ../rtl/omsp_alu.v ../rtl/omsp_and_gate.v ../rtl/omsp_clock_gate.v ../rtl/omsp_frontend.v ../rtl/omsp_min_exec.v ../rtl/omsp_register_file.v ../rtl/omsp_execution_unit.v ../syn/omsp_min_exec_synthesized.v -full64 +incdir+../rtl -debug_access /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a +neg_tchk -sdf max:omsp_min_exec_tb.dut:../syn/omsp_min_exec_const.sdf -v /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/verilog/saed32nm.v"}
+{"vcs1": {"peak_mem": 387148}}

@@ -8,7 +8,7 @@ hsMainFileCount                    	1
 hsMtmSpecArr_i                     	3
 hsMainFileSuffixArr_i              	csdf1.MAIN
 hsAuxFileSuffixArr_i               	csdf1.AUX
-hsOriginalSdfFileArr_i             	../syn/omsp_alu_const.sdf
+hsOriginalSdfFileArr_i             	../syn/omsp_min_exec_const.sdf
 fHsMultiSdfDbg                     	0
 partitionName                      	6	MASTER
 hsimInitRegValue                   	3

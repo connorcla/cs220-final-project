@@ -16,7 +16,7 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 135025.505886 427925.505886
+zoom 117538.750000 654858.750000
 cursor 0.000000
 marker 0.000000
 
@@ -47,17 +47,13 @@ curSTATUS ByChange
 
 addGroup "G1"
 activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb"
-addSignal -h 16 /tb_omsp_min_exec/mclk
+addSignal -h 16 -UNSIGNED -HEX /omsp_min_exec_tb/dmem_addr[15:0]
+addSignal -h 16 -UNSIGNED -HEX -holdScope dmem_dout[15:0]
+addSignal -h 16 -holdScope mclk
 addSignal -h 16 -UNSIGNED -HEX -holdScope pmem_addr[14:0]
 addSignal -h 16 -UNSIGNED -HEX -holdScope pmem_dout[15:0]
 addSignal -h 16 -holdScope pmem_en
-addSignal -h 16 -UNSIGNED -HEX -holdScope dmem_dout[15:0]
-addSignal -h 16 -UNSIGNED -HEX -holdScope dmem_din[15:0]
-addSignal -h 16 -UNSIGNED -HEX -holdScope dmem_addr[15:0]
-addSignal -h 16 -holdScope dmem_en
-addSignal -h 16 -UNSIGNED -HEX /tb_omsp_min_exec/dut/frontend_0/pc[15:0]
-addSignal -h 16 /tb_omsp_min_exec/dut/execution_unit_0/mb_en
-addSignal -h 16 -UNSIGNED -HEX -holdScope mb_wr[1:0]
+addSignal -h 16 -holdScope puc_rst
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
@@ -67,14 +63,17 @@ activeDirFile "" "/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb"
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
-"/tb_omsp_min_exec"
-"/tb_omsp_min_exec/dut"
+"/omsp_min_exec_tb"
+"/omsp_min_exec_tb/dut"
 
 SCOPE_LIST_BEGIN
-"/tb_omsp_min_exec"
-"/tb_omsp_min_exec/dut/frontend_0"
-"/tb_omsp_min_exec/dut/execution_unit_0"
-"/tb_omsp_min_exec/dut"
+"/omsp_min_exec_tb"
+"/omsp_min_exec_tb/dut/DP_OP_262_122_9732"
+"/omsp_min_exec_tb/dut/DP_OP_263_123_7087"
+"/omsp_min_exec_tb/dut/DP_OP_264_124_7087"
+"/omsp_min_exec_tb/dut/DP_OP_265_125_7087"
+"/omsp_min_exec_tb/dut/DP_OP_266_126_7087"
+"/omsp_min_exec_tb/dut/add_x_91"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

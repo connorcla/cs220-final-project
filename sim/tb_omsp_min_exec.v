@@ -30,16 +30,16 @@ module omsp_min_exec_tb;
     );
 
     always @(posedge mclk) begin
-    if (dut.frontend_0.pc === 16'hDEAD) begin
+    if (dut.pc === 16'hDEAD) begin
         $display("!!! WARNING: PC went DEAD. Forcing to 0000 !!!");
-        force dut.frontend_0.pc = 16'h0000;
+        force dut.pc = 16'h0000;
         #10;
-        release dut.frontend_0.pc;
+        release dut.pc;
     end
 end
 
     initial mclk = 0;
-    always #10 mclk = ~mclk; // 50MHz Clock
+    always #10 mclk = ~mclk;
 
     always @(*) begin
     if (!pmem_en) begin
@@ -69,7 +69,7 @@ end
         
         $display("Core Released at %t", $time);
 
-        repeat (20) @(posedge mclk);
+        repeat (2000) @(posedge mclk);
 
         $display("Simulation Finished");
         $finish;
