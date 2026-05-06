@@ -23,15 +23,6 @@ elaborate ${DESIGN_NAME} -architecture verilog -library DEFAULT
 
 # Link the design to ensure all references are resolved
 link
- 
-# Constraints
-# Clock definition: 10 ns period (500 MHz), 50% duty cycle
-create_clock -name "clk" -period 2 -waveform {0 1} [get_ports "clk"]
-set_dont_touch_network [get_clocks "clk"]
-
-# Clock uncertainty for setup and hold times
-set_clock_uncertainty 0.2 -setup [get_clocks "clk"]
-set_clock_uncertainty 0.2 -hold [get_clocks "clk"]
 
 # General design constraints
 set_max_fanout 100 [get_designs "*"]
@@ -62,7 +53,7 @@ set_clock_uncertainty 0.1 -hold  [get_clocks "mclk"]
 #set CLOCK_PERIOD 100.0; #  10 MHz
 #set CLOCK_PERIOD 66.6; #  15 MHz
 #set CLOCK_PERIOD 50.0; #  20 MHz
-set CLOCK_PERIOD 40.0; #  25 MHz
+#set CLOCK_PERIOD 40.0; #  25 MHz
 #set CLOCK_PERIOD 33.3; #  30 MHz
 #set CLOCK_PERIOD 30.0; #  33 MHz
 #set CLOCK_PERIOD 25.0; #  40 MHz
@@ -75,13 +66,13 @@ set CLOCK_PERIOD 40.0; #  25 MHz
 #set CLOCK_PERIOD 12.5; #  80 MHz
 #set CLOCK_PERIOD 11.1; #  90 MHz
 #set CLOCK_PERIOD 10.0; # 100 MHz
-#set CLOCK_PERIOD  8.0; # 125 MHz
+set CLOCK_PERIOD  8.0; # 125 MHz
 
 
-create_clock -name     "dco_clk"                              \
+create_clock -name     "mclk"                              \
              -period   "$CLOCK_PERIOD"                        \
              -waveform "[expr $CLOCK_PERIOD/2] $CLOCK_PERIOD" \
-             [get_ports dco_clk]
+             [get_ports mclk]
 
 create_clock -name     "lfxt_clk"                             \
              -period   "$CLOCK_PERIOD"                        \

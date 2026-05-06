@@ -3,7 +3,7 @@
 Report : area
 Design : omsp_min_exec
 Version: W-2024.09-SP5-4
-Date   : Mon May  4 21:09:27 2026
+Date   : Tue May  5 21:46:56 2026
 ****************************************
 
 Library(s) Used:
@@ -11,22 +11,22 @@ Library(s) Used:
     saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
 
 Number of ports:                         1054
-Number of nets:                          3333
-Number of cells:                         2307
-Number of combinational cells:           1916
+Number of nets:                          3673
+Number of cells:                         2654
+Number of combinational cells:           2016
 Number of sequential cells:               375
 Number of macros/black boxes:               0
-Number of buf/inv:                        364
+Number of buf/inv:                        322
 Number of references:                       6
 
-Combinational area:               4692.006554
-Buf/Inv area:                      503.967559
-Noncombinational area:            2669.528622
+Combinational area:               4935.984787
+Buf/Inv area:                      436.873540
+Noncombinational area:            2794.567447
 Macro/Black Box area:                0.000000
-Net Interconnect area:            1950.983423
+Net Interconnect area:            2287.521448
 
-Total cell area:                  7361.535176
-Total area:                       9312.518599
+Total cell area:                  7730.552234
+Total area:                      10018.073682
 
 Hierarchical area distribution
 ------------------------------
@@ -36,23 +36,23 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
                                   Total      Total    national   national   boxes   Design
 --------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------
-omsp_min_exec                     7361.5352    100.0    89.4587     0.0000  0.0000  omsp_min_exec
-execution_unit_0                  5369.8086     72.9   617.3158   249.0611  0.0000  omsp_execution_unit
-execution_unit_0/alu_0             884.6753     12.0   533.7024     0.0000  0.0000  omsp_alu
+omsp_min_exec                     7730.5522    100.0    87.4255     0.0000  0.0000  omsp_min_exec
+execution_unit_0                  5733.9970     74.2   611.4705   249.0611  0.0000  omsp_execution_unit
+execution_unit_0/alu_0            1207.1840     15.6   527.6029     0.0000  0.0000  omsp_alu
 execution_unit_0/alu_0/DP_OP_68_122_3245
-                                   133.4256      1.8   133.4256     0.0000  0.0000  omsp_alu_DP_OP_68_122_3245_1
+                                   132.4090      1.7   132.4090     0.0000  0.0000  omsp_alu_DP_OP_68_122_3245_0
 execution_unit_0/alu_0/DP_OP_69_123_7159
-                                    54.3868      0.7    54.3868     0.0000  0.0000  omsp_alu_DP_OP_69_123_7159_1
+                                   130.8842      1.7   130.8842     0.0000  0.0000  omsp_alu_DP_OP_69_123_7159_1
 execution_unit_0/alu_0/DP_OP_70_124_7159
-                                    54.3868      0.7    54.3868     0.0000  0.0000  omsp_alu_DP_OP_70_124_7159_1
+                                   141.0499      1.8   141.0499     0.0000  0.0000  omsp_alu_DP_OP_70_124_7159_2
 execution_unit_0/alu_0/DP_OP_71_125_7159
-                                    54.3868      0.7    54.3868     0.0000  0.0000  omsp_alu_DP_OP_71_125_7159_1
+                                   139.7792      1.8   139.7792     0.0000  0.0000  omsp_alu_DP_OP_71_125_7159_2
 execution_unit_0/alu_0/DP_OP_72_126_7159
-                                    54.3868      0.7    54.3868     0.0000  0.0000  omsp_alu_DP_OP_72_126_7159_1
-execution_unit_0/register_file_0  3618.7565     49.2  1974.9530  1643.8034  0.0000  omsp_register_file
-frontend_0                        1902.2679     25.8  1028.5208   776.6641  0.0000  omsp_frontend
-frontend_0/add_x_83                 97.0830      1.3    97.0830     0.0000  0.0000  omsp_frontend_DW01_add_2
+                                   135.4588      1.8   135.4588     0.0000  0.0000  omsp_alu_DP_OP_72_126_7159_1
+execution_unit_0/register_file_0  3666.2814     47.4  1905.5717  1760.7096  0.0000  omsp_register_file
+frontend_0                        1909.1297     24.7  1003.6147   784.7967  0.0000  omsp_frontend
+frontend_0/add_x_83                120.7184      1.6   120.7184     0.0000  0.0000  omsp_frontend_DW01_add_3
 --------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------
-Total                                                 4692.0066  2669.5286  0.0000
+Total                                                 4935.9848  2794.5674  0.0000
 
 1

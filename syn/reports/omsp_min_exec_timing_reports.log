@@ -2,7 +2,7 @@ Information: Updating design information... (UID-85)
 Information: Timing loop detected. (OPT-150)
 	U28/A1 U28/Y execution_unit_0/U109/A1 execution_unit_0/U109/Y execution_unit_0/U108/A3 execution_unit_0/U108/Y execution_unit_0/alu_0/U152/A1 execution_unit_0/alu_0/U152/Y execution_unit_0/alu_0/U147/A execution_unit_0/alu_0/U147/Y execution_unit_0/alu_0/DP_OP_68_122_3245/U37/A execution_unit_0/alu_0/DP_OP_68_122_3245/U37/S 
 Information: Timing loop detected. (OPT-150)
-	U35/A U35/Y U28/A3 U28/Y execution_unit_0/U109/A1 execution_unit_0/U109/Y execution_unit_0/U108/A3 execution_unit_0/U108/Y execution_unit_0/alu_0/U152/A1 execution_unit_0/alu_0/U152/Y execution_unit_0/alu_0/U147/A execution_unit_0/alu_0/U147/Y execution_unit_0/alu_0/DP_OP_68_122_3245/U37/A execution_unit_0/alu_0/DP_OP_68_122_3245/U37/S 
+	U36/A U36/Y U28/A3 U28/Y execution_unit_0/U109/A1 execution_unit_0/U109/Y execution_unit_0/U108/A3 execution_unit_0/U108/Y execution_unit_0/alu_0/U152/A1 execution_unit_0/alu_0/U152/Y execution_unit_0/alu_0/U147/A execution_unit_0/alu_0/U147/Y execution_unit_0/alu_0/DP_OP_68_122_3245/U37/A execution_unit_0/alu_0/DP_OP_68_122_3245/U37/S 
 Warning: Disabling timing arc between pins 'A1' and 'Y' on cell 'U28'
          to break a timing loop. (OPT-314)
 Warning: Disabling timing arc between pins 'A1' and 'Y' on cell 'U28'
@@ -139,206 +139,162 @@ Report : timing
         -max_paths 1
 Design : omsp_min_exec
 Version: W-2024.09-SP5-4
-Date   : Mon May  4 21:09:27 2026
+Date   : Tue May  5 21:46:56 2026
 ****************************************
 
 Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
 Wire Load Model Mode: enclosed
 
-  Startpoint: frontend_0/e_state_reg_0_
-              (rising edge-triggered flip-flop)
-  Endpoint: pmem_addr[14]
-            (output port)
-  Path Group: (none)
+  Startpoint: frontend_0/inst_type_reg_0_
+              (rising edge-triggered flip-flop clocked by mclk)
+  Endpoint: execution_unit_0/register_file_0/r2_reg_0_
+            (rising edge-triggered flip-flop clocked by mclk)
+  Path Group: mclk
   Path Type: max
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  omsp_frontend      8000                  saed32rvt_ss0p75v125c
   omsp_min_exec      8000                  saed32rvt_ss0p75v125c
+  omsp_frontend      8000                  saed32rvt_ss0p75v125c
+  omsp_register_file 8000                  saed32rvt_ss0p75v125c
   omsp_execution_unit
                      8000                  saed32rvt_ss0p75v125c
-  omsp_register_file 8000                  saed32rvt_ss0p75v125c
   omsp_alu           8000                  saed32rvt_ss0p75v125c
   omsp_alu_DP_OP_69_123_7159_1
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_alu_DP_OP_70_124_7159_1
+  omsp_alu_DP_OP_70_124_7159_2
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_alu_DP_OP_71_125_7159_1
+  omsp_alu_DP_OP_71_125_7159_2
                      ForQA                 saed32rvt_ss0p75v125c
   omsp_alu_DP_OP_72_126_7159_1
                      ForQA                 saed32rvt_ss0p75v125c
 
   Point                                                   Incr       Path
   --------------------------------------------------------------------------
-  frontend_0/e_state_reg_0_/CLK (DFFASX1_RVT)             0.00       0.00 r
-  frontend_0/e_state_reg_0_/Q (DFFASX1_RVT)               0.38       0.38 f
-  frontend_0/e_state[0] (omsp_frontend)                   0.00       0.38 f
-  execution_unit_0/e_state[0] (omsp_execution_unit)       0.00       0.38 f
-  execution_unit_0/U268/Y (INVX0_RVT)                     0.09       0.47 r
-  execution_unit_0/U262/Y (NAND3X0_RVT)                   0.13       0.61 f
-  execution_unit_0/U261/Y (INVX0_RVT)                     0.10       0.71 r
-  execution_unit_0/U259/Y (AND2X1_RVT)                    0.13       0.84 r
-  execution_unit_0/register_file_0/reg_sr_clr (omsp_register_file)
-                                                          0.00       0.84 r
-  execution_unit_0/register_file_0/U178/Y (INVX0_RVT)     0.09       0.93 f
-  execution_unit_0/register_file_0/U505/Y (AND2X1_RVT)
-                                                          0.21       1.14 f
-  execution_unit_0/register_file_0/U146/Y (AO22X1_RVT)
-                                                          0.21       1.35 f
-  execution_unit_0/register_file_0/U145/Y (AO221X1_RVT)
-                                                          0.12       1.47 f
-  execution_unit_0/register_file_0/U140/Y (OR3X1_RVT)     0.17       1.64 f
-  execution_unit_0/register_file_0/U85/Y (AOI221X1_RVT)
-                                                          0.16       1.80 r
-  execution_unit_0/register_file_0/U711/Y (NAND3X0_RVT)
-                                                          0.10       1.90 f
-  execution_unit_0/register_file_0/reg_src[0] (omsp_register_file)
-                                                          0.00       1.90 f
-  execution_unit_0/U61/Y (AO221X1_RVT)                    0.21       2.12 f
-  execution_unit_0/U60/Y (AO221X1_RVT)                    0.14       2.26 f
-  execution_unit_0/alu_0/op_src[0] (omsp_alu)             0.00       2.26 f
-  execution_unit_0/alu_0/U225/Y (OA22X1_RVT)              0.17       2.43 f
-  execution_unit_0/alu_0/U224/Y (INVX0_RVT)               0.13       2.56 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/I1[0] (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       2.56 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U38/CO (FADDX1_RVT)
-                                                          0.23       2.79 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U37/CO (FADDX1_RVT)
-                                                          0.19       2.98 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U36/CO (FADDX1_RVT)
-                                                          0.19       3.17 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U35/S (FADDX1_RVT)
-                                                          0.30       3.47 f
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U25/Y (INVX0_RVT)
-                                                          0.08       3.54 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U44/Y (OA21X1_RVT)
-                                                          0.13       3.67 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/O1 (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       3.67 r
-  execution_unit_0/alu_0/U237/Y (INVX0_RVT)               0.04       3.71 f
-  execution_unit_0/alu_0/DP_OP_69_123_7159/I4[1] (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       3.71 f
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U9/Y (INVX0_RVT)
-                                                          0.13       3.84 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U7/Y (OR2X1_RVT)
-                                                          0.18       4.01 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U5/Y (OR2X1_RVT)
-                                                          0.13       4.15 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U3/CO (FADDX1_RVT)
-                                                          0.18       4.33 r
-  execution_unit_0/alu_0/DP_OP_69_123_7159/U1/Y (XOR2X1_RVT)
-                                                          0.25       4.58 f
+  clock mclk (rise edge)                                  4.00       4.00
+  clock network delay (ideal)                             0.00       4.00
+  frontend_0/inst_type_reg_0_/CLK (DFFARX1_RVT)           0.00       4.00 r
+  frontend_0/inst_type_reg_0_/Q (DFFARX1_RVT)             0.35       4.35 r
+  frontend_0/U337/Y (AND4X1_RVT)                          0.21       4.56 r
+  frontend_0/U336/Y (NAND3X0_RVT)                         0.14       4.69 f
+  frontend_0/U311/Y (OAI222X1_RVT)                        0.35       5.04 r
+  frontend_0/inst_src[1] (omsp_frontend)                  0.00       5.04 r
+  execution_unit_0/inst_src[1] (omsp_execution_unit)      0.00       5.04 r
+  execution_unit_0/register_file_0/inst_src[1] (omsp_register_file)
+                                                          0.00       5.04 r
+  execution_unit_0/register_file_0/U627/Y (NAND2X0_RVT)
+                                                          0.09       5.13 f
+  execution_unit_0/register_file_0/U351/Y (INVX2_RVT)     0.12       5.25 r
+  execution_unit_0/register_file_0/U72/Y (AO22X1_RVT)     0.14       5.39 r
+  execution_unit_0/register_file_0/U71/Y (AO221X1_RVT)
+                                                          0.14       5.53 r
+  execution_unit_0/register_file_0/U11/Y (OR4X1_RVT)      0.24       5.77 r
+  execution_unit_0/register_file_0/reg_src[2] (omsp_register_file)
+                                                          0.00       5.77 r
+  execution_unit_0/U37/Y (AO221X1_RVT)                    0.15       5.92 r
+  execution_unit_0/U36/Y (AO221X1_RVT)                    0.17       6.09 r
+  execution_unit_0/alu_0/op_src[2] (omsp_alu)             0.00       6.09 r
+  execution_unit_0/alu_0/U6/Y (INVX0_RVT)                 0.06       6.15 f
+  execution_unit_0/alu_0/U130/Y (OA22X1_RVT)              0.14       6.29 f
+  execution_unit_0/alu_0/U7/Y (INVX0_RVT)                 0.14       6.43 r
+  execution_unit_0/alu_0/DP_OP_69_123_7159/I1[2] (omsp_alu_DP_OP_69_123_7159_1)
+                                                          0.00       6.43 r
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U70/Y (NOR2X0_RVT)
+                                                          0.18       6.61 f
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U67/Y (OAI21X1_RVT)
+                                                          0.23       6.84 r
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U65/Y (AOI21X1_RVT)
+                                                          0.13       6.97 f
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U104/Y (OA21X1_RVT)
+                                                          0.14       7.12 f
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U30/Y (NOR2X0_RVT)
+                                                          0.16       7.28 r
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U26/Y (OAI21X2_RVT)
+                                                          0.20       7.47 f
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U7/Y (AOI21X1_RVT)
+                                                          0.21       7.68 r
+  execution_unit_0/alu_0/DP_OP_69_123_7159/U1/Y (XOR2X2_RVT)
+                                                          0.21       7.90 f
   execution_unit_0/alu_0/DP_OP_69_123_7159/O2[4] (omsp_alu_DP_OP_69_123_7159_1)
-                                                          0.00       4.58 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/I3 (omsp_alu_DP_OP_70_124_7159_1)
-                                                          0.00       4.58 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U38/CO (FADDX1_RVT)
-                                                          0.18       4.76 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U37/CO (FADDX1_RVT)
-                                                          0.18       4.94 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U36/CO (FADDX1_RVT)
-                                                          0.18       5.12 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U35/S (FADDX1_RVT)
-                                                          0.32       5.45 r
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U25/Y (INVX0_RVT)
-                                                          0.05       5.50 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U44/Y (OA21X1_RVT)
-                                                          0.13       5.63 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/O1 (omsp_alu_DP_OP_70_124_7159_1)
-                                                          0.00       5.63 f
-  execution_unit_0/alu_0/U236/Y (INVX0_RVT)               0.05       5.68 r
-  execution_unit_0/alu_0/DP_OP_70_124_7159/I4[1] (omsp_alu_DP_OP_70_124_7159_1)
-                                                          0.00       5.68 r
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U9/Y (INVX0_RVT)
-                                                          0.10       5.79 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U7/Y (OR2X1_RVT)
-                                                          0.18       5.97 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U5/Y (OR2X1_RVT)
-                                                          0.14       6.11 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U3/CO (FADDX1_RVT)
-                                                          0.17       6.28 f
-  execution_unit_0/alu_0/DP_OP_70_124_7159/U1/Y (XOR2X1_RVT)
-                                                          0.22       6.50 r
-  execution_unit_0/alu_0/DP_OP_70_124_7159/O2[4] (omsp_alu_DP_OP_70_124_7159_1)
-                                                          0.00       6.50 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/I3 (omsp_alu_DP_OP_71_125_7159_1)
-                                                          0.00       6.50 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U38/CO (FADDX1_RVT)
-                                                          0.19       6.69 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U37/CO (FADDX1_RVT)
-                                                          0.19       6.88 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U36/CO (FADDX1_RVT)
-                                                          0.19       7.06 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U35/S (FADDX1_RVT)
-                                                          0.30       7.36 f
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U14/Y (INVX0_RVT)
-                                                          0.08       7.44 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U44/Y (OA21X1_RVT)
-                                                          0.13       7.57 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/O1 (omsp_alu_DP_OP_71_125_7159_1)
-                                                          0.00       7.57 r
-  execution_unit_0/alu_0/U235/Y (INVX0_RVT)               0.04       7.61 f
-  execution_unit_0/alu_0/DP_OP_71_125_7159/I4[1] (omsp_alu_DP_OP_71_125_7159_1)
-                                                          0.00       7.61 f
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U9/Y (INVX0_RVT)
-                                                          0.13       7.74 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U7/Y (OR2X1_RVT)
-                                                          0.18       7.91 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U5/Y (OR2X1_RVT)
-                                                          0.13       8.04 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U3/CO (FADDX1_RVT)
-                                                          0.18       8.22 r
-  execution_unit_0/alu_0/DP_OP_71_125_7159/U1/Y (XOR2X1_RVT)
-                                                          0.25       8.48 f
-  execution_unit_0/alu_0/DP_OP_71_125_7159/O2[4] (omsp_alu_DP_OP_71_125_7159_1)
-                                                          0.00       8.48 f
+                                                          0.00       7.90 f
+  execution_unit_0/alu_0/DP_OP_70_124_7159/I3 (omsp_alu_DP_OP_70_124_7159_2)
+                                                          0.00       7.90 f
+  execution_unit_0/alu_0/DP_OP_70_124_7159/U51/Y (AOI21X1_RVT)
+                                                          0.22       8.12 r
+  execution_unit_0/alu_0/DP_OP_70_124_7159/O1 (omsp_alu_DP_OP_70_124_7159_2)
+                                                          0.00       8.12 r
+  execution_unit_0/alu_0/U236/Y (INVX0_RVT)               0.05       8.17 f
+  execution_unit_0/alu_0/DP_OP_70_124_7159/I4[1] (omsp_alu_DP_OP_70_124_7159_2)
+                                                          0.00       8.17 f
+  execution_unit_0/alu_0/DP_OP_70_124_7159/U12/Y (NOR2X1_RVT)
+                                                          0.16       8.33 r
+  execution_unit_0/alu_0/DP_OP_70_124_7159/U9/Y (OAI21X1_RVT)
+                                                          0.21       8.54 f
+  execution_unit_0/alu_0/DP_OP_70_124_7159/U7/Y (AOI21X1_RVT)
+                                                          0.15       8.69 r
+  execution_unit_0/alu_0/DP_OP_70_124_7159/U128/Y (XOR2X1_RVT)
+                                                          0.25       8.94 f
+  execution_unit_0/alu_0/DP_OP_70_124_7159/O2[4] (omsp_alu_DP_OP_70_124_7159_2)
+                                                          0.00       8.94 f
+  execution_unit_0/alu_0/DP_OP_71_125_7159/I3 (omsp_alu_DP_OP_71_125_7159_2)
+                                                          0.00       8.94 f
+  execution_unit_0/alu_0/DP_OP_71_125_7159/U51/Y (AOI21X1_RVT)
+                                                          0.23       9.17 r
+  execution_unit_0/alu_0/DP_OP_71_125_7159/U29/Y (NOR2X0_RVT)
+                                                          0.15       9.32 f
+  execution_unit_0/alu_0/DP_OP_71_125_7159/U143/Y (OAI21X1_RVT)
+                                                          0.24       9.56 r
+  execution_unit_0/alu_0/DP_OP_71_125_7159/U147/Y (AO21X1_RVT)
+                                                          0.15       9.71 r
+  execution_unit_0/alu_0/DP_OP_71_125_7159/U140/Y (XNOR2X1_RVT)
+                                                          0.23       9.94 r
+  execution_unit_0/alu_0/DP_OP_71_125_7159/O2[4] (omsp_alu_DP_OP_71_125_7159_2)
+                                                          0.00       9.94 r
   execution_unit_0/alu_0/DP_OP_72_126_7159/I3 (omsp_alu_DP_OP_72_126_7159_1)
-                                                          0.00       8.48 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U38/CO (FADDX1_RVT)
-                                                          0.18       8.66 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U37/CO (FADDX1_RVT)
-                                                          0.18       8.84 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U36/CO (FADDX1_RVT)
-                                                          0.18       9.02 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U35/S (FADDX1_RVT)
-                                                          0.32       9.35 r
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U25/Y (INVX0_RVT)
-                                                          0.05       9.40 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U44/Y (OA21X1_RVT)
-                                                          0.13       9.53 f
+                                                          0.00       9.94 r
+  execution_unit_0/alu_0/DP_OP_72_126_7159/U42/Y (AOI21X1_RVT)
+                                                          0.18      10.12 f
   execution_unit_0/alu_0/DP_OP_72_126_7159/O1 (omsp_alu_DP_OP_72_126_7159_1)
-                                                          0.00       9.53 f
-  execution_unit_0/alu_0/U234/Y (INVX0_RVT)               0.05       9.58 r
-  execution_unit_0/alu_0/DP_OP_72_126_7159/I4[1] (omsp_alu_DP_OP_72_126_7159_1)
-                                                          0.00       9.58 r
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U9/Y (INVX0_RVT)
-                                                          0.10       9.69 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U7/Y (OR2X1_RVT)
-                                                          0.18       9.87 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U5/Y (OR2X1_RVT)
-                                                          0.14      10.02 f
-  execution_unit_0/alu_0/DP_OP_72_126_7159/U3/S (FADDX1_RVT)
-                                                          0.28      10.29 r
+                                                          0.00      10.12 f
+  execution_unit_0/alu_0/U234/Y (INVX1_RVT)               0.06      10.18 r
+  execution_unit_0/alu_0/DP_OP_72_126_7159/I4[2] (omsp_alu_DP_OP_72_126_7159_1)
+                                                          0.00      10.18 r
+  execution_unit_0/alu_0/DP_OP_72_126_7159/U131/Y (INVX0_RVT)
+                                                          0.04      10.23 f
+  execution_unit_0/alu_0/DP_OP_72_126_7159/U28/Y (NAND2X0_RVT)
+                                                          0.10      10.33 r
+  execution_unit_0/alu_0/DP_OP_72_126_7159/U137/Y (OAI21X1_RVT)
+                                                          0.25      10.57 f
+  execution_unit_0/alu_0/DP_OP_72_126_7159/U15/Y (AOI21X1_RVT)
+                                                          0.22      10.80 r
+  execution_unit_0/alu_0/DP_OP_72_126_7159/U6/Y (XOR2X2_RVT)
+                                                          0.19      10.99 f
   execution_unit_0/alu_0/DP_OP_72_126_7159/O2[3] (omsp_alu_DP_OP_72_126_7159_1)
-                                                          0.00      10.29 r
-  execution_unit_0/alu_0/U139/Y (AO222X1_RVT)             0.20      10.49 r
-  execution_unit_0/alu_0/alu_out[15] (omsp_alu)           0.00      10.49 r
-  execution_unit_0/register_file_0/reg_dest_val[15] (omsp_register_file)
-                                                          0.00      10.49 r
-  execution_unit_0/register_file_0/U597/Y (AND2X1_RVT)
-                                                          0.20      10.69 r
-  execution_unit_0/register_file_0/pc_sw[15] (omsp_register_file)
-                                                          0.00      10.69 r
-  execution_unit_0/pc_sw[15] (omsp_execution_unit)        0.00      10.69 r
-  frontend_0/pc_sw[15] (omsp_frontend)                    0.00      10.69 r
-  frontend_0/U22/Y (AO221X1_RVT)                          0.25      10.94 r
-  frontend_0/mab[15] (omsp_frontend)                      0.00      10.94 r
-  U12/Y (AO22X1_RVT)                                      0.15      11.09 r
-  pmem_addr[14] (out)                                     0.00      11.09 r
-  data arrival time                                                 11.09
+                                                          0.00      10.99 f
+  execution_unit_0/alu_0/U40/Y (AO222X1_RVT)              0.16      11.14 f
+  execution_unit_0/alu_0/U210/Y (OR2X1_RVT)               0.14      11.28 f
+  execution_unit_0/alu_0/U55/Y (AO221X1_RVT)              0.22      11.51 f
+  execution_unit_0/alu_0/U103/Y (AO21X1_RVT)              0.15      11.66 f
+  execution_unit_0/alu_0/alu_stat[0] (omsp_alu)           0.00      11.66 f
+  execution_unit_0/register_file_0/alu_stat[0] (omsp_register_file)
+                                                          0.00      11.66 f
+  execution_unit_0/register_file_0/U645/Y (OA221X1_RVT)
+                                                          0.17      11.83 f
+  execution_unit_0/register_file_0/r2_reg_0_/D (DFFASRX1_RVT)
+                                                          0.00      11.83 f
+  data arrival time                                                 11.83
+
+  clock mclk (rise edge)                                 12.00      12.00
+  clock network delay (ideal)                             0.00      12.00
+  execution_unit_0/register_file_0/r2_reg_0_/CLK (DFFASRX1_RVT)
+                                                          0.00      12.00 r
+  library setup time                                     -0.16      11.84
+  data required time                                                11.84
   --------------------------------------------------------------------------
-  (Path is unconstrained)
+  data required time                                                11.84
+  data arrival time                                                -11.83
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
 
 
 1
