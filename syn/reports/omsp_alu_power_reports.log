@@ -7,7 +7,7 @@ Report : power
         -analysis_effort low
 Design : omsp_alu
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 00:17:39 2026
+Date   : Tue Jun  2 14:46:49 2026
 ****************************************
 
 
@@ -22,15 +22,17 @@ Wire Load Model Mode: enclosed
 Design        Wire Load Model            Library
 ------------------------------------------------
 omsp_alu               8000              saed32rvt_ss0p75v125c
-omsp_alu_DP_OP_72_126_7159_0
+omsp_alu_DP_OP_77_125_7159_0
                        ForQA             saed32rvt_ss0p75v125c
-omsp_alu_DP_OP_71_125_7159_0
+omsp_alu_DP_OP_76_124_7159_0
                        ForQA             saed32rvt_ss0p75v125c
-omsp_alu_DP_OP_69_123_7159_0
+omsp_alu_DP_OP_74_122_7159_0
                        ForQA             saed32rvt_ss0p75v125c
-omsp_alu_DP_OP_68_122_3245_0
+omsp_alu_DP_OP_77_126_9670_0
                        ForQA             saed32rvt_ss0p75v125c
-omsp_alu_DP_OP_70_124_7159_1
+omsp_alu_DP_OP_78_127_5688_0
+                       8000              saed32rvt_ss0p75v125c
+omsp_alu_DP_OP_75_123_7159_1
                        ForQA             saed32rvt_ss0p75v125c
 
 
@@ -47,15 +49,17 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-omsp_alu                                  3.250    9.049 2.21e+07   34.439 100.0
-  DP_OP_70_124_7159 (omsp_alu_DP_OP_70_124_7159_1)
-                                          0.454    1.138 1.81e+06    3.403   9.9
-  DP_OP_68_122_3245 (omsp_alu_DP_OP_68_122_3245_0)
-                                          0.163    0.804 2.84e+06    3.809  11.1
-  DP_OP_69_123_7159 (omsp_alu_DP_OP_69_123_7159_0)
-                                          0.289    0.713 7.96e+05    1.798   5.2
-  DP_OP_71_125_7159 (omsp_alu_DP_OP_71_125_7159_0)
-                                          0.266    0.696 7.92e+05    1.754   5.1
-  DP_OP_72_126_7159 (omsp_alu_DP_OP_72_126_7159_0)
-                                          0.272    0.709 7.89e+05    1.770   5.1
+omsp_alu                                  7.294   22.082 3.91e+07   68.479 100.0
+  DP_OP_75_123_7159 (omsp_alu_DP_OP_75_123_7159_1)
+                                          0.449    1.141 1.83e+06    3.415   5.0
+  DP_OP_78_127_5688 (omsp_alu_DP_OP_78_127_5688_0)
+                                          3.777   12.475 1.47e+07   30.977  45.2
+  DP_OP_77_126_9670 (omsp_alu_DP_OP_77_126_9670_0)
+                                          0.298    1.055 3.25e+06    4.602   6.7
+  DP_OP_74_122_7159 (omsp_alu_DP_OP_74_122_7159_0)
+                                          0.289    0.713 7.96e+05    1.798   2.6
+  DP_OP_76_124_7159 (omsp_alu_DP_OP_76_124_7159_0)
+                                          0.270    0.709 7.93e+05    1.773   2.6
+  DP_OP_77_125_7159 (omsp_alu_DP_OP_77_125_7159_0)
+                                          0.272    0.713 7.90e+05    1.775   2.6
 1

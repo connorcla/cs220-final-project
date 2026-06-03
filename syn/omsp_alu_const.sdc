@@ -1,6 +1,6 @@
 ###################################################################
 
-# Created by write_sdc on Tue May 5 00:17:38 2026
+# Created by write_sdc on Tue Jun 2 14:46:49 2026
 
 ###################################################################
 set sdc_version 2.1
@@ -61,6 +61,8 @@ set_input_delay -clock v_clk  -max 0.2  [get_ports {op_dst[3]}]
 set_input_delay -clock v_clk  -max 0.2  [get_ports {op_dst[2]}]
 set_input_delay -clock v_clk  -max 0.2  [get_ports {op_dst[1]}]
 set_input_delay -clock v_clk  -max 0.2  [get_ports {op_dst[0]}]
+set_input_delay -clock v_clk  -max 0.2  [get_ports {inst_alu[13]}]
+set_input_delay -clock v_clk  -max 0.2  [get_ports {inst_alu[12]}]
 set_input_delay -clock v_clk  -max 0.2  [get_ports {inst_alu[11]}]
 set_input_delay -clock v_clk  -max 0.2  [get_ports {inst_alu[10]}]
 set_input_delay -clock v_clk  -max 0.2  [get_ports {inst_alu[9]}]
@@ -98,6 +100,10 @@ set_output_delay -clock v_clk  -max 0.2  [get_ports {alu_stat[3]}]
 set_output_delay -clock v_clk  -max 0.2  [get_ports {alu_stat[2]}]
 set_output_delay -clock v_clk  -max 0.2  [get_ports {alu_stat[1]}]
 set_output_delay -clock v_clk  -max 0.2  [get_ports {alu_stat[0]}]
+set_input_transition -max 0.1  [get_ports {inst_alu[13]}]
+set_input_transition -min 0.1  [get_ports {inst_alu[13]}]
+set_input_transition -max 0.1  [get_ports {inst_alu[12]}]
+set_input_transition -min 0.1  [get_ports {inst_alu[12]}]
 set_input_transition -max 0.1  [get_ports {inst_alu[11]}]
 set_input_transition -min 0.1  [get_ports {inst_alu[11]}]
 set_input_transition -max 0.1  [get_ports {inst_alu[10]}]

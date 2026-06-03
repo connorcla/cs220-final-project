@@ -4,12 +4,9 @@ psDaiDir                           	simv.daidir
 destPath                           	csrc/
 fSharedMasterElab                  	0
 fHsimPCSharedLibSpecified          	0
-hsMainFileCount                    	1
-hsMtmSpecArr_i                     	3
-hsMainFileSuffixArr_i              	csdf1.MAIN
-hsAuxFileSuffixArr_i               	csdf1.AUX
-hsOriginalSdfFileArr_i             	../syn/omsp_min_exec_const.sdf
-fHsMultiSdfDbg                     	0
+hsMainFileCount                    	0
+hsMainFileName                     	dummy
+hsAuxFileName                      	dummy
 partitionName                      	6	MASTER
 hsimInitRegValue                   	3
 fNSParam                           	256
@@ -33,7 +30,7 @@ fHsimTaskFuncXmrsDbg               	0
 fHsimAllTaskFuncXmrs               	0
 fHsimDoXmrProcessing               	1
 fNoMergeDelays                     	0
-uGlblTimeUnit                      	4
+uGlblTimeUnit                      	5
 fHsimAllMtm                        	0
 fSimprofileNew                     	0
 fFsimFlag                          	0
@@ -66,7 +63,7 @@ fCcExConfigFileFlag                	0
 fFsimForcelist                     	0
 fNewCBSemantics                    	1
 fSchedAtEnd                        	0
-fSpecifyInDesign                   	1
+fSpecifyInDesign                   	0
 fSvNettRealResType                 	0
 fFgpSched0User                     	0
 fFgpDynelabFix                     	1
@@ -106,7 +103,7 @@ fHsimICDelayCCN                    	0
 fHsimICDiag                        	0
 fHsimMsidSched                     	0
 fHsimNewCSDF                       	1
-vcselabIncrMode                    	1
+vcselabIncrMode                    	2
 fHsimMPPackDelay                   	0
 fHsimMultDriver                    	0
 fHsimPart                          	0
@@ -229,7 +226,7 @@ fHsimPcCbOpt                       	1
 fHsimAmsTunneling                  	0
 fHsimAmsTunnelingDiag              	0
 fHsimAmsNewDrs                     	0
-fHsimScUpwardXmrNoSplit            	0
+fHsimScUpwardXmrNoSplit            	1
 fHsimOrigNdbViewOnly               	0
 fHsimVcsInterface                  	1
 fHsimVcsInterfaceAlias             	0
@@ -484,7 +481,7 @@ fHsimMergeOnly                     	0
 fHsimStitchNew                     	0
 fFrcRelCbk                         	1
 fPulserrWarn                       	1
-hsMtmSpec                          	3
+hsMtmSpec                          	0
 fprofile                           	0
 fPreserveDaidir                    	1
 fElabGraphLevelize                 	0
@@ -589,7 +586,7 @@ fHsimOptMPDelayLoad                	0
 fHsimTransMPDelay                  	1
 fLargeSizeSdfTest                  	0
 fAllMtm                            	0
-fHsimDelayGateMbme                 	1
+fHsimDelayGateMbme                 	0
 fHsimDelayGateMbmeOld              	0
 fHsimNdb                           	1
 fHsimNdbDebug                      	0
@@ -669,8 +666,8 @@ dGblPeR                            	1.000000
 fNewdaidirpath                     	0
 fHsimDelayMbmeCheck                	4
 fHsimMdbPartInputLimit             	1
-fHsimSdfData                       	1
-fHsimDesignHasSdfAnnotation        	1
+fHsimSdfData                       	0
+fHsimDesignHasSdfAnnotation        	0
 fHsimDesignUsesParallelVcs         	0
 fHsimCMEnabled                     	0
 fHsimNotDelRefData                 	0

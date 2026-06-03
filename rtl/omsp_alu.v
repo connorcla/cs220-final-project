@@ -76,10 +76,10 @@ output        [3:0] alu_stat_wr;   // ALU Status write {V,N,Z,C}
 //=========
 input               dbg_halt_st;   // Halt/Run status from CPU
 input               exec_cycle;    // Instruction execution cycle
-input        [11:0] inst_alu;      // ALU control signals
+input        [13:0] inst_alu;      // ALU control signals               MODIFIED
 input               inst_bw;       // Decoded Inst: byte width
 input         [7:0] inst_jmp;      // Decoded Inst: Conditional jump
-input         [7:0] inst_so;       // Single-operand arithmetic
+input         [9:0] inst_so;       // Single-operand arithmetic
 input        [15:0] op_dst;        // Destination operand
 input        [15:0] op_src;        // Source operand
 input         [3:0] status;        // R2 Status {V,N,Z,C}
@@ -120,6 +120,8 @@ endfunction
 //   PUSH        src     SP-2->SP, src->@SP                       -  -  -  -
 //   CALL        dst     SP-2->SP, PC+2->@SP, dst->PC             -  -  -  -
 //   RETI                TOS->SR, SP+2->SP, TOS->PC, SP+2->SP     *  *  *  *
+//   MUL         src     R4 * src -> R4                           0  *  *  0
+//   MAC         src     (R4 * src) + R4 -> R4                    0  *  *  0
 //
 //-----------------------------------------------------------------------------
 // TWO-OPERAND ARITHMETIC:
@@ -201,13 +203,33 @@ wire [16:0] alu_swpb       = {1'b0, op_src[7:0],op_src[15:8]};
 wire [16:0] alu_sxt        = {1'b0, {8{op_src[7]}},op_src[7:0]};
 
 
+////////////////////////////
+// MUL and MAC Optimization
+////////////////////////////
+wire        alu_mul_en = exec_cycle & inst_alu[`ALU_MUL];
+wire        alu_mac_en = exec_cycle & inst_alu[`ALU_MAC];
+
+// 16x16 alu multiplication
+wire [31:0] mul_product = op_src * op_dst;
+
+// Accumulate with prev dest
+wire [31:0] mac_result = mul_product + {16'h0000, op_dst};
+
+//lower selection bus
+wire [16:0] alu_mul_out = {1'b0, mul_product[15:0]};
+wire [16:0] alu_mac_out = {1'b0, mac_result[15:0]};
+
+////////////////////////////
+
 // Combine short paths toghether to simplify final ALU mux
 wire        alu_short_thro = ~(inst_alu[`ALU_AND]   |
                                inst_alu[`ALU_OR]    |
                                inst_alu[`ALU_XOR]   |
                                inst_alu[`ALU_SHIFT] |
                                inst_so[`SWPB]       |
-                               inst_so[`SXT]);
+                               inst_so[`SXT]        |
+		               alu_mul_en           |
+		               alu_mac_en);
 
 wire [16:0] alu_short      = ({17{inst_alu[`ALU_AND]}}   & alu_and)   |
                              ({17{inst_alu[`ALU_OR]}}    & alu_or)    |
@@ -221,7 +243,9 @@ wire [16:0] alu_short      = ({17{inst_alu[`ALU_AND]}}   & alu_and)   |
 // ALU output mux
 wire [16:0] alu_out_nxt    = (inst_so[`IRQ] | dbg_halt_st |
                               inst_alu[`ALU_ADD]) ? alu_add_inc :
-                              inst_alu[`ALU_DADD] ? alu_dadd    : alu_short;
+                              inst_alu[`ALU_DADD] ? alu_dadd    : 
+			      alu_mul_en          ? alu_mul_out :             // For MUL
+			      alu_mac_en          ? alu_mac_out : alu_short;  // For MAC
 
 assign      alu_out        =  alu_out_nxt[15:0];
 assign      alu_out_add    =  alu_add[15:0];
@@ -243,9 +267,10 @@ wire    N           = inst_bw ?  alu_out[7]       : alu_out[15];
 wire    Z           = inst_bw ? (alu_out[7:0]==0) : (alu_out==0);
 wire    C           = inst_bw ?  alu_out[8]       : alu_out_nxt[16];
 
-assign  alu_stat    = inst_alu[`ALU_SHIFT]  ? {1'b0, N,Z,op_src_in[0]} :
-                      inst_alu[`ALU_STAT_7] ? {1'b0, N,Z,~Z}           :
-                      inst_alu[`ALU_XOR]    ? {V_xor,N,Z,~Z}           : {V,N,Z,C};
+assign  alu_stat    = (alu_mul_en | alu_mac_en) ? {1'b0, N, Z, 1'b0}       :   // For MUL and MAC Flag setting 
+	              inst_alu[`ALU_SHIFT]      ? {1'b0, N,Z,op_src_in[0]} :
+                      inst_alu[`ALU_STAT_7]     ? {1'b0, N,Z,~Z}           :
+                      inst_alu[`ALU_XOR]        ? {V_xor,N,Z,~Z}           : {V,N,Z,C};
 
 assign  alu_stat_wr = (inst_alu[`ALU_STAT_F] & exec_cycle) ? 4'b1111 : 4'b0000;
 

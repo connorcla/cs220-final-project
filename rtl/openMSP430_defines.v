@@ -763,6 +763,8 @@
 `define ALU_STAT_F    9
 `define ALU_SHIFT    10
 `define EXEC_NO_WR   11
+`define ALU_MUL      12
+`define ALU_MAC      13
 
 // Debug interface
 `define DBG_UART_WR   18

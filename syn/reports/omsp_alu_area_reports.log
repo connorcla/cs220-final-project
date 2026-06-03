@@ -3,30 +3,30 @@
 Report : area
 Design : omsp_alu
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 00:17:38 2026
+Date   : Tue Jun  2 14:46:49 2026
 ****************************************
 
 Library(s) Used:
 
     saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
 
-Number of ports:                          247
-Number of nets:                           804
-Number of cells:                          567
-Number of combinational cells:            560
+Number of ports:                          330
+Number of nets:                          1321
+Number of cells:                          897
+Number of combinational cells:            889
 Number of sequential cells:                 0
 Number of macros/black boxes:               0
-Number of buf/inv:                         49
-Number of references:                      20
+Number of buf/inv:                         56
+Number of references:                      21
 
-Combinational area:               1359.416286
-Buf/Inv area:                       65.060864
+Combinational area:               2362.268503
+Buf/Inv area:                       74.210049
 Noncombinational area:               0.000000
 Macro/Black Box area:                0.000000
-Net Interconnect area:             248.822301
+Net Interconnect area:             476.754281
 
-Total cell area:                  1359.416286
-Total area:                       1608.238587
+Total cell area:                  2362.268503
+Total area:                       2839.022783
 
 Hierarchical area distribution
 ------------------------------
@@ -36,13 +36,14 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
                                   Total      Total    national   national   boxes   Design
 --------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------
-omsp_alu                          1359.4163    100.0   955.8356     0.0000  0.0000  omsp_alu
-DP_OP_68_122_3245                  131.9007      9.7   131.9007     0.0000  0.0000  omsp_alu_DP_OP_68_122_3245_0
-DP_OP_69_123_7159                   45.7459      3.4    45.7459     0.0000  0.0000  omsp_alu_DP_OP_69_123_7159_0
-DP_OP_70_124_7159                  134.4422      9.9   134.4422     0.0000  0.0000  omsp_alu_DP_OP_70_124_7159_1
-DP_OP_71_125_7159                   45.7459      3.4    45.7459     0.0000  0.0000  omsp_alu_DP_OP_71_125_7159_0
-DP_OP_72_126_7159                   45.7459      3.4    45.7459     0.0000  0.0000  omsp_alu_DP_OP_72_126_7159_0
+omsp_alu                          2362.2685    100.0  1066.6424     0.0000  0.0000  omsp_alu
+DP_OP_74_122_7159                   45.7459      1.9    45.7459     0.0000  0.0000  omsp_alu_DP_OP_74_122_7159_0
+DP_OP_75_123_7159                  134.6963      5.7   134.6963     0.0000  0.0000  omsp_alu_DP_OP_75_123_7159_1
+DP_OP_76_124_7159                   45.7459      1.9    45.7459     0.0000  0.0000  omsp_alu_DP_OP_76_124_7159_0
+DP_OP_77_125_7159                   45.7459      1.9    45.7459     0.0000  0.0000  omsp_alu_DP_OP_77_125_7159_0
+DP_OP_77_126_9670                  197.4699      8.4   197.4699     0.0000  0.0000  omsp_alu_DP_OP_77_126_9670_0
+DP_OP_78_127_5688                  826.2221     35.0   826.2221     0.0000  0.0000  omsp_alu_DP_OP_78_127_5688_0
 --------------------------------  ---------  -------  ---------  ---------  ------  ----------------------------
-Total                                                 1359.4163     0.0000  0.0000
+Total                                                 2362.2685     0.0000  0.0000
 
 1

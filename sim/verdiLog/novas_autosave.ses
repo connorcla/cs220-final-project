@@ -25,9 +25,9 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb
-syncTime = 0
-viewport = 2560 427 1908 1175 0 0 486 1906
+postSimFile = /home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb
+syncTime = 103236
+viewport = 0 0 2548 1359 0 0 578 2546
 interactiveMode = False
 viewType = Source
 simulatorMode = False
@@ -51,11 +51,11 @@ SourceVerticalScrollLines = 5
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [nMemoryManager]
-WaveformFile = /home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb
+WaveformFile = /home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 11 1908 513 143 65
+viewPort = 0 11 2548 605 143 65
 primaryWindow = TRUE
 SessionFile = /home/cegrad/cclab002/cs220-final-project/sim/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
