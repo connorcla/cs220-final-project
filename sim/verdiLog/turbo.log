@@ -1,3 +1,3 @@
 Command Line: /usr/local/synopsys/verdi/W-2024.09-SP2-5/platform/LINUXAMD64/bin/Novas
 uname(Linux bender.engr.ucr.edu 4.18.0-553.124.1.el8_10.x86_64 #1 SMP Tue May 12 16:44:08 UTC 2026 x86_64)
-au time 391.599111 8.200674 1.575348 delta 331567104 331567104 total 1369391104 1369391104
+au time 114.971652 6.937218 0.732094 delta 334827520 334827520 total 1372651520 1372651520

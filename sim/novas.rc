@@ -234,7 +234,7 @@ FindBarVisible =
 ColorThemeModern = bright
 version = Verdi_W-2024.09-SP2-5
 recent_commands_Verdi = hbLoadFsdbFile,hbCloseFsdbFile,srcShowFile,srcCompile
-recent_commands_nWave = zoomOut,getSignal,zoomAll,getAllSignals,zoomIn
+recent_commands_nWave = zoomIn,getSignal,zoomOut,zoomAll,getAllSignals
 prevColorThemeModern = bright
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -684,24 +684,24 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Block's First Line"
 width = 120
 visualIndex = 1
 isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
@@ -719,9 +719,9 @@ isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Message"
-width = 2000
-visualIndex = 5
+name = "Severity"
+width = 60
+visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
@@ -968,8 +968,8 @@ printBasic = 1 0 0 TRUE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
-RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb\""
+RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb\""
+RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
 RecentFile3 = "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
 RecentFile4 = "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\""
 open_file_time_range = FALSE

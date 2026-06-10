@@ -6,13 +6,13 @@ Report : timing
         -max_paths 1
 Design : omsp_min_exec
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 22:51:25 2026
+Date   : Tue Jun  2 23:16:17 2026
 ****************************************
 
 Operating Conditions: ss0p75v125c   Library: saed32rvt_ss0p75v125c
 Wire Load Model Mode: enclosed
 
-  Startpoint: pmem_dout[11]
+  Startpoint: pmem_dout[9]
               (input port clocked by mclk)
   Endpoint: pmem_addr[14]
             (output port clocked by mclk)
@@ -22,7 +22,7 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   omsp_min_exec      16000                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_263_123_7087_2
+  omsp_min_exec_DP_OP_268_122_7087_0
                      ForQA                 saed32rvt_ss0p75v125c
 
   Point                                                   Incr       Path
@@ -30,66 +30,69 @@ Wire Load Model Mode: enclosed
   clock mclk (rise edge)                                  0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   input external delay                                    2.25       2.25 r
-  pmem_dout[11] (in)                                      0.00       2.25 r
-  U63/Y (AO22X1_RVT)                                      0.18       2.43 r
-  U1177/Y (AO222X1_RVT)                                   0.24       2.67 r
-  U1331/Y (AO22X1_RVT)                                    0.14       2.81 r
-  U1330/Y (OR2X1_RVT)                                     0.10       2.90 r
-  U291/Y (AO221X1_RVT)                                    0.16       3.07 r
-  U1267/Y (XNOR2X1_RVT)                                   0.25       3.32 r
-  U805/Y (INVX1_RVT)                                      0.09       3.41 f
-  DP_OP_263_123_7087/I1[3] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       3.41 f
-  DP_OP_263_123_7087/U83/SO (HADDX1_RVT)                  0.24       3.65 r
-  DP_OP_263_123_7087/U99/Y (NOR2X0_RVT)                   0.16       3.81 f
-  DP_OP_263_123_7087/U51/Y (OAI21X2_RVT)                  0.21       4.02 r
-  DP_OP_263_123_7087/U49/Y (AOI21X1_RVT)                  0.13       4.15 f
-  DP_OP_263_123_7087/U103/Y (AND2X1_RVT)                  0.11       4.25 f
-  DP_OP_263_123_7087/U102/Y (OR2X1_RVT)                   0.11       4.37 f
-  DP_OP_263_123_7087/U101/Y (INVX0_RVT)                   0.06       4.42 r
-  DP_OP_263_123_7087/U95/Y (OAI21X1_RVT)                  0.21       4.63 f
-  DP_OP_263_123_7087/U105/Y (AO21X1_RVT)                  0.18       4.81 f
-  DP_OP_263_123_7087/U104/Y (XNOR2X2_RVT)                 0.19       5.00 r
-  DP_OP_263_123_7087/O2[4] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       5.00 r
-  DP_OP_264_124_7087/I3 (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.00 r
-  DP_OP_264_124_7087/U31/Y (XNOR2X2_RVT)                  0.18       5.18 r
-  DP_OP_264_124_7087/O2[0] (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.18 r
-  U739/Y (AO222X2_RVT)                                    0.25       5.43 r
-  U1370/Y (AO22X1_RVT)                                    0.17       5.60 r
-  U1345/Y (AO21X1_RVT)                                    0.18       5.78 r
-  U1447/Y (INVX2_RVT)                                     0.04       5.83 f
-  U1347/Y (AND2X1_RVT)                                    0.11       5.94 f
-  C4042/Y (AND2X1_RVT)                                    0.10       6.04 f
-  C4045/Y (AND2X1_RVT)                                    0.10       6.14 f
-  C4048/Y (AND2X1_RVT)                                    0.10       6.24 f
-  U1363/Y (AND2X1_RVT)                                    0.09       6.33 f
-  U1362/Y (OR3X1_RVT)                                     0.13       6.46 f
-  U1326/Y (OA21X1_RVT)                                    0.13       6.60 f
-  U1325/Y (OR3X1_RVT)                                     0.13       6.73 f
-  U1160/Y (INVX0_RVT)                                     0.06       6.79 r
-  U1334/Y (OR2X1_RVT)                                     0.09       6.88 r
-  U1333/Y (OA21X1_RVT)                                    0.13       7.01 r
-  add_x_89_U15/C1 (HADDX1_RVT)                            0.13       7.14 r
-  add_x_89_U14/C1 (HADDX1_RVT)                            0.12       7.26 r
-  add_x_89_U13/C1 (HADDX1_RVT)                            0.12       7.38 r
-  add_x_89_U12/C1 (HADDX1_RVT)                            0.12       7.49 r
-  add_x_89_U11/C1 (HADDX1_RVT)                            0.12       7.61 r
-  add_x_89_U10/C1 (HADDX1_RVT)                            0.12       7.73 r
-  add_x_89_U9/C1 (HADDX1_RVT)                             0.12       7.85 r
-  add_x_89_U8/C1 (HADDX1_RVT)                             0.12       7.96 r
-  add_x_89_U7/C1 (HADDX1_RVT)                             0.12       8.08 r
-  add_x_89_U6/C1 (HADDX1_RVT)                             0.12       8.20 r
-  add_x_89_U5/C1 (HADDX1_RVT)                             0.12       8.32 r
-  add_x_89_U4/C1 (HADDX1_RVT)                             0.12       8.43 r
-  add_x_89_U3/C1 (HADDX1_RVT)                             0.12       8.55 r
-  add_x_89_U2/C1 (HADDX1_RVT)                             0.12       8.67 r
-  U1402/SO (HADDX1_RVT)                                   0.20       8.86 f
-  U1355/Y (AO21X1_RVT)                                    0.16       9.03 f
-  U1346/Y (AO22X1_RVT)                                    0.10       9.13 f
-  pmem_addr[14] (out)                                     0.00       9.13 f
+  pmem_dout[9] (in)                                       0.00       2.25 r
+  U57/Y (AO22X1_RVT)                                      0.18       2.43 r
+  U45/Y (AO222X1_RVT)                                     0.24       2.67 r
+  U299/Y (AO22X1_RVT)                                     0.15       2.82 r
+  U298/Y (AO221X1_RVT)                                    0.14       2.96 r
+  U297/Y (AO221X2_RVT)                                    0.22       3.18 r
+  U818/Y (INVX0_RVT)                                      0.08       3.26 f
+  U1294/Y (XNOR2X1_RVT)                                   0.28       3.54 r
+  DP_OP_268_122_7087/I1[1] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       3.54 r
+  DP_OP_268_122_7087/U37/CO (FADDX1_RVT)                  0.23       3.77 r
+  DP_OP_268_122_7087/U36/CO (FADDX1_RVT)                  0.19       3.95 r
+  DP_OP_268_122_7087/U35/S (FADDX1_RVT)                   0.31       4.26 f
+  DP_OP_268_122_7087/U44/Y (INVX1_RVT)                    0.07       4.33 r
+  DP_OP_268_122_7087/U47/Y (OA21X1_RVT)                   0.13       4.46 r
+  DP_OP_268_122_7087/O1 (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.46 r
+  I_912/Y (INVX1_RVT)                                     0.05       4.51 f
+  DP_OP_268_122_7087/I4[2] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.51 f
+  DP_OP_268_122_7087/U49/Y (AND2X1_RVT)                   0.11       4.62 f
+  DP_OP_268_122_7087/U48/Y (NAND2X0_RVT)                  0.11       4.74 r
+  DP_OP_268_122_7087/U3/CO (FADDX1_RVT)                   0.20       4.94 r
+  DP_OP_268_122_7087/U46/Y (XOR3X1_RVT)                   0.17       5.11 f
+  DP_OP_268_122_7087/O2[4] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       5.11 f
+  DP_OP_269_123_7087/I3 (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.11 f
+  DP_OP_269_123_7087/U31/Y (XNOR2X2_RVT)                  0.19       5.30 r
+  DP_OP_269_123_7087/O2[0] (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.30 r
+  U754/Y (AO221X2_RVT)                                    0.26       5.55 r
+  U1479/Y (AO22X1_RVT)                                    0.16       5.72 r
+  U1447/Y (AO21X1_RVT)                                    0.17       5.89 r
+  U1191/Y (INVX0_RVT)                                     0.06       5.95 f
+  U1450/Y (AND2X1_RVT)                                    0.11       6.06 f
+  C4124/Y (AND2X1_RVT)                                    0.10       6.17 f
+  C4127/Y (AND2X1_RVT)                                    0.10       6.27 f
+  C4130/Y (AND2X1_RVT)                                    0.10       6.37 f
+  U1470/Y (AND2X1_RVT)                                    0.09       6.46 f
+  U1469/Y (OR3X1_RVT)                                     0.13       6.59 f
+  U408/Y (OA22X1_RVT)                                     0.13       6.73 f
+  U1454/Y (OR2X1_RVT)                                     0.11       6.84 f
+  U1412/Y (NAND2X0_RVT)                                   0.07       6.91 r
+  U1439/Y (OA21X1_RVT)                                    0.17       7.08 r
+  U1402/Y (AND2X1_RVT)                                    0.12       7.20 r
+  U1389/Y (AND2X1_RVT)                                    0.10       7.30 r
+  add_x_89_U13/C1 (HADDX1_RVT)                            0.13       7.43 r
+  U1386/Y (AND2X1_RVT)                                    0.11       7.53 r
+  add_x_89_U11/C1 (HADDX1_RVT)                            0.13       7.66 r
+  U1384/Y (AND2X1_RVT)                                    0.11       7.76 r
+  add_x_89_U9/C1 (HADDX1_RVT)                             0.11       7.88 r
+  add_x_89_U8/C1 (HADDX2_RVT)                             0.13       8.00 r
+  U1408/Y (AND2X1_RVT)                                    0.10       8.11 r
+  add_x_89_U6/C1 (HADDX1_RVT)                             0.13       8.23 r
+  U1406/Y (AND2X1_RVT)                                    0.11       8.34 r
+  U1196/C1 (HADDX1_RVT)                                   0.13       8.46 r
+  U1404/Y (AND2X1_RVT)                                    0.11       8.57 r
+  U1197/C1 (HADDX1_RVT)                                   0.12       8.69 r
+  U1410/Y (XNOR2X2_RVT)                                   0.17       8.86 r
+  U1461/Y (AO21X1_RVT)                                    0.15       9.01 r
+  U1448/Y (AO22X1_RVT)                                    0.11       9.13 r
+  pmem_addr[14] (out)                                     0.00       9.13 r
   data arrival time                                                  9.13
 
   clock mclk (rise edge)                                 10.00      10.00
@@ -104,7 +107,7 @@ Wire Load Model Mode: enclosed
   slack (MET)                                                        0.03
 
 
-  Startpoint: pmem_dout[11]
+  Startpoint: pmem_dout[9]
               (input port clocked by mclk)
   Endpoint: r2_reg_0_ (rising edge-triggered flip-flop clocked by mclk)
   Path Group: REGIN
@@ -113,13 +116,13 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   omsp_min_exec      16000                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_263_123_7087_2
+  omsp_min_exec_DP_OP_268_122_7087_0
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_264_124_7087_2
+  omsp_min_exec_DP_OP_269_123_7087_2
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_265_125_7087_1
+  omsp_min_exec_DP_OP_270_124_7087_1
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_266_126_7087_1
+  omsp_min_exec_DP_OP_271_125_7087_1
                      ForQA                 saed32rvt_ss0p75v125c
 
   Point                                                   Incr       Path
@@ -127,86 +130,79 @@ Wire Load Model Mode: enclosed
   clock mclk (rise edge)                                  0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   input external delay                                    2.25       2.25 r
-  pmem_dout[11] (in)                                      0.00       2.25 r
-  U63/Y (AO22X1_RVT)                                      0.18       2.43 r
-  U1177/Y (AO222X1_RVT)                                   0.24       2.67 r
-  U1331/Y (AO22X1_RVT)                                    0.14       2.81 r
-  U1330/Y (OR2X1_RVT)                                     0.10       2.90 r
-  U291/Y (AO221X1_RVT)                                    0.16       3.07 r
-  U1267/Y (XNOR2X1_RVT)                                   0.25       3.32 r
-  U805/Y (INVX1_RVT)                                      0.09       3.41 f
-  DP_OP_263_123_7087/I1[3] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       3.41 f
-  DP_OP_263_123_7087/U83/SO (HADDX1_RVT)                  0.24       3.65 r
-  DP_OP_263_123_7087/U99/Y (NOR2X0_RVT)                   0.16       3.81 f
-  DP_OP_263_123_7087/U51/Y (OAI21X2_RVT)                  0.21       4.02 r
-  DP_OP_263_123_7087/U49/Y (AOI21X1_RVT)                  0.13       4.15 f
-  DP_OP_263_123_7087/U103/Y (AND2X1_RVT)                  0.11       4.25 f
-  DP_OP_263_123_7087/U102/Y (OR2X1_RVT)                   0.11       4.37 f
-  DP_OP_263_123_7087/U101/Y (INVX0_RVT)                   0.06       4.42 r
-  DP_OP_263_123_7087/U95/Y (OAI21X1_RVT)                  0.21       4.63 f
-  DP_OP_263_123_7087/U105/Y (AO21X1_RVT)                  0.18       4.81 f
-  DP_OP_263_123_7087/U104/Y (XNOR2X2_RVT)                 0.19       5.00 f
-  DP_OP_263_123_7087/O2[4] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       5.00 f
-  DP_OP_264_124_7087/I3 (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.00 f
-  DP_OP_264_124_7087/U51/Y (AOI21X1_RVT)                  0.21       5.21 r
-  DP_OP_264_124_7087/O1 (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.21 r
-  I_1012/Y (INVX0_RVT)                                    0.05       5.26 f
-  DP_OP_264_124_7087/I4[2] (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.26 f
-  DP_OP_264_124_7087/U140/Y (AND2X1_RVT)                  0.12       5.38 f
-  DP_OP_264_124_7087/U131/Y (OAI21X1_RVT)                 0.24       5.62 r
-  DP_OP_264_124_7087/U139/Y (AO21X1_RVT)                  0.15       5.77 r
-  DP_OP_264_124_7087/U122/Y (XNOR2X1_RVT)                 0.23       6.00 r
-  DP_OP_264_124_7087/O2[4] (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       6.00 r
-  DP_OP_265_125_7087/I3 (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.00 r
-  DP_OP_265_125_7087/U42/Y (AOI21X1_RVT)                  0.19       6.19 f
-  DP_OP_265_125_7087/O1 (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.19 f
-  I_1113/Y (INVX0_RVT)                                    0.07       6.26 r
-  DP_OP_265_125_7087/I4[1] (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.26 r
-  DP_OP_265_125_7087/U135/Y (NOR2X0_RVT)                  0.16       6.42 f
-  DP_OP_265_125_7087/U9/Y (OAI21X1_RVT)                   0.23       6.65 r
-  DP_OP_265_125_7087/U145/Y (AO21X1_RVT)                  0.10       6.75 r
-  DP_OP_265_125_7087/U138/Y (XNOR2X1_RVT)                 0.23       6.98 r
-  DP_OP_265_125_7087/O2[4] (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.98 r
-  DP_OP_266_126_7087/I3 (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       6.98 r
-  DP_OP_266_126_7087/U42/Y (AOI21X1_RVT)                  0.19       7.17 f
-  DP_OP_266_126_7087/O1 (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       7.17 f
-  I_1212/Y (INVX1_RVT)                                    0.06       7.22 r
-  DP_OP_266_126_7087/I4[2] (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       7.22 r
-  DP_OP_266_126_7087/U139/Y (OR2X1_RVT)                   0.10       7.33 r
-  DP_OP_266_126_7087/U135/Y (OAI21X1_RVT)                 0.22       7.55 f
-  DP_OP_266_126_7087/U15/Y (AOI21X1_RVT)                  0.22       7.77 r
-  DP_OP_266_126_7087/U137/Y (XOR2X1_RVT)                  0.22       7.99 f
-  DP_OP_266_126_7087/O2[3] (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       7.99 f
-  U751/Y (AO222X1_RVT)                                    0.16       8.15 f
-  U1341/Y (OR3X1_RVT)                                     0.19       8.34 f
-  C293/Y (OR2X1_RVT)                                      0.10       8.44 f
-  U1335/Y (OR3X1_RVT)                                     0.12       8.56 f
-  U1366/Y (OR2X1_RVT)                                     0.10       8.67 f
-  U1337/Y (OR2X1_RVT)                                     0.10       8.76 f
-  C301/Y (OR2X1_RVT)                                      0.10       8.86 f
-  U1339/Y (NOR2X0_RVT)                                    0.14       9.00 r
-  U1365/Y (AO22X1_RVT)                                    0.12       9.12 r
-  U1138/Y (INVX0_RVT)                                     0.05       9.17 f
-  U1200/Y (AOI22X1_RVT)                                   0.14       9.31 r
-  U1361/Y (NAND3X0_RVT)                                   0.07       9.38 f
-  U1359/Y (AO21X1_RVT)                                    0.16       9.54 f
-  U1348/Y (AND2X1_RVT)                                    0.10       9.64 f
-  r2_reg_0_/D (DFFARX1_RVT)                               0.00       9.64 f
-  data arrival time                                                  9.64
+  pmem_dout[9] (in)                                       0.00       2.25 r
+  U57/Y (AO22X1_RVT)                                      0.18       2.43 r
+  U45/Y (AO222X1_RVT)                                     0.24       2.67 r
+  U299/Y (AO22X1_RVT)                                     0.15       2.82 r
+  U298/Y (AO221X1_RVT)                                    0.14       2.96 r
+  U297/Y (AO221X2_RVT)                                    0.22       3.18 r
+  U818/Y (INVX0_RVT)                                      0.08       3.26 f
+  U1294/Y (XNOR2X1_RVT)                                   0.28       3.54 r
+  DP_OP_268_122_7087/I1[1] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       3.54 r
+  DP_OP_268_122_7087/U37/CO (FADDX1_RVT)                  0.23       3.77 r
+  DP_OP_268_122_7087/U36/CO (FADDX1_RVT)                  0.19       3.95 r
+  DP_OP_268_122_7087/U35/S (FADDX1_RVT)                   0.31       4.26 f
+  DP_OP_268_122_7087/U44/Y (INVX1_RVT)                    0.07       4.33 r
+  DP_OP_268_122_7087/U47/Y (OA21X1_RVT)                   0.13       4.46 r
+  DP_OP_268_122_7087/O1 (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.46 r
+  I_912/Y (INVX1_RVT)                                     0.05       4.51 f
+  DP_OP_268_122_7087/I4[2] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.51 f
+  DP_OP_268_122_7087/U49/Y (AND2X1_RVT)                   0.11       4.62 f
+  DP_OP_268_122_7087/U48/Y (NAND2X0_RVT)                  0.11       4.74 r
+  DP_OP_268_122_7087/U3/CO (FADDX1_RVT)                   0.20       4.94 r
+  DP_OP_268_122_7087/U46/Y (XOR3X1_RVT)                   0.17       5.11 f
+  DP_OP_268_122_7087/O2[4] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       5.11 f
+  DP_OP_269_123_7087/I3 (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.11 f
+  DP_OP_269_123_7087/U51/Y (AOI21X1_RVT)                  0.22       5.33 r
+  DP_OP_269_123_7087/O1 (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.33 r
+  U1182/Y (INVX0_RVT)                                     0.06       5.39 f
+  DP_OP_269_123_7087/I4[2] (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.39 f
+  DP_OP_269_123_7087/U142/Y (AND2X1_RVT)                  0.12       5.51 f
+  DP_OP_269_123_7087/U143/Y (OA21X1_RVT)                  0.16       5.68 f
+  DP_OP_269_123_7087/U137/Y (INVX0_RVT)                   0.07       5.74 r
+  DP_OP_269_123_7087/U141/Y (AO21X1_RVT)                  0.15       5.90 r
+  DP_OP_269_123_7087/U122/Y (XNOR2X1_RVT)                 0.22       6.12 f
+  DP_OP_269_123_7087/O2[4] (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       6.12 f
+  DP_OP_270_124_7087/I3 (omsp_min_exec_DP_OP_270_124_7087_1)
+                                                          0.00       6.12 f
+  DP_OP_270_124_7087/U42/Y (AOI21X1_RVT)                  0.22       6.33 r
+  DP_OP_270_124_7087/U143/Y (NOR2X0_RVT)                  0.14       6.47 f
+  DP_OP_270_124_7087/U140/Y (OAI21X1_RVT)                 0.26       6.73 r
+  DP_OP_270_124_7087/U145/Y (AO21X1_RVT)                  0.16       6.89 r
+  DP_OP_270_124_7087/U138/Y (XNOR2X1_RVT)                 0.23       7.12 r
+  DP_OP_270_124_7087/O2[4] (omsp_min_exec_DP_OP_270_124_7087_1)
+                                                          0.00       7.12 r
+  DP_OP_271_125_7087/I3 (omsp_min_exec_DP_OP_271_125_7087_1)
+                                                          0.00       7.12 r
+  DP_OP_271_125_7087/U42/Y (AOI21X1_RVT)                  0.19       7.31 f
+  DP_OP_271_125_7087/U27/Y (NOR2X0_RVT)                   0.15       7.46 r
+  DP_OP_271_125_7087/U136/Y (OAI21X1_RVT)                 0.23       7.69 f
+  DP_OP_271_125_7087/U131/Y (INVX0_RVT)                   0.07       7.77 r
+  DP_OP_271_125_7087/U140/Y (OA21X1_RVT)                  0.14       7.91 r
+  DP_OP_271_125_7087/U6/Y (XOR2X1_RVT)                    0.23       8.14 f
+  DP_OP_271_125_7087/O2[3] (omsp_min_exec_DP_OP_271_125_7087_1)
+                                                          0.00       8.14 f
+  U1475/Y (AO21X1_RVT)                                    0.19       8.33 f
+  U1421/Y (OR3X1_RVT)                                     0.18       8.51 f
+  U1441/Y (OR3X1_RVT)                                     0.13       8.63 f
+  U1472/Y (OR2X1_RVT)                                     0.10       8.74 f
+  U1443/Y (OR2X1_RVT)                                     0.10       8.83 f
+  U1426/Y (NOR2X0_RVT)                                    0.14       8.97 r
+  U1468/Y (AOI22X1_RVT)                                   0.16       9.13 f
+  U1284/Y (AOI22X1_RVT)                                   0.15       9.27 r
+  U1467/Y (NAND3X0_RVT)                                   0.07       9.34 f
+  U1465/Y (AO21X1_RVT)                                    0.16       9.50 f
+  U1451/Y (AND2X1_RVT)                                    0.10       9.60 f
+  r2_reg_0_/D (DFFARX1_RVT)                               0.00       9.60 f
+  data arrival time                                                  9.60
 
   clock mclk (rise edge)                                 10.00      10.00
   clock network delay (ideal)                             0.00      10.00
@@ -216,9 +212,9 @@ Wire Load Model Mode: enclosed
   data required time                                                 9.68
   --------------------------------------------------------------------------
   data required time                                                 9.68
-  data arrival time                                                 -9.64
+  data arrival time                                                 -9.60
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.03
+  slack (MET)                                                        0.08
 
 
   Startpoint: e_state_reg_3_
@@ -231,7 +227,7 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   omsp_min_exec      16000                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_263_123_7087_2
+  omsp_min_exec_DP_OP_268_122_7087_0
                      ForQA                 saed32rvt_ss0p75v125c
 
   Point                                                   Incr       Path
@@ -242,80 +238,82 @@ Wire Load Model Mode: enclosed
   e_state_reg_3_/Q (DFFARX1_RVT)                          0.32       0.32 f
   C572/Y (OR2X1_RVT)                                      0.12       0.44 f
   C577/Y (OR2X1_RVT)                                      0.11       0.55 f
-  C578/Y (OR2X1_RVT)                                      0.17       0.72 f
-  U354/Y (AND2X1_RVT)                                     0.21       0.93 f
-  U1143/Y (AO222X1_RVT)                                   0.23       1.16 f
-  U1371/Y (NBUFFX2_RVT)                                   0.13       1.29 f
-  C2067/Y (AND2X1_RVT)                                    0.12       1.41 f
-  C2065/Y (OR2X1_RVT)                                     0.11       1.52 f
-  C2064/Y (OR2X1_RVT)                                     0.11       1.63 f
-  C2063/Y (OR2X1_RVT)                                     0.11       1.75 f
-  C2062/Y (OR2X1_RVT)                                     0.11       1.86 f
-  C2061/Y (OR2X1_RVT)                                     0.11       1.97 f
-  C2060/Y (OR2X1_RVT)                                     0.11       2.08 f
-  C2059/Y (OR2X1_RVT)                                     0.11       2.19 f
-  C2058/Y (OR2X1_RVT)                                     0.11       2.30 f
-  C2057/Y (OR2X1_RVT)                                     0.11       2.41 f
-  C2056/Y (OR2X1_RVT)                                     0.11       2.53 f
-  C2055/Y (OR2X1_RVT)                                     0.11       2.64 f
-  C2054/Y (OR2X1_RVT)                                     0.11       2.75 f
-  C2053/Y (OR2X1_RVT)                                     0.11       2.86 f
-  C2052/Y (OR2X1_RVT)                                     0.12       2.98 f
-  U315/Y (AO221X1_RVT)                                    0.20       3.19 f
-  U1167/Y (INVX0_RVT)                                     0.07       3.26 r
-  U1266/Y (XOR2X1_RVT)                                    0.26       3.52 f
-  U802/Y (INVX2_RVT)                                      0.09       3.61 r
-  DP_OP_263_123_7087/I1[0] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       3.61 r
-  DP_OP_263_123_7087/U74/Y (AOI21X1_RVT)                  0.18       3.78 f
-  DP_OP_263_123_7087/U68/Y (OAI21X2_RVT)                  0.22       4.01 r
-  DP_OP_263_123_7087/U49/Y (AOI21X1_RVT)                  0.17       4.18 f
-  DP_OP_263_123_7087/U103/Y (AND2X1_RVT)                  0.11       4.29 f
-  DP_OP_263_123_7087/U102/Y (OR2X1_RVT)                   0.11       4.40 f
-  DP_OP_263_123_7087/U101/Y (INVX0_RVT)                   0.06       4.46 r
-  DP_OP_263_123_7087/U95/Y (OAI21X1_RVT)                  0.21       4.66 f
-  DP_OP_263_123_7087/U105/Y (AO21X1_RVT)                  0.18       4.84 f
-  DP_OP_263_123_7087/U104/Y (XNOR2X2_RVT)                 0.19       5.04 r
-  DP_OP_263_123_7087/O2[4] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       5.04 r
-  DP_OP_264_124_7087/I3 (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.04 r
-  DP_OP_264_124_7087/U31/Y (XNOR2X2_RVT)                  0.18       5.21 r
-  DP_OP_264_124_7087/O2[0] (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.21 r
-  U739/Y (AO222X2_RVT)                                    0.25       5.47 r
-  U1370/Y (AO22X1_RVT)                                    0.17       5.63 r
-  U1345/Y (AO21X1_RVT)                                    0.18       5.82 r
-  U1447/Y (INVX2_RVT)                                     0.04       5.86 f
-  U1347/Y (AND2X1_RVT)                                    0.11       5.97 f
-  C4042/Y (AND2X1_RVT)                                    0.10       6.07 f
-  C4045/Y (AND2X1_RVT)                                    0.10       6.18 f
-  C4048/Y (AND2X1_RVT)                                    0.10       6.27 f
-  U1363/Y (AND2X1_RVT)                                    0.09       6.37 f
-  U1362/Y (OR3X1_RVT)                                     0.13       6.50 f
-  U1326/Y (OA21X1_RVT)                                    0.13       6.63 f
-  U1325/Y (OR3X1_RVT)                                     0.13       6.76 f
-  U1160/Y (INVX0_RVT)                                     0.06       6.82 r
-  U1334/Y (OR2X1_RVT)                                     0.09       6.91 r
-  U1333/Y (OA21X1_RVT)                                    0.13       7.04 r
-  add_x_89_U15/C1 (HADDX1_RVT)                            0.13       7.17 r
-  add_x_89_U14/C1 (HADDX1_RVT)                            0.12       7.29 r
-  add_x_89_U13/C1 (HADDX1_RVT)                            0.12       7.41 r
-  add_x_89_U12/C1 (HADDX1_RVT)                            0.12       7.53 r
-  add_x_89_U11/C1 (HADDX1_RVT)                            0.12       7.64 r
-  add_x_89_U10/C1 (HADDX1_RVT)                            0.12       7.76 r
-  add_x_89_U9/C1 (HADDX1_RVT)                             0.12       7.88 r
-  add_x_89_U8/C1 (HADDX1_RVT)                             0.12       8.00 r
-  add_x_89_U7/C1 (HADDX1_RVT)                             0.12       8.11 r
-  add_x_89_U6/C1 (HADDX1_RVT)                             0.12       8.23 r
-  add_x_89_U5/C1 (HADDX1_RVT)                             0.12       8.35 r
-  add_x_89_U4/C1 (HADDX1_RVT)                             0.12       8.47 r
-  add_x_89_U3/C1 (HADDX1_RVT)                             0.12       8.58 r
-  add_x_89_U2/C1 (HADDX1_RVT)                             0.12       8.70 r
-  U1402/SO (HADDX1_RVT)                                   0.20       8.90 f
-  U1355/Y (AO21X1_RVT)                                    0.16       9.06 f
-  U1346/Y (AO22X1_RVT)                                    0.10       9.16 f
-  pmem_addr[14] (out)                                     0.00       9.16 f
+  C578/Y (OR2X1_RVT)                                      0.16       0.72 f
+  U353/Y (AND2X1_RVT)                                     0.21       0.92 f
+  U342/Y (AO22X1_RVT)                                     0.22       1.15 f
+  C2070/Y (AND2X1_RVT)                                    0.16       1.31 f
+  U1474/Y (OR3X1_RVT)                                     0.12       1.43 f
+  C2063/Y (OR2X1_RVT)                                     0.12       1.55 f
+  C2062/Y (OR2X1_RVT)                                     0.11       1.66 f
+  C2061/Y (OR2X1_RVT)                                     0.11       1.77 f
+  C2060/Y (OR2X1_RVT)                                     0.11       1.88 f
+  C2059/Y (OR2X1_RVT)                                     0.11       1.99 f
+  C2058/Y (OR2X1_RVT)                                     0.11       2.11 f
+  C2057/Y (OR2X1_RVT)                                     0.11       2.22 f
+  C2056/Y (OR2X1_RVT)                                     0.11       2.33 f
+  C2055/Y (OR2X1_RVT)                                     0.11       2.44 f
+  C2054/Y (OR2X1_RVT)                                     0.11       2.55 f
+  U1473/Y (OR3X1_RVT)                                     0.13       2.69 f
+  U1432/Y (AO22X1_RVT)                                    0.11       2.80 f
+  U1431/Y (OR4X4_RVT)                                     0.30       3.09 f
+  U1295/Y (XNOR2X1_RVT)                                   0.22       3.32 f
+  U825/Y (INVX2_RVT)                                      0.09       3.40 r
+  DP_OP_268_122_7087/I1[0] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       3.40 r
+  DP_OP_268_122_7087/U38/CO (FADDX1_RVT)                  0.20       3.61 r
+  DP_OP_268_122_7087/U37/CO (FADDX1_RVT)                  0.19       3.80 r
+  DP_OP_268_122_7087/U36/CO (FADDX1_RVT)                  0.19       3.99 r
+  DP_OP_268_122_7087/U35/S (FADDX1_RVT)                   0.31       4.29 f
+  DP_OP_268_122_7087/U44/Y (INVX1_RVT)                    0.07       4.36 r
+  DP_OP_268_122_7087/U47/Y (OA21X1_RVT)                   0.13       4.49 r
+  DP_OP_268_122_7087/O1 (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.49 r
+  I_912/Y (INVX1_RVT)                                     0.05       4.54 f
+  DP_OP_268_122_7087/I4[2] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.54 f
+  DP_OP_268_122_7087/U49/Y (AND2X1_RVT)                   0.11       4.65 f
+  DP_OP_268_122_7087/U48/Y (NAND2X0_RVT)                  0.11       4.77 r
+  DP_OP_268_122_7087/U3/CO (FADDX1_RVT)                   0.20       4.97 r
+  DP_OP_268_122_7087/U46/Y (XOR3X1_RVT)                   0.17       5.14 f
+  DP_OP_268_122_7087/O2[4] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       5.14 f
+  DP_OP_269_123_7087/I3 (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.14 f
+  DP_OP_269_123_7087/U31/Y (XNOR2X2_RVT)                  0.19       5.33 r
+  DP_OP_269_123_7087/O2[0] (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.33 r
+  U754/Y (AO221X2_RVT)                                    0.26       5.58 r
+  U1479/Y (AO22X1_RVT)                                    0.16       5.75 r
+  U1447/Y (AO21X1_RVT)                                    0.17       5.92 r
+  U1191/Y (INVX0_RVT)                                     0.06       5.98 f
+  U1450/Y (AND2X1_RVT)                                    0.11       6.09 f
+  C4124/Y (AND2X1_RVT)                                    0.10       6.20 f
+  C4127/Y (AND2X1_RVT)                                    0.10       6.30 f
+  C4130/Y (AND2X1_RVT)                                    0.10       6.40 f
+  U1470/Y (AND2X1_RVT)                                    0.09       6.49 f
+  U1469/Y (OR3X1_RVT)                                     0.13       6.62 f
+  U408/Y (OA22X1_RVT)                                     0.13       6.76 f
+  U1454/Y (OR2X1_RVT)                                     0.11       6.87 f
+  U1412/Y (NAND2X0_RVT)                                   0.07       6.94 r
+  U1439/Y (OA21X1_RVT)                                    0.17       7.11 r
+  U1402/Y (AND2X1_RVT)                                    0.12       7.23 r
+  U1389/Y (AND2X1_RVT)                                    0.10       7.33 r
+  add_x_89_U13/C1 (HADDX1_RVT)                            0.13       7.46 r
+  U1386/Y (AND2X1_RVT)                                    0.11       7.56 r
+  add_x_89_U11/C1 (HADDX1_RVT)                            0.13       7.69 r
+  U1384/Y (AND2X1_RVT)                                    0.11       7.79 r
+  add_x_89_U9/C1 (HADDX1_RVT)                             0.11       7.91 r
+  add_x_89_U8/C1 (HADDX2_RVT)                             0.13       8.03 r
+  U1408/Y (AND2X1_RVT)                                    0.10       8.14 r
+  add_x_89_U6/C1 (HADDX1_RVT)                             0.13       8.26 r
+  U1406/Y (AND2X1_RVT)                                    0.11       8.37 r
+  U1196/C1 (HADDX1_RVT)                                   0.13       8.49 r
+  U1404/Y (AND2X1_RVT)                                    0.11       8.60 r
+  U1197/C1 (HADDX1_RVT)                                   0.12       8.72 r
+  U1410/Y (XNOR2X2_RVT)                                   0.17       8.89 r
+  U1461/Y (AO21X1_RVT)                                    0.15       9.04 r
+  U1448/Y (AO22X1_RVT)                                    0.11       9.16 r
+  pmem_addr[14] (out)                                     0.00       9.16 r
   data arrival time                                                  9.16
 
   clock mclk (rise edge)                                 10.00      10.00
@@ -339,13 +337,13 @@ Wire Load Model Mode: enclosed
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
   omsp_min_exec      16000                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_263_123_7087_2
+  omsp_min_exec_DP_OP_268_122_7087_0
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_264_124_7087_2
+  omsp_min_exec_DP_OP_269_123_7087_2
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_265_125_7087_1
+  omsp_min_exec_DP_OP_270_124_7087_1
                      ForQA                 saed32rvt_ss0p75v125c
-  omsp_min_exec_DP_OP_266_126_7087_1
+  omsp_min_exec_DP_OP_271_125_7087_1
                      ForQA                 saed32rvt_ss0p75v125c
 
   Point                                                   Incr       Path
@@ -356,100 +354,92 @@ Wire Load Model Mode: enclosed
   e_state_reg_3_/Q (DFFARX1_RVT)                          0.32       0.32 f
   C572/Y (OR2X1_RVT)                                      0.12       0.44 f
   C577/Y (OR2X1_RVT)                                      0.11       0.55 f
-  C578/Y (OR2X1_RVT)                                      0.17       0.72 f
-  U354/Y (AND2X1_RVT)                                     0.21       0.93 f
-  U1143/Y (AO222X1_RVT)                                   0.23       1.16 f
-  U1371/Y (NBUFFX2_RVT)                                   0.13       1.29 f
-  C2067/Y (AND2X1_RVT)                                    0.12       1.41 f
-  C2065/Y (OR2X1_RVT)                                     0.11       1.52 f
-  C2064/Y (OR2X1_RVT)                                     0.11       1.63 f
-  C2063/Y (OR2X1_RVT)                                     0.11       1.75 f
-  C2062/Y (OR2X1_RVT)                                     0.11       1.86 f
-  C2061/Y (OR2X1_RVT)                                     0.11       1.97 f
-  C2060/Y (OR2X1_RVT)                                     0.11       2.08 f
-  C2059/Y (OR2X1_RVT)                                     0.11       2.19 f
-  C2058/Y (OR2X1_RVT)                                     0.11       2.30 f
-  C2057/Y (OR2X1_RVT)                                     0.11       2.41 f
-  C2056/Y (OR2X1_RVT)                                     0.11       2.53 f
-  C2055/Y (OR2X1_RVT)                                     0.11       2.64 f
-  C2054/Y (OR2X1_RVT)                                     0.11       2.75 f
-  C2053/Y (OR2X1_RVT)                                     0.11       2.86 f
-  C2052/Y (OR2X1_RVT)                                     0.12       2.98 f
-  U315/Y (AO221X1_RVT)                                    0.20       3.19 f
-  U1167/Y (INVX0_RVT)                                     0.07       3.26 r
-  U1266/Y (XOR2X1_RVT)                                    0.26       3.52 f
-  U802/Y (INVX2_RVT)                                      0.09       3.61 r
-  DP_OP_263_123_7087/I1[0] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       3.61 r
-  DP_OP_263_123_7087/U74/Y (AOI21X1_RVT)                  0.18       3.78 f
-  DP_OP_263_123_7087/U68/Y (OAI21X2_RVT)                  0.22       4.01 r
-  DP_OP_263_123_7087/U49/Y (AOI21X1_RVT)                  0.17       4.18 f
-  DP_OP_263_123_7087/U103/Y (AND2X1_RVT)                  0.11       4.29 f
-  DP_OP_263_123_7087/U102/Y (OR2X1_RVT)                   0.11       4.40 f
-  DP_OP_263_123_7087/U101/Y (INVX0_RVT)                   0.06       4.46 r
-  DP_OP_263_123_7087/U95/Y (OAI21X1_RVT)                  0.21       4.66 f
-  DP_OP_263_123_7087/U105/Y (AO21X1_RVT)                  0.18       4.84 f
-  DP_OP_263_123_7087/U104/Y (XNOR2X2_RVT)                 0.19       5.03 f
-  DP_OP_263_123_7087/O2[4] (omsp_min_exec_DP_OP_263_123_7087_2)
-                                                          0.00       5.03 f
-  DP_OP_264_124_7087/I3 (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.03 f
-  DP_OP_264_124_7087/U51/Y (AOI21X1_RVT)                  0.21       5.24 r
-  DP_OP_264_124_7087/O1 (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.24 r
-  I_1012/Y (INVX0_RVT)                                    0.05       5.29 f
-  DP_OP_264_124_7087/I4[2] (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       5.29 f
-  DP_OP_264_124_7087/U140/Y (AND2X1_RVT)                  0.12       5.41 f
-  DP_OP_264_124_7087/U131/Y (OAI21X1_RVT)                 0.24       5.65 r
-  DP_OP_264_124_7087/U139/Y (AO21X1_RVT)                  0.15       5.81 r
-  DP_OP_264_124_7087/U122/Y (XNOR2X1_RVT)                 0.23       6.04 r
-  DP_OP_264_124_7087/O2[4] (omsp_min_exec_DP_OP_264_124_7087_2)
-                                                          0.00       6.04 r
-  DP_OP_265_125_7087/I3 (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.04 r
-  DP_OP_265_125_7087/U42/Y (AOI21X1_RVT)                  0.19       6.22 f
-  DP_OP_265_125_7087/O1 (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.22 f
-  I_1113/Y (INVX0_RVT)                                    0.07       6.29 r
-  DP_OP_265_125_7087/I4[1] (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       6.29 r
-  DP_OP_265_125_7087/U135/Y (NOR2X0_RVT)                  0.16       6.45 f
-  DP_OP_265_125_7087/U9/Y (OAI21X1_RVT)                   0.23       6.68 r
-  DP_OP_265_125_7087/U145/Y (AO21X1_RVT)                  0.10       6.78 r
-  DP_OP_265_125_7087/U138/Y (XNOR2X1_RVT)                 0.23       7.01 r
-  DP_OP_265_125_7087/O2[4] (omsp_min_exec_DP_OP_265_125_7087_1)
-                                                          0.00       7.01 r
-  DP_OP_266_126_7087/I3 (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       7.01 r
-  DP_OP_266_126_7087/U42/Y (AOI21X1_RVT)                  0.19       7.20 f
-  DP_OP_266_126_7087/O1 (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       7.20 f
-  I_1212/Y (INVX1_RVT)                                    0.06       7.26 r
-  DP_OP_266_126_7087/I4[2] (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       7.26 r
-  DP_OP_266_126_7087/U139/Y (OR2X1_RVT)                   0.10       7.36 r
-  DP_OP_266_126_7087/U135/Y (OAI21X1_RVT)                 0.22       7.58 f
-  DP_OP_266_126_7087/U15/Y (AOI21X1_RVT)                  0.22       7.80 r
-  DP_OP_266_126_7087/U137/Y (XOR2X1_RVT)                  0.22       8.02 f
-  DP_OP_266_126_7087/O2[3] (omsp_min_exec_DP_OP_266_126_7087_1)
-                                                          0.00       8.02 f
-  U751/Y (AO222X1_RVT)                                    0.16       8.19 f
-  U1341/Y (OR3X1_RVT)                                     0.19       8.37 f
-  C293/Y (OR2X1_RVT)                                      0.10       8.47 f
-  U1335/Y (OR3X1_RVT)                                     0.12       8.60 f
-  U1366/Y (OR2X1_RVT)                                     0.10       8.70 f
-  U1337/Y (OR2X1_RVT)                                     0.10       8.80 f
-  C301/Y (OR2X1_RVT)                                      0.10       8.89 f
-  U1339/Y (NOR2X0_RVT)                                    0.14       9.03 r
-  U1365/Y (AO22X1_RVT)                                    0.12       9.15 r
-  U1138/Y (INVX0_RVT)                                     0.05       9.20 f
-  U1200/Y (AOI22X1_RVT)                                   0.14       9.35 r
-  U1361/Y (NAND3X0_RVT)                                   0.07       9.42 f
-  U1359/Y (AO21X1_RVT)                                    0.16       9.58 f
-  U1348/Y (AND2X1_RVT)                                    0.10       9.67 f
-  r2_reg_0_/D (DFFARX1_RVT)                               0.00       9.67 f
-  data arrival time                                                  9.67
+  C578/Y (OR2X1_RVT)                                      0.16       0.72 f
+  U353/Y (AND2X1_RVT)                                     0.21       0.92 f
+  U342/Y (AO22X1_RVT)                                     0.22       1.15 f
+  C2070/Y (AND2X1_RVT)                                    0.16       1.31 f
+  U1474/Y (OR3X1_RVT)                                     0.12       1.43 f
+  C2063/Y (OR2X1_RVT)                                     0.12       1.55 f
+  C2062/Y (OR2X1_RVT)                                     0.11       1.66 f
+  C2061/Y (OR2X1_RVT)                                     0.11       1.77 f
+  C2060/Y (OR2X1_RVT)                                     0.11       1.88 f
+  C2059/Y (OR2X1_RVT)                                     0.11       1.99 f
+  C2058/Y (OR2X1_RVT)                                     0.11       2.11 f
+  C2057/Y (OR2X1_RVT)                                     0.11       2.22 f
+  C2056/Y (OR2X1_RVT)                                     0.11       2.33 f
+  C2055/Y (OR2X1_RVT)                                     0.11       2.44 f
+  C2054/Y (OR2X1_RVT)                                     0.11       2.55 f
+  U1473/Y (OR3X1_RVT)                                     0.13       2.69 f
+  U1432/Y (AO22X1_RVT)                                    0.11       2.80 f
+  U1431/Y (OR4X4_RVT)                                     0.30       3.09 f
+  U1295/Y (XNOR2X1_RVT)                                   0.22       3.32 f
+  U825/Y (INVX2_RVT)                                      0.09       3.40 r
+  DP_OP_268_122_7087/I1[0] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       3.40 r
+  DP_OP_268_122_7087/U38/CO (FADDX1_RVT)                  0.20       3.61 r
+  DP_OP_268_122_7087/U37/CO (FADDX1_RVT)                  0.19       3.80 r
+  DP_OP_268_122_7087/U36/CO (FADDX1_RVT)                  0.19       3.99 r
+  DP_OP_268_122_7087/U35/S (FADDX1_RVT)                   0.31       4.29 f
+  DP_OP_268_122_7087/U44/Y (INVX1_RVT)                    0.07       4.36 r
+  DP_OP_268_122_7087/U47/Y (OA21X1_RVT)                   0.13       4.49 r
+  DP_OP_268_122_7087/O1 (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.49 r
+  I_912/Y (INVX1_RVT)                                     0.05       4.54 f
+  DP_OP_268_122_7087/I4[2] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       4.54 f
+  DP_OP_268_122_7087/U49/Y (AND2X1_RVT)                   0.11       4.65 f
+  DP_OP_268_122_7087/U48/Y (NAND2X0_RVT)                  0.11       4.77 r
+  DP_OP_268_122_7087/U3/CO (FADDX1_RVT)                   0.20       4.97 r
+  DP_OP_268_122_7087/U46/Y (XOR3X1_RVT)                   0.17       5.14 f
+  DP_OP_268_122_7087/O2[4] (omsp_min_exec_DP_OP_268_122_7087_0)
+                                                          0.00       5.14 f
+  DP_OP_269_123_7087/I3 (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.14 f
+  DP_OP_269_123_7087/U51/Y (AOI21X1_RVT)                  0.22       5.36 r
+  DP_OP_269_123_7087/O1 (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.36 r
+  U1182/Y (INVX0_RVT)                                     0.06       5.42 f
+  DP_OP_269_123_7087/I4[2] (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       5.42 f
+  DP_OP_269_123_7087/U142/Y (AND2X1_RVT)                  0.12       5.54 f
+  DP_OP_269_123_7087/U143/Y (OA21X1_RVT)                  0.16       5.71 f
+  DP_OP_269_123_7087/U137/Y (INVX0_RVT)                   0.07       5.77 r
+  DP_OP_269_123_7087/U141/Y (AO21X1_RVT)                  0.15       5.93 r
+  DP_OP_269_123_7087/U122/Y (XNOR2X1_RVT)                 0.22       6.15 f
+  DP_OP_269_123_7087/O2[4] (omsp_min_exec_DP_OP_269_123_7087_2)
+                                                          0.00       6.15 f
+  DP_OP_270_124_7087/I3 (omsp_min_exec_DP_OP_270_124_7087_1)
+                                                          0.00       6.15 f
+  DP_OP_270_124_7087/U42/Y (AOI21X1_RVT)                  0.22       6.36 r
+  DP_OP_270_124_7087/U143/Y (NOR2X0_RVT)                  0.14       6.50 f
+  DP_OP_270_124_7087/U140/Y (OAI21X1_RVT)                 0.26       6.76 r
+  DP_OP_270_124_7087/U145/Y (AO21X1_RVT)                  0.16       6.92 r
+  DP_OP_270_124_7087/U138/Y (XNOR2X1_RVT)                 0.23       7.15 r
+  DP_OP_270_124_7087/O2[4] (omsp_min_exec_DP_OP_270_124_7087_1)
+                                                          0.00       7.15 r
+  DP_OP_271_125_7087/I3 (omsp_min_exec_DP_OP_271_125_7087_1)
+                                                          0.00       7.15 r
+  DP_OP_271_125_7087/U42/Y (AOI21X1_RVT)                  0.19       7.34 f
+  DP_OP_271_125_7087/U27/Y (NOR2X0_RVT)                   0.15       7.49 r
+  DP_OP_271_125_7087/U136/Y (OAI21X1_RVT)                 0.23       7.73 f
+  DP_OP_271_125_7087/U131/Y (INVX0_RVT)                   0.07       7.80 r
+  DP_OP_271_125_7087/U140/Y (OA21X1_RVT)                  0.14       7.94 r
+  DP_OP_271_125_7087/U6/Y (XOR2X1_RVT)                    0.23       8.17 f
+  DP_OP_271_125_7087/O2[3] (omsp_min_exec_DP_OP_271_125_7087_1)
+                                                          0.00       8.17 f
+  U1475/Y (AO21X1_RVT)                                    0.19       8.36 f
+  U1421/Y (OR3X1_RVT)                                     0.18       8.54 f
+  U1441/Y (OR3X1_RVT)                                     0.13       8.66 f
+  U1472/Y (OR2X1_RVT)                                     0.10       8.77 f
+  U1443/Y (OR2X1_RVT)                                     0.10       8.86 f
+  U1426/Y (NOR2X0_RVT)                                    0.14       9.00 r
+  U1468/Y (AOI22X1_RVT)                                   0.16       9.16 f
+  U1284/Y (AOI22X1_RVT)                                   0.15       9.30 r
+  U1467/Y (NAND3X0_RVT)                                   0.07       9.37 f
+  U1465/Y (AO21X1_RVT)                                    0.16       9.53 f
+  U1451/Y (AND2X1_RVT)                                    0.10       9.63 f
+  r2_reg_0_/D (DFFARX1_RVT)                               0.00       9.63 f
+  data arrival time                                                  9.63
 
   clock mclk (rise edge)                                 10.00      10.00
   clock network delay (ideal)                             0.00      10.00
@@ -459,9 +449,9 @@ Wire Load Model Mode: enclosed
   data required time                                                 9.68
   --------------------------------------------------------------------------
   data required time                                                 9.68
-  data arrival time                                                 -9.67
+  data arrival time                                                 -9.63
   --------------------------------------------------------------------------
-  slack (MET)                                                        0.00
+  slack (MET)                                                        0.05
 
 
 1

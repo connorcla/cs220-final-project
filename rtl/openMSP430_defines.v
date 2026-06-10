@@ -690,6 +690,8 @@
 `define CALL   5
 `define RETI   6
 `define IRQ    7
+`define MUL    8
+`define MAC    9
 
 // Conditional jump
 `define JNE    0

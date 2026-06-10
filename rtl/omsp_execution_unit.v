@@ -112,7 +112,7 @@ input         [3:0] e_state;       // Execution state
 input               exec_done;     // Execution completed
 input         [7:0] inst_ad;       // Decoded Inst: destination addressing mode
 input         [7:0] inst_as;       // Decoded Inst: source addressing mode
-input        [11:0] inst_alu;      // ALU control signals
+input        [13:0] inst_alu;      // ALU control signals
 input               inst_bw;       // Decoded Inst: byte width
 input        [15:0] inst_dest;     // Decoded Inst: destination (one hot)
 input        [15:0] inst_dext;     // Decoded Inst: destination extended instruction word
@@ -120,7 +120,7 @@ input               inst_irq_rst;  // Decoded Inst: reset interrupt
 input         [7:0] inst_jmp;      // Decoded Inst: Conditional jump
 input               inst_mov;      // Decoded Inst: mov instruction
 input        [15:0] inst_sext;     // Decoded Inst: source extended instruction word
-input         [7:0] inst_so;       // Decoded Inst: Single-operand arithmetic
+input         [9:0] inst_so;       // Decoded Inst: Single-operand arithmetic
 input        [15:0] inst_src;      // Decoded Inst: source (one hot)
 input         [2:0] inst_type;     // Decoded Instruction type
 input               mclk;          // Main system clock

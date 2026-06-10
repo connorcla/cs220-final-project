@@ -50,9 +50,9 @@ end
         end else begin
             case (pmem_addr)
                 15'h0000: pmem_dout = 16'h4303; // NOP
-                15'h0001: pmem_dout = 16'h5506; // ADD R5, R6
+                15'h0001: pmem_dout = 16'h1806; // MUL R6
                 15'h0002: pmem_dout = 16'h4303; // NOP
-		15'h0003: pmem_dout = 16'h3FFF; //
+		15'h0003: pmem_dout = 16'h3FFF; // JMP
                 default:  pmem_dout = 16'hDEAD; 
             endcase
         end

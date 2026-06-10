@@ -250,6 +250,9 @@ set_false_path -from dbg_en
 # Check the design for issues
 check_design
 
+current_design omsp_min_exec
+set_dont_touch [current_design]
+
 # Perform synthesis with optimization
 compile_ultra -incremental
 

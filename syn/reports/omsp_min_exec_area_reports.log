@@ -3,30 +3,30 @@
 Report : area
 Design : omsp_min_exec
 Version: W-2024.09-SP5-4
-Date   : Tue May  5 22:51:26 2026
+Date   : Tue Jun  2 23:16:17 2026
 ****************************************
 
 Library(s) Used:
 
     saed32rvt_ss0p75v125c (File: /usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db)
 
-Number of ports:                          275
-Number of nets:                          4106
-Number of cells:                         3793
-Number of combinational cells:           3407
-Number of sequential cells:               374
+Number of ports:                          356
+Number of nets:                          4631
+Number of cells:                         4131
+Number of combinational cells:           3740
+Number of sequential cells:               378
 Number of macros/black boxes:               0
-Number of buf/inv:                        273
-Number of references:                      45
+Number of buf/inv:                        276
+Number of references:                      51
 
-Combinational area:               7804.762469
-Buf/Inv area:                      377.912133
-Noncombinational area:            2664.954030
+Combinational area:               8850.056734
+Buf/Inv area:                      384.519877
+Noncombinational area:            2692.909870
 Macro/Black Box area:                0.000000
-Net Interconnect area:            2651.725237
+Net Interconnect area:            2901.538166
 
-Total cell area:                 10469.716498
-Total area:                      13121.441736
+Total cell area:                 11542.966604
+Total area:                      14444.504770
 
 Hierarchical area distribution
 ------------------------------
@@ -36,14 +36,15 @@ Hierarchical area distribution
 Hierarchical cell                 Absolute    Percent  Combi-     Noncombi-  Black-
                                   Total       Total    national   national   boxes   Design
 --------------------------------  ----------  -------  ---------  ---------  ------  ----------------------------------
-omsp_min_exec                     10469.7165    100.0  7003.4464  2664.9540  0.0000  omsp_min_exec
-DP_OP_262_122_9732                  131.9007      1.3   131.9007     0.0000  0.0000  omsp_min_exec_DP_OP_262_122_9732_0
-DP_OP_263_123_7087                  129.8676      1.2   129.8676     0.0000  0.0000  omsp_min_exec_DP_OP_263_123_7087_2
-DP_OP_264_124_7087                  136.9836      1.3   136.9836     0.0000  0.0000  omsp_min_exec_DP_OP_264_124_7087_2
-DP_OP_265_125_7087                  134.6963      1.3   134.6963     0.0000  0.0000  omsp_min_exec_DP_OP_265_125_7087_1
-DP_OP_266_126_7087                  135.7129      1.3   135.7129     0.0000  0.0000  omsp_min_exec_DP_OP_266_126_7087_1
-add_x_91                            132.1549      1.3   132.1549     0.0000  0.0000  omsp_min_exec_DW01_add_4
+omsp_min_exec                     11542.9666    100.0  7216.1650  2692.9099  0.0000  omsp_min_exec
+DP_OP_268_122_7087                   52.0995      0.5    52.0995     0.0000  0.0000  omsp_min_exec_DP_OP_268_122_7087_0
+DP_OP_269_123_7087                  131.9007      1.1   131.9007     0.0000  0.0000  omsp_min_exec_DP_OP_269_123_7087_2
+DP_OP_270_124_7087                  134.4422      1.2   134.4422     0.0000  0.0000  omsp_min_exec_DP_OP_270_124_7087_1
+DP_OP_271_125_7087                  133.4256      1.2   133.4256     0.0000  0.0000  omsp_min_exec_DP_OP_271_125_7087_1
+DP_OP_271_126_4915                  197.4699      1.7   197.4699     0.0000  0.0000  omsp_min_exec_DP_OP_271_126_4915_0
+DP_OP_272_127_6441                  826.2221      7.2   826.2221     0.0000  0.0000  omsp_min_exec_DP_OP_272_127_6441_0
+add_x_91                            158.3317      1.4   158.3317     0.0000  0.0000  omsp_min_exec_DW01_add_4
 --------------------------------  ----------  -------  ---------  ---------  ------  ----------------------------------
-Total                                                  7804.7625  2664.9540  0.0000
+Total                                                  8850.0567  2692.9099  0.0000
 
 1

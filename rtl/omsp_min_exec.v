@@ -48,14 +48,14 @@ wire                 gie;
 
 wire           [7:0] inst_ad;
 wire           [7:0] inst_as;
-wire          [11:0] inst_alu;
+wire          [13:0] inst_alu;
 wire                 inst_bw;
 wire                 inst_irq_rst;
 wire                 inst_mov;
 wire          [15:0] inst_dest;
 wire          [15:0] inst_dext;
 wire          [15:0] inst_sext;
-wire           [7:0] inst_so;
+wire           [9:0] inst_so;
 wire          [15:0] inst_src;
 wire           [2:0] inst_type;
 wire           [7:0] inst_jmp;

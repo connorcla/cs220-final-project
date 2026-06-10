@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running pt_shell Version V-2023.12-SP5-4 for linux64 -- Aug 07, 2025
-#@ # Date:   Tue Jun  2 15:17:36 2026
+#@ # Date:   Tue Jun  2 23:21:34 2026
 #@ # Run by: cclab002@bender.engr.ucr.edu
 #@ 
 
@@ -868,29 +868,29 @@ source /usr/local/synopsys/prime/V-2023.12-SP5-4/admin/setup/.synopsys_pt.setup
 #@ }
 #@ # -- End source /usr/local/synopsys/prime/V-2023.12-SP5-4/auxx/tcllib/lib/itcl4.2.1/itcl.tcl
 
-source alu_ptpx.tcl
-#@ # -- Starting source alu_ptpx.tcl
+source omsp_ptpx.tcl
+#@ # -- Starting source omsp_ptpx.tcl
 
-#@ # Enable power analysis in PrimeTime
 #@ set power_enable_analysis TRUE
+#@ set power_analysis_mode averaged
 #@ 
-#@ # Set library paths
 #@ set target_library "/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db"
 #@ set link_library [list {*} "/usr/local/synopsys/pdk/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ss0p75v125c.db"]
 #@ 
-#@ read_db $target_library
+#@ read_verilog "../syn/omsp_min_exec_synthesized.v"
 #@ 
-#@ read_verilog "../syn/omsp_alu_synthesized.v"
+#@ current_design omsp_min_exec
 #@ 
-#@ current_design omsp_alu
+#@ link
 #@ 
-#@ create_clock -period 10 -name clk
+#@ create_clock -period 10.0 -name mclk [get_ports mclk]
 #@ 
-#@ read_vcd "../sim/alu.vcd" -strip_path "alu_tb/dut"
+#@ read_vcd "../sim/min_exec.vcd" -strip_path "omsp_min_exec_tb/dut"
 #@ 
-#@ report_switching_activity -list_not_annotated > unannotated_alu.log
-#@ report_power -nosplit -hierarchy -verbose > alu_total_power.log
-#@ report_power -cell -verbose > alu_cell_power.log
+#@ report_switching_activity -list_not_annotated > unannotated_min_exec.log
+#@ 
+#@ report_power -nosplit -hierarchy -verbose > min_exec_total_power.log
+#@ report_power -cell -verbose > min_exec_cell_power.log
 #@ 
 #@ exit
 #@ if { [namespace which -command __pre_quit_tcl_procs] == "::__pre_quit_tcl_procs" } {   __pre_quit_tcl_procs}

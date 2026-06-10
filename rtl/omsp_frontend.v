@@ -107,7 +107,7 @@ output         [3:0] e_state;          // Execution state
 output               exec_done;        // Execution completed
 output         [7:0] inst_ad;          // Decoded Inst: destination addressing mode
 output         [7:0] inst_as;          // Decoded Inst: source addressing mode
-output        [11:0] inst_alu;         // ALU control signals
+output        [13:0] inst_alu;         // ALU control signals // NEW - extended inst_alu
 output               inst_bw;          // Decoded Inst: byte width
 output        [15:0] inst_dest;        // Decoded Inst: destination (one hot)
 output        [15:0] inst_dext;        // Decoded Inst: destination extended instruction word
@@ -115,7 +115,7 @@ output               inst_irq_rst;     // Decoded Inst: Reset interrupt
 output         [7:0] inst_jmp;         // Decoded Inst: Conditional jump
 output               inst_mov;         // Decoded Inst: mov instruction
 output        [15:0] inst_sext;        // Decoded Inst: source extended instruction word
-output         [7:0] inst_so;          // Decoded Inst: Single-operand arithmetic
+output         [9:0] inst_so;          // Decoded Inst: Single-operand arithmetic // NEW - extended inst_so
 output        [15:0] inst_src;         // Decoded Inst: source (one hot)
 output         [2:0] inst_type;        // Decoded Instruction type
 output [`IRQ_NR-3:0] irq_acc;          // Interrupt request accepted (one-hot signal)
@@ -183,6 +183,7 @@ function [7:0] one_hot8;
       one_hot8[binary] = 1'b1;
    end
 endfunction
+
 
 // Get IRQ number
 function  [5:0] get_irq_num;
@@ -559,11 +560,16 @@ always @(posedge mclk_decode or posedge puc_rst)
 // 8'b01000000: RETI
 // 8'b10000000: IRQ
 
-reg   [7:0] inst_so;
-wire  [7:0] inst_so_nxt = irq_detect ? 8'h80 : (one_hot8(ir[9:7]) & {8{inst_type_nxt[`INST_SO]}});
+// NEW - check if instruction is MUL or MAC 
+wire is_mul = (inst_type_nxt[`INST_SO]) & (ir[11:7]==5'b10000);
+wire is_mac = (inst_type_nxt[`INST_SO]) & (ir[11:7]==5'b10001);
+
+// NEW - extended inst_so and inst_so_nxt to accomodate the two new instructions
+reg   [9:0] inst_so;
+wire  [9:0] inst_so_nxt = irq_detect ? 10'h80 : is_mul ? 10'b0100000000 : is_mac ? 10'b1000000000 : (one_hot8(ir[9:7]) & {10{inst_type_nxt[`INST_SO]}});
 
 always @(posedge mclk_decode or posedge puc_rst)
-  if (puc_rst)     inst_so <= 8'h00;
+  if (puc_rst)     inst_so <= 10'h00; // NEW - inst_so is 10 bits now
 `ifdef CLOCK_GATING
   else             inst_so <= inst_so_nxt;
 `else
@@ -641,11 +647,14 @@ always @(posedge mclk_decode or posedge puc_rst)
   else if (decode) inst_dest_bin <= ir[3:0];
 `endif
 
+// NEW - if MUL or MAC set inst_dest to R4
 wire  [15:0] inst_dest = cpu_halt_st          ? one_hot16(dbg_reg_sel) :
                          inst_type[`INST_JMP] ? 16'h0001               :
                          inst_so[`IRQ]  |
                          inst_so[`PUSH] |
                          inst_so[`CALL]       ? 16'h0002               :
+			 inst_so[`MUL]  |
+			 inst_so[`MAC]	      ? 16'h0010	       :
                                                 one_hot16(inst_dest_bin);
 
 
@@ -765,9 +774,12 @@ reg  [7:0] inst_ad_nxt;
 
 wire [3:0] dest_reg = ir[3:0];
 
-always @(dest_reg or ir or inst_type_nxt)
+// NEW - if MAC or MUL set dest addressing mode to register direct
+always @(dest_reg or ir or inst_type_nxt or is_mul or is_mac)
   begin
-     if (~inst_type_nxt[`INST_TO])
+     if (is_mul | is_mac)
+	inst_ad_nxt = 8'b00000001;
+     else if (~inst_type_nxt[`INST_TO])
        inst_ad_nxt =  8'b00000000;
      else if (dest_reg==4'h2)   // Addressing mode using R2
        case (ir[7])
@@ -944,7 +956,7 @@ wire exec_done = exec_jmp        ? (e_state==E_JUMP)   :
 // 12'b010000000000: Update status bit for XOR instruction
 // 12'b100000000000: Don't write to destination
 
-reg  [11:0] inst_alu;
+reg  [13:0] inst_alu; // NEW - inst_alu is 14 bits now
 
 wire        alu_src_inv   = inst_to_nxt[`SUB]  | inst_to_nxt[`SUBC] |
                             inst_to_nxt[`CMP]  | inst_to_nxt[`BIC] ;
@@ -984,7 +996,14 @@ wire        alu_shift     = inst_so_nxt[`RRC]  | inst_so_nxt[`RRA];
 
 wire        exec_no_wr    = inst_to_nxt[`CMP] | inst_to_nxt[`BIT];
 
-wire [11:0] inst_alu_nxt  = {exec_no_wr,
+// NEW - extend inst_alu_nxt to accomodate mul/mac signal bits
+wire 	    alu_mul 	  = inst_so_nxt[`MUL];
+
+wire        alu_mac	  = inst_so_nxt[`MAC];
+
+wire [13:0] inst_alu_nxt  = {alu_mac,
+			     alu_mul,
+			     exec_no_wr,
                              alu_shift,
                              alu_stat_f,
                              alu_stat_7,
@@ -998,7 +1017,7 @@ wire [11:0] inst_alu_nxt  = {exec_no_wr,
                              alu_src_inv};
 
 always @(posedge mclk_decode or posedge puc_rst)
-  if (puc_rst)     inst_alu <= 12'h000;
+  if (puc_rst)     inst_alu <= 14'h000; // NEW - inst_alu is 14 bits now
 `ifdef CLOCK_GATING
   else             inst_alu <= inst_alu_nxt;
 `else

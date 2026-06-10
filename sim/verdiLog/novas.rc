@@ -234,7 +234,7 @@ FindBarVisible =
 ColorThemeModern = bright
 version = Verdi_W-2024.09-SP2-5
 recent_commands_Verdi = hbLoadFsdbFile,hbCloseFsdbFile,srcShowFile,srcCompile
-recent_commands_nWave = getSignal,zoomAll,getAllSignals,zoomIn,zoomOut
+recent_commands_nWave = zoomIn,getSignal,zoomOut,zoomAll,getAllSignals
 prevColorThemeModern = bright
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -392,9 +392,9 @@ Verdi_OpenFile = 665,444,590,340
 QwWarnMsgDlg = 660,515,600,250
 tipViewerDlg = 3321,938,398,259
 QwQuestionMsgDlg = 3317,993,406,101
-loadFile = 3213,825,614,432
-qWaveSignalDialog = 3120,802,800,479
-QwUserAskDlg = 3358,949,324,128
+loadFile = 288,453,614,432
+qWaveSignalDialog = 880,467,800,479
+QwUserAskDlg = 1118,614,324,128
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -593,7 +593,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED12
 [Text.1]
-viewport = 2560 427 1908 1175 45
+viewport = 0 0 2548 1359 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -684,45 +684,45 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Type"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = "Severity"
 width = 60
 visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.ruleHistory]
@@ -801,8 +801,8 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 3120 802 800 479 242 387 314 91
-viewPort = 0 11 1908 513 143 65
+getSignalForm = 880 467 800 479 242 387 314 91
+viewPort = 0 11 2548 605 143 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -969,9 +969,9 @@ printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
 RecentFile1 = "\"/home/cegrad/cclab002/cs220-final-project/sim/min_exec.fsdb\""
-RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
-RecentFile3 = "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\""
-RecentFile4 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
+RecentFile2 = "\"/home/cegrad/cclab002/cs220-final-project/sim/alu.fsdb\""
+RecentFile3 = "\"/home/cegrad/cclab002/cs220-final-project/sim/novas.fsdb\""
+RecentFile4 = "\"/home/cegrad/cclab002/cs220-final-project/sim/dump.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1605,7 +1605,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 11 1908 513 143 65
+viewPort = 0 11 2548 605 143 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

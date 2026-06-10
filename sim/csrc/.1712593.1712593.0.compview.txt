@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1780466856.078015105, "rt":1.00, "ut":0.49, "st":0.15}}
+{"vcselab":{"timestamp_begin":1780466857.200477794, "rt":0.56, "ut":0.26, "st":0.10}}
+{"link":{"timestamp_begin":1780466857.984866917, "rt":0.43, "ut":0.19, "st":0.11}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1780466855.479385014}
+{"VCS_COMP_START_TIME": 1780466855.479385014}
+{"VCS_COMP_END_TIME": 1780466858.804229824}
+{"VCS_USER_OPTIONS": "tb_omsp_min_exec.v ../rtl/omsp_alu.v ../rtl/omsp_and_gate.v ../rtl/omsp_clock_gate.v ../rtl/omsp_frontend.v ../rtl/omsp_min_exec.v ../rtl/omsp_register_file.v ../rtl/omsp_execution_unit.v +incdir+../rtl -full64 -debug_access /usr/local/synopsys/verdi/W-2024.09-SP2-5/share/PLI/VCS/LINUX64/pli.a"}
+{"vcs1": {"peak_mem": 407540}}
+{"vcselab": {"peak_mem": 265368}}
